@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A4891A21751D33C00086E39 /* CashFlowService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4891A11751D33C00086E39 /* CashFlowService.m */; };
+		7A4891A51751D36400086E39 /* CashFlowsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4891A41751D36400086E39 /* CashFlowsRepository.m */; };
+		7A4891A81751D37200086E39 /* PeriodsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4891A71751D37200086E39 /* PeriodsRepository.m */; };
+		7A4891AB1751D38000086E39 /* PeriodInputDataRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4891AA1751D38000086E39 /* PeriodInputDataRepository.m */; };
 		7A4BCD0817519E5A00901881 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4BCD0717519E5A00901881 /* UIKit.framework */; };
 		7A4BCD0A17519E5A00901881 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4BCD0917519E5A00901881 /* Foundation.framework */; };
 		7A4BCD0C17519E5A00901881 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4BCD0B17519E5A00901881 /* CoreGraphics.framework */; };
@@ -17,6 +21,22 @@
 		7A4BCD401751A01E00901881 /* CashFlow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A4BCD301751A01E00901881 /* CashFlow.xcdatamodeld */; };
 		7A4BCD431751A1D400901881 /* UnitOfWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4BCD421751A1D400901881 /* UnitOfWork.m */; };
 		7A4BCD4A1751A62600901881 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4BCD491751A62600901881 /* MainStoryboard.storyboard */; };
+		7A67C73D1751EB2F00136E15 /* Period.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C73C1751EB2F00136E15 /* Period.m */; };
+		7A67C7401751EB3000136E15 /* PeriodInputData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C73F1751EB3000136E15 /* PeriodInputData.m */; };
+		7A67C7431751EB3000136E15 /* CashFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C7421751EB3000136E15 /* CashFlow.m */; };
+		7A67C7721751F91B00136E15 /* IncomeTaxesExpenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C7581751F91B00136E15 /* IncomeTaxesExpenses.m */; };
+		7A67C7731751F91B00136E15 /* LoanExpenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C75A1751F91B00136E15 /* LoanExpenses.m */; };
+		7A67C7741751F91B00136E15 /* ManpowerExpenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C75C1751F91B00136E15 /* ManpowerExpenses.m */; };
+		7A67C7751751F91B00136E15 /* PeriodCashFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C75E1751F91B00136E15 /* PeriodCashFlow.m */; };
+		7A67C7761751F91B00136E15 /* PeriodExpenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C7601751F91B00136E15 /* PeriodExpenses.m */; };
+		7A67C7771751F91B00136E15 /* PeriodIncomes.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C7621751F91B00136E15 /* PeriodIncomes.m */; };
+		7A67C7781751F91B00136E15 /* RawMaterialExpenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C7641751F91B00136E15 /* RawMaterialExpenses.m */; };
+		7A67C7791751F91B00136E15 /* SalaryExpenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C7661751F91B00136E15 /* SalaryExpenses.m */; };
+		7A67C77A1751F91B00136E15 /* SalesIncomes.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C7681751F91B00136E15 /* SalesIncomes.m */; };
+		7A67C77B1751F91B00136E15 /* PeriodPlannedCashFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C76B1751F91B00136E15 /* PeriodPlannedCashFlow.m */; };
+		7A67C77C1751F91B00136E15 /* PeriodPlannedCashFlowSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C76D1751F91B00136E15 /* PeriodPlannedCashFlowSummary.m */; };
+		7A67C77D1751F91B00136E15 /* PeriodPlannedExpenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C76F1751F91B00136E15 /* PeriodPlannedExpenses.m */; };
+		7A67C77E1751F91B00136E15 /* PeriodPlannedIncomes.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C7711751F91B00136E15 /* PeriodPlannedIncomes.m */; };
 		7A7739201751A7E3006430A0 /* 44_no_sort.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A7739191751A7E3006430A0 /* 44_no_sort.png */; };
 		7A7739211751A7E3006430A0 /* 44_no_sort@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A77391A1751A7E3006430A0 /* 44_no_sort@2x.png */; };
 		7A7739221751A7E3006430A0 /* 44_sort_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A77391B1751A7E3006430A0 /* 44_sort_down.png */; };
@@ -30,6 +50,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A4891891751B02C00086E39 /* CashFlowPeriodType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashFlowPeriodType.h; sourceTree = "<group>"; };
+		7A4891A01751D33C00086E39 /* CashFlowService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashFlowService.h; sourceTree = "<group>"; };
+		7A4891A11751D33C00086E39 /* CashFlowService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashFlowService.m; sourceTree = "<group>"; };
+		7A4891A31751D36400086E39 /* CashFlowsRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashFlowsRepository.h; sourceTree = "<group>"; };
+		7A4891A41751D36400086E39 /* CashFlowsRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashFlowsRepository.m; sourceTree = "<group>"; };
+		7A4891A61751D37200086E39 /* PeriodsRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodsRepository.h; sourceTree = "<group>"; };
+		7A4891A71751D37200086E39 /* PeriodsRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodsRepository.m; sourceTree = "<group>"; };
+		7A4891A91751D38000086E39 /* PeriodInputDataRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodInputDataRepository.h; sourceTree = "<group>"; };
+		7A4891AA1751D38000086E39 /* PeriodInputDataRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodInputDataRepository.m; sourceTree = "<group>"; };
 		7A4BCD0417519E5A00901881 /* CashFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4BCD0717519E5A00901881 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7A4BCD0917519E5A00901881 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -45,6 +74,38 @@
 		7A4BCD411751A1D400901881 /* UnitOfWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitOfWork.h; sourceTree = "<group>"; };
 		7A4BCD421751A1D400901881 /* UnitOfWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitOfWork.m; sourceTree = "<group>"; };
 		7A4BCD491751A62600901881 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		7A67C73B1751EB2F00136E15 /* Period.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Period.h; sourceTree = "<group>"; };
+		7A67C73C1751EB2F00136E15 /* Period.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Period.m; sourceTree = "<group>"; };
+		7A67C73E1751EB3000136E15 /* PeriodInputData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodInputData.h; sourceTree = "<group>"; };
+		7A67C73F1751EB3000136E15 /* PeriodInputData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodInputData.m; sourceTree = "<group>"; };
+		7A67C7411751EB3000136E15 /* CashFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashFlow.h; sourceTree = "<group>"; };
+		7A67C7421751EB3000136E15 /* CashFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashFlow.m; sourceTree = "<group>"; };
+		7A67C7571751F91B00136E15 /* IncomeTaxesExpenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeTaxesExpenses.h; sourceTree = "<group>"; };
+		7A67C7581751F91B00136E15 /* IncomeTaxesExpenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeTaxesExpenses.m; sourceTree = "<group>"; };
+		7A67C7591751F91B00136E15 /* LoanExpenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanExpenses.h; sourceTree = "<group>"; };
+		7A67C75A1751F91B00136E15 /* LoanExpenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoanExpenses.m; sourceTree = "<group>"; };
+		7A67C75B1751F91B00136E15 /* ManpowerExpenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManpowerExpenses.h; sourceTree = "<group>"; };
+		7A67C75C1751F91B00136E15 /* ManpowerExpenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManpowerExpenses.m; sourceTree = "<group>"; };
+		7A67C75D1751F91B00136E15 /* PeriodCashFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodCashFlow.h; sourceTree = "<group>"; };
+		7A67C75E1751F91B00136E15 /* PeriodCashFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodCashFlow.m; sourceTree = "<group>"; };
+		7A67C75F1751F91B00136E15 /* PeriodExpenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodExpenses.h; sourceTree = "<group>"; };
+		7A67C7601751F91B00136E15 /* PeriodExpenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodExpenses.m; sourceTree = "<group>"; };
+		7A67C7611751F91B00136E15 /* PeriodIncomes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodIncomes.h; sourceTree = "<group>"; };
+		7A67C7621751F91B00136E15 /* PeriodIncomes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodIncomes.m; sourceTree = "<group>"; };
+		7A67C7631751F91B00136E15 /* RawMaterialExpenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RawMaterialExpenses.h; sourceTree = "<group>"; };
+		7A67C7641751F91B00136E15 /* RawMaterialExpenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RawMaterialExpenses.m; sourceTree = "<group>"; };
+		7A67C7651751F91B00136E15 /* SalaryExpenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalaryExpenses.h; sourceTree = "<group>"; };
+		7A67C7661751F91B00136E15 /* SalaryExpenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalaryExpenses.m; sourceTree = "<group>"; };
+		7A67C7671751F91B00136E15 /* SalesIncomes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesIncomes.h; sourceTree = "<group>"; };
+		7A67C7681751F91B00136E15 /* SalesIncomes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesIncomes.m; sourceTree = "<group>"; };
+		7A67C76A1751F91B00136E15 /* PeriodPlannedCashFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodPlannedCashFlow.h; sourceTree = "<group>"; };
+		7A67C76B1751F91B00136E15 /* PeriodPlannedCashFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodPlannedCashFlow.m; sourceTree = "<group>"; };
+		7A67C76C1751F91B00136E15 /* PeriodPlannedCashFlowSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodPlannedCashFlowSummary.h; sourceTree = "<group>"; };
+		7A67C76D1751F91B00136E15 /* PeriodPlannedCashFlowSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodPlannedCashFlowSummary.m; sourceTree = "<group>"; };
+		7A67C76E1751F91B00136E15 /* PeriodPlannedExpenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodPlannedExpenses.h; sourceTree = "<group>"; };
+		7A67C76F1751F91B00136E15 /* PeriodPlannedExpenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodPlannedExpenses.m; sourceTree = "<group>"; };
+		7A67C7701751F91B00136E15 /* PeriodPlannedIncomes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodPlannedIncomes.h; sourceTree = "<group>"; };
+		7A67C7711751F91B00136E15 /* PeriodPlannedIncomes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodPlannedIncomes.m; sourceTree = "<group>"; };
 		7A7739191751A7E3006430A0 /* 44_no_sort.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 44_no_sort.png; sourceTree = "<group>"; };
 		7A77391A1751A7E3006430A0 /* 44_no_sort@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "44_no_sort@2x.png"; sourceTree = "<group>"; };
 		7A77391B1751A7E3006430A0 /* 44_sort_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 44_sort_down.png; sourceTree = "<group>"; };
@@ -77,6 +138,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A48918D1751C3BE00086E39 /* Processed Entities */ = {
+			isa = PBXGroup;
+			children = (
+				7A67C7561751F91B00136E15 /* Period Cash Flow */,
+				7A67C7691751F91B00136E15 /* Period Planned Cash Flow */,
+			);
+			path = "Processed Entities";
+			sourceTree = "<group>";
+		};
+		7A4891C81751E00600086E39 /* Managed Objects */ = {
+			isa = PBXGroup;
+			children = (
+				7A67C7411751EB3000136E15 /* CashFlow.h */,
+				7A67C7421751EB3000136E15 /* CashFlow.m */,
+				7A67C73E1751EB3000136E15 /* PeriodInputData.h */,
+				7A67C73F1751EB3000136E15 /* PeriodInputData.m */,
+				7A67C73B1751EB2F00136E15 /* Period.h */,
+				7A67C73C1751EB2F00136E15 /* Period.m */,
+			);
+			path = "Managed Objects";
+			sourceTree = "<group>";
+		};
 		7A4BCCFB17519E5A00901881 = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +257,8 @@
 		7A4BCD321751A01E00901881 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				7A4891C81751E00600086E39 /* Managed Objects */,
+				7A48918D1751C3BE00086E39 /* Processed Entities */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -181,6 +266,7 @@
 		7A4BCD331751A01E00901881 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				7A4891891751B02C00086E39 /* CashFlowPeriodType.h */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -190,6 +276,12 @@
 			children = (
 				7A7739321751A9DE006430A0 /* GenericRepository.h */,
 				7A7739331751A9DE006430A0 /* GenericRepository.m */,
+				7A4891A31751D36400086E39 /* CashFlowsRepository.h */,
+				7A4891A41751D36400086E39 /* CashFlowsRepository.m */,
+				7A4891A61751D37200086E39 /* PeriodsRepository.h */,
+				7A4891A71751D37200086E39 /* PeriodsRepository.m */,
+				7A4891A91751D38000086E39 /* PeriodInputDataRepository.h */,
+				7A4891AA1751D38000086E39 /* PeriodInputDataRepository.m */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -199,6 +291,8 @@
 			children = (
 				7A7739351751AADC006430A0 /* GenericService.h */,
 				7A7739361751AADC006430A0 /* GenericService.m */,
+				7A4891A01751D33C00086E39 /* CashFlowService.h */,
+				7A4891A11751D33C00086E39 /* CashFlowService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -304,6 +398,46 @@
 			children = (
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		7A67C7561751F91B00136E15 /* Period Cash Flow */ = {
+			isa = PBXGroup;
+			children = (
+				7A67C7571751F91B00136E15 /* IncomeTaxesExpenses.h */,
+				7A67C7581751F91B00136E15 /* IncomeTaxesExpenses.m */,
+				7A67C7591751F91B00136E15 /* LoanExpenses.h */,
+				7A67C75A1751F91B00136E15 /* LoanExpenses.m */,
+				7A67C75B1751F91B00136E15 /* ManpowerExpenses.h */,
+				7A67C75C1751F91B00136E15 /* ManpowerExpenses.m */,
+				7A67C75D1751F91B00136E15 /* PeriodCashFlow.h */,
+				7A67C75E1751F91B00136E15 /* PeriodCashFlow.m */,
+				7A67C75F1751F91B00136E15 /* PeriodExpenses.h */,
+				7A67C7601751F91B00136E15 /* PeriodExpenses.m */,
+				7A67C7611751F91B00136E15 /* PeriodIncomes.h */,
+				7A67C7621751F91B00136E15 /* PeriodIncomes.m */,
+				7A67C7631751F91B00136E15 /* RawMaterialExpenses.h */,
+				7A67C7641751F91B00136E15 /* RawMaterialExpenses.m */,
+				7A67C7651751F91B00136E15 /* SalaryExpenses.h */,
+				7A67C7661751F91B00136E15 /* SalaryExpenses.m */,
+				7A67C7671751F91B00136E15 /* SalesIncomes.h */,
+				7A67C7681751F91B00136E15 /* SalesIncomes.m */,
+			);
+			path = "Period Cash Flow";
+			sourceTree = "<group>";
+		};
+		7A67C7691751F91B00136E15 /* Period Planned Cash Flow */ = {
+			isa = PBXGroup;
+			children = (
+				7A67C76A1751F91B00136E15 /* PeriodPlannedCashFlow.h */,
+				7A67C76B1751F91B00136E15 /* PeriodPlannedCashFlow.m */,
+				7A67C76C1751F91B00136E15 /* PeriodPlannedCashFlowSummary.h */,
+				7A67C76D1751F91B00136E15 /* PeriodPlannedCashFlowSummary.m */,
+				7A67C76E1751F91B00136E15 /* PeriodPlannedExpenses.h */,
+				7A67C76F1751F91B00136E15 /* PeriodPlannedExpenses.m */,
+				7A67C7701751F91B00136E15 /* PeriodPlannedIncomes.h */,
+				7A67C7711751F91B00136E15 /* PeriodPlannedIncomes.m */,
+			);
+			path = "Period Planned Cash Flow";
 			sourceTree = "<group>";
 		};
 		7A7739171751A7E3006430A0 /* ShinobiGrids.embeddedframework */ = {
@@ -414,6 +548,26 @@
 				7A77392E1751A8B5006430A0 /* AlertViewsFactory.m in Sources */,
 				7A7739341751A9DE006430A0 /* GenericRepository.m in Sources */,
 				7A7739371751AADC006430A0 /* GenericService.m in Sources */,
+				7A4891A21751D33C00086E39 /* CashFlowService.m in Sources */,
+				7A4891A51751D36400086E39 /* CashFlowsRepository.m in Sources */,
+				7A4891A81751D37200086E39 /* PeriodsRepository.m in Sources */,
+				7A4891AB1751D38000086E39 /* PeriodInputDataRepository.m in Sources */,
+				7A67C73D1751EB2F00136E15 /* Period.m in Sources */,
+				7A67C7401751EB3000136E15 /* PeriodInputData.m in Sources */,
+				7A67C7431751EB3000136E15 /* CashFlow.m in Sources */,
+				7A67C7721751F91B00136E15 /* IncomeTaxesExpenses.m in Sources */,
+				7A67C7731751F91B00136E15 /* LoanExpenses.m in Sources */,
+				7A67C7741751F91B00136E15 /* ManpowerExpenses.m in Sources */,
+				7A67C7751751F91B00136E15 /* PeriodCashFlow.m in Sources */,
+				7A67C7761751F91B00136E15 /* PeriodExpenses.m in Sources */,
+				7A67C7771751F91B00136E15 /* PeriodIncomes.m in Sources */,
+				7A67C7781751F91B00136E15 /* RawMaterialExpenses.m in Sources */,
+				7A67C7791751F91B00136E15 /* SalaryExpenses.m in Sources */,
+				7A67C77A1751F91B00136E15 /* SalesIncomes.m in Sources */,
+				7A67C77B1751F91B00136E15 /* PeriodPlannedCashFlow.m in Sources */,
+				7A67C77C1751F91B00136E15 /* PeriodPlannedCashFlowSummary.m in Sources */,
+				7A67C77D1751F91B00136E15 /* PeriodPlannedExpenses.m in Sources */,
+				7A67C77E1751F91B00136E15 /* PeriodPlannedIncomes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

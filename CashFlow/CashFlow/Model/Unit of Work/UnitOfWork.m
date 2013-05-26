@@ -10,6 +10,10 @@
 
 @interface UnitOfWork ()
 
+@property (strong, nonatomic) PeriodsRepository *periodsRepository;
+@property (strong, nonatomic) CashFlowsRepository *cashFlowsRepository;
+@property (strong, nonatomic) PeriodInputDataRepository *periodInputDataRepository;
+
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
@@ -37,6 +41,37 @@
     return _sharedUnitOfWork;
 }
 
+#pragma mark -
+#pragma mark Repositories
+
+- (PeriodsRepository *)periodsRepository
+{
+    if (!_periodsRepository) {
+        self.periodsRepository = [[PeriodsRepository alloc] initWithDefaultContext:self.managedObjectContext];
+    }
+    
+    return _periodsRepository;
+}
+
+- (CashFlowsRepository *)cashFlowsRepository
+{
+    if (!_cashFlowsRepository) {
+        self.cashFlowsRepository = [[CashFlowsRepository alloc] initWithDefaultContext:self.managedObjectContext];
+    }
+    
+    return _cashFlowsRepository;
+}
+
+- (PeriodInputDataRepository *)periodInputDataRepository
+{
+    if (!_periodInputDataRepository) {
+        self.periodInputDataRepository = [[PeriodInputDataRepository alloc] initWithDefaultContext:self.managedObjectContext];
+    }
+    
+    return _periodInputDataRepository;
+}
+
+#pragma mark -
 #pragma mark Public Methods
 
 - (void)rollback
