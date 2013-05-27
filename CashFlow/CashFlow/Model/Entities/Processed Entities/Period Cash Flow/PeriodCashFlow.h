@@ -17,5 +17,6 @@
 @property (strong, nonatomic) PeriodInputData *inputData;
 @property (strong, nonatomic) PeriodIncomes *incomes;
 @property (strong, nonatomic) PeriodExpenses *expenses;
+@property (strong, nonatomic) PeriodCashFlow *lastPeriodCashFlow;
 
 @end

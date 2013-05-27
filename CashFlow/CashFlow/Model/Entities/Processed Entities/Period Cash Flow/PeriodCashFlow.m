@@ -36,4 +36,13 @@
     return _expenses;
 }
 
+- (PeriodCashFlow *)lastPeriodCashFlow
+{
+    if (!_lastPeriodCashFlow) {
+        self.lastPeriodCashFlow = [[PeriodCashFlow alloc] init];
+    }
+    
+    return _lastPeriodCashFlow;
+}
+
 @end

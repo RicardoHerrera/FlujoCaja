@@ -8,6 +8,8 @@
 
 #import "PeriodIncomes.h"
 #import "SalesIncomes.h"
+#import "PeriodInputData.h"
+#import "PeriodCashFlow.h"
 
 @implementation PeriodIncomes
 
@@ -28,17 +30,28 @@
 
 - (double)debtCollections
 {
-    return 0.0;
+    SalesIncomes *salesIncomes = self.salesIncomes;
+    
+    return salesIncomes.cash + salesIncomes.credit + salesIncomes.penalty;
 }
 
 - (double)loans
 {
-    return 0.0;
+    PeriodInputData *inputData = self.periodCashFlow.inputData;
+    
+    double loans = (inputData.loanIncomes)? inputData.loanIncomes.doubleValue : 0;
+    
+    return loans;
 }
 
 - (double)salesIGV
 {
-    return 0.0;
+    PeriodInputData *inputData = self.periodCashFlow.inputData;
+    SalesIncomes *salesIncomes = self.salesIncomes;
+    
+    double igv = (inputData.igv)? inputData.igv.doubleValue : 0;
+    
+    return (salesIncomes.sales / (1 + igv)) * igv;
 }
 
 @end

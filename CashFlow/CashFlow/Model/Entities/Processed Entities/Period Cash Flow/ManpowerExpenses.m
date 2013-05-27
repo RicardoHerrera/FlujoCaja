@@ -8,6 +8,10 @@
 
 #import "ManpowerExpenses.h"
 #import "PeriodExpenses.h"
+#import "PeriodInputData.h"
+#import "PeriodCashFlow.h"
+#import "PeriodIncomes.h"
+#import "SalesIncomes.h"
 
 @implementation ManpowerExpenses
 
@@ -29,17 +33,29 @@
 
 - (double)fixed
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.periodExpenses.periodCashFlow;
+    PeriodInputData *inputData = periodCashFlow.inputData;
+    
+    double fixedManpower = (inputData.fixedManpower)? inputData.fixedManpower.doubleValue : 0;
+    
+    return fixedManpower;
 }
 
 - (double)variable
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.periodExpenses.periodCashFlow;
+    PeriodInputData *inputData = periodCashFlow.inputData;
+    PeriodIncomes *periodIncomes = periodCashFlow.incomes;
+    SalesIncomes *salesIncomes = periodIncomes.salesIncomes;
+    
+    double variableManpowerPercentage = (inputData.variableManpower)? inputData.variableManpower.doubleValue : 0;
+    
+    return variableManpowerPercentage * salesIncomes.sales;
 }
 
 - (double)total
 {
-    return 0.0;
+    return self.fixed + self.variable;
 }
 
 @end

@@ -8,6 +8,8 @@
 
 #import "LoanExpenses.h"
 #import "PeriodExpenses.h"
+#import "PeriodInputData.h"
+#import "PeriodCashFlow.h"
 
 @implementation LoanExpenses
 
@@ -27,14 +29,24 @@
 #pragma mark -
 #pragma mark Calculated Attributes
 
-- (double)old
+- (double)oldLoans
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.periodExpenses.periodCashFlow;
+    PeriodInputData *inputData = periodCashFlow.inputData;
+    
+    double oldLoans = (inputData.oldLoanExpenses)? inputData.oldLoanExpenses.doubleValue : 0;
+    
+    return oldLoans;
 }
 
-- (double)new
+- (double)newLoans
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.periodExpenses.periodCashFlow;
+    PeriodInputData *inputData = periodCashFlow.inputData;
+    
+    double newLoans = (inputData.newLoanExpenses)? inputData.newLoanExpenses.doubleValue : 0;
+    
+    return newLoans;
 }
 
 @end

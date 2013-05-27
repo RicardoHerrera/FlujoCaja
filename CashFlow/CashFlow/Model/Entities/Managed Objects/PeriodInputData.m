@@ -15,6 +15,7 @@
 @dynamic badDebts;
 @dynamic baseRawMaterials;
 @dynamic cashDebtCollections;
+@dynamic creditSalesPenalty;
 @dynamic debtCollections;
 @dynamic dividends;
 @dynamic fixedAssetsExpense;
@@ -24,7 +25,6 @@
 @dynamic incomeTax;
 @dynamic incomeTaxRegularization;
 @dynamic payroll;
-@dynamic creditSalesPenalty;
 @dynamic rawMaterials;
 @dynamic rawMaterialsCashPayment;
 @dynamic rawMaterialsPayment;
@@ -32,6 +32,13 @@
 @dynamic semestralRewards;
 @dynamic tea;
 @dynamic variableManpower;
+@dynamic oldLoanExpenses;
+@dynamic newLoanExpenses;
+@dynamic loanIncomes;
+@dynamic assetsPurchases;
+@dynamic administrativeExpenses;
+@dynamic socialBenefits;
+@dynamic salesExpenses;
 @dynamic period;
 
 @end

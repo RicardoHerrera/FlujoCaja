@@ -8,6 +8,10 @@
 
 #import "SalaryExpenses.h"
 #import "PeriodExpenses.h"
+#import "PeriodCashFlow.h"
+#import "PeriodIncomes.h"
+#import "PeriodInputData.h"
+#import "Period.h"
 
 @implementation SalaryExpenses
 
@@ -29,17 +33,29 @@
 
 - (double)payroll
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.periodExpenses.periodCashFlow;
+    PeriodInputData *inputData = periodCashFlow.inputData;
+    Period *period = inputData.period;
+    
+    double payroll = (inputData.payroll)? inputData.payroll.doubleValue : 0;
+    NSInteger month = (period.month)? period.month.integerValue : 0;
+    
+    return (month == 7 || month == 12)? payroll * 2 : payroll;
 }
 
 - (double)socialBenefits
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.periodExpenses.periodCashFlow;
+    PeriodInputData *inputData = periodCashFlow.inputData;
+    
+    double socialBenefitsPercentage = (inputData.socialBenefits)? inputData.socialBenefits.doubleValue : 0;
+    
+    return self.payroll * socialBenefitsPercentage;
 }
 
 - (double)total
 {
-    return 0.0;
+    return self.payroll + self.socialBenefits;
 }
 
 @end

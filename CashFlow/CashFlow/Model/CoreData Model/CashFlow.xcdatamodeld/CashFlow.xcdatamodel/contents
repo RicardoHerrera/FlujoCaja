@@ -16,6 +16,8 @@
         <relationship name="inputData" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PeriodInputData" inverseName="period" inverseEntity="PeriodInputData" syncable="YES"/>
     </entity>
     <entity name="PeriodInputData" representedClassName="PeriodInputData" syncable="YES">
+        <attribute name="administrativeExpenses" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="assetsPurchases" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="badDebts" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="baseRawMaterials" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="cashDebtCollections" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -28,12 +30,17 @@
         <attribute name="igv" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="incomeTax" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="incomeTaxRegularization" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="loanIncomes" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="newLoanExpenses" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="oldLoanExpenses" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="payroll" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="rawMaterials" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="rawMaterialsCashPayment" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="rawMaterialsPayment" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="sales" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="salesExpenses" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="semestralRewards" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="socialBenefits" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="tea" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="variableManpower" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="period" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Period" inverseName="inputData" inverseEntity="Period" syncable="YES"/>
@@ -41,6 +48,6 @@
     <elements>
         <element name="CashFlow" positionX="153" positionY="335" width="128" height="88"/>
         <element name="Period" positionX="342" positionY="275" width="128" height="163"/>
-        <element name="PeriodInputData" positionX="522" positionY="378" width="128" height="360"/>
+        <element name="PeriodInputData" positionX="522" positionY="378" width="128" height="465"/>
     </elements>
 </model>

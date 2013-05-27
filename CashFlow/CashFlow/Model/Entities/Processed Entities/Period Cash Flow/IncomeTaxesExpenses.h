@@ -14,7 +14,6 @@
 
 @property (strong, nonatomic) PeriodExpenses *periodExpenses;
 
-@property (readonly, nonatomic) double tax;
 @property (readonly, nonatomic) double advancePayment;
 @property (readonly, nonatomic) double regularization;
 @property (readonly, nonatomic) double total;

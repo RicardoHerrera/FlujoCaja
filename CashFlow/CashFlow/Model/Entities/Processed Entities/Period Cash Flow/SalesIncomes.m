@@ -8,6 +8,9 @@
 
 #import "SalesIncomes.h"
 #import "PeriodIncomes.h"
+#import "PeriodCashFlow.h"
+#import "PeriodInputData.h"
+#import "Period.h"
 
 @implementation SalesIncomes
 
@@ -29,27 +32,53 @@
 
 - (double)sales
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.periodIncomes.periodCashFlow;
+    PeriodInputData *inputData = periodCashFlow.inputData;
+    
+    double sales = (inputData.sales)? inputData.sales.doubleValue : 0;
+    
+    return sales;
 }
 
 - (double)cash
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.periodIncomes.periodCashFlow;
+    PeriodInputData *inputData = periodCashFlow.inputData;
+    
+    double cashDebtCollections = (inputData.cashDebtCollections)? inputData.cashDebtCollections.doubleValue : 0;
+    
+    return self.sales * cashDebtCollections;
 }
 
 - (double)credit
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.periodIncomes.periodCashFlow;
+    PeriodInputData *inputData = periodCashFlow.inputData;
+    PeriodCashFlow *lastPeriodCashFlow = periodCashFlow.lastPeriodCashFlow;
+    
+    double cashDebtCollections = (inputData.cashDebtCollections)? inputData.cashDebtCollections.doubleValue : 0;
+    
+    return lastPeriodCashFlow.incomes.salesIncomes.sales * cashDebtCollections;
 }
 
 - (double)penalty
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.periodIncomes.periodCashFlow;
+    PeriodInputData *inputData = periodCashFlow.inputData;
+    
+    double penalty = (inputData.creditSalesPenalty)? inputData.creditSalesPenalty.doubleValue : 0;
+    
+    return self.credit * penalty;
 }
 
 - (double)badDebts
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.periodIncomes.periodCashFlow;
+    PeriodInputData *inputData = periodCashFlow.inputData;
+    
+    double badDebtsPercentage = (inputData.badDebts)? inputData.badDebts.doubleValue : 0;
+    
+    return self.sales * badDebtsPercentage;
 }
 
 @end

@@ -14,7 +14,7 @@
 
 @property (strong, nonatomic) PeriodExpenses *periodExpenses;
 
-@property (readonly, nonatomic) double old;
-@property (readonly, nonatomic) double new;
+@property (nonatomic) double oldLoans;
+@property (nonatomic) double newLoans;
 
 @end

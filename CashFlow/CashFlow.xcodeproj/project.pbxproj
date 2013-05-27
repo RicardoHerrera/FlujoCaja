@@ -22,7 +22,6 @@
 		7A4BCD431751A1D400901881 /* UnitOfWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4BCD421751A1D400901881 /* UnitOfWork.m */; };
 		7A4BCD4A1751A62600901881 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4BCD491751A62600901881 /* MainStoryboard.storyboard */; };
 		7A67C73D1751EB2F00136E15 /* Period.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C73C1751EB2F00136E15 /* Period.m */; };
-		7A67C7401751EB3000136E15 /* PeriodInputData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C73F1751EB3000136E15 /* PeriodInputData.m */; };
 		7A67C7431751EB3000136E15 /* CashFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C7421751EB3000136E15 /* CashFlow.m */; };
 		7A67C7721751F91B00136E15 /* IncomeTaxesExpenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C7581751F91B00136E15 /* IncomeTaxesExpenses.m */; };
 		7A67C7731751F91B00136E15 /* LoanExpenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C75A1751F91B00136E15 /* LoanExpenses.m */; };
@@ -47,6 +46,7 @@
 		7A77392E1751A8B5006430A0 /* AlertViewsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A77392D1751A8B5006430A0 /* AlertViewsFactory.m */; };
 		7A7739341751A9DE006430A0 /* GenericRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7739331751A9DE006430A0 /* GenericRepository.m */; };
 		7A7739371751AADC006430A0 /* GenericService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7739361751AADC006430A0 /* GenericService.m */; };
+		7AB073D31752EF7200CEE235 /* PeriodInputData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB073D21752EF7200CEE235 /* PeriodInputData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,8 +76,6 @@
 		7A4BCD491751A62600901881 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		7A67C73B1751EB2F00136E15 /* Period.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Period.h; sourceTree = "<group>"; };
 		7A67C73C1751EB2F00136E15 /* Period.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Period.m; sourceTree = "<group>"; };
-		7A67C73E1751EB3000136E15 /* PeriodInputData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodInputData.h; sourceTree = "<group>"; };
-		7A67C73F1751EB3000136E15 /* PeriodInputData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodInputData.m; sourceTree = "<group>"; };
 		7A67C7411751EB3000136E15 /* CashFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashFlow.h; sourceTree = "<group>"; };
 		7A67C7421751EB3000136E15 /* CashFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashFlow.m; sourceTree = "<group>"; };
 		7A67C7571751F91B00136E15 /* IncomeTaxesExpenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeTaxesExpenses.h; sourceTree = "<group>"; };
@@ -120,6 +118,8 @@
 		7A7739331751A9DE006430A0 /* GenericRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericRepository.m; sourceTree = "<group>"; };
 		7A7739351751AADC006430A0 /* GenericService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericService.h; sourceTree = "<group>"; };
 		7A7739361751AADC006430A0 /* GenericService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericService.m; sourceTree = "<group>"; };
+		7AB073D11752EF7200CEE235 /* PeriodInputData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodInputData.h; sourceTree = "<group>"; };
+		7AB073D21752EF7200CEE235 /* PeriodInputData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodInputData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,10 +152,10 @@
 			children = (
 				7A67C7411751EB3000136E15 /* CashFlow.h */,
 				7A67C7421751EB3000136E15 /* CashFlow.m */,
-				7A67C73E1751EB3000136E15 /* PeriodInputData.h */,
-				7A67C73F1751EB3000136E15 /* PeriodInputData.m */,
 				7A67C73B1751EB2F00136E15 /* Period.h */,
 				7A67C73C1751EB2F00136E15 /* Period.m */,
+				7AB073D11752EF7200CEE235 /* PeriodInputData.h */,
+				7AB073D21752EF7200CEE235 /* PeriodInputData.m */,
 			);
 			path = "Managed Objects";
 			sourceTree = "<group>";
@@ -553,7 +553,6 @@
 				7A4891A81751D37200086E39 /* PeriodsRepository.m in Sources */,
 				7A4891AB1751D38000086E39 /* PeriodInputDataRepository.m in Sources */,
 				7A67C73D1751EB2F00136E15 /* Period.m in Sources */,
-				7A67C7401751EB3000136E15 /* PeriodInputData.m in Sources */,
 				7A67C7431751EB3000136E15 /* CashFlow.m in Sources */,
 				7A67C7721751F91B00136E15 /* IncomeTaxesExpenses.m in Sources */,
 				7A67C7731751F91B00136E15 /* LoanExpenses.m in Sources */,
@@ -568,6 +567,7 @@
 				7A67C77C1751F91B00136E15 /* PeriodPlannedCashFlowSummary.m in Sources */,
 				7A67C77D1751F91B00136E15 /* PeriodPlannedExpenses.m in Sources */,
 				7A67C77E1751F91B00136E15 /* PeriodPlannedIncomes.m in Sources */,
+				7AB073D31752EF7200CEE235 /* PeriodInputData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

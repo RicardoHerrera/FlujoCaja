@@ -8,6 +8,10 @@
 
 #import "RawMaterialExpenses.h"
 #import "PeriodExpenses.h"
+#import "PeriodCashFlow.h"
+#import "PeriodIncomes.h"
+#import "SalesIncomes.h"
+#import "PeriodInputData.h"
 
 @implementation RawMaterialExpenses
 
@@ -29,22 +33,40 @@
 
 - (double)rawMaterials
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.periodExpenses.periodCashFlow;
+    PeriodInputData *inputData = periodCashFlow.inputData;
+    PeriodIncomes *incomes = periodCashFlow.incomes;
+    SalesIncomes *salesIncomes = incomes.salesIncomes;
+    
+    double baseRawMaterials = (inputData.baseRawMaterials)? inputData.baseRawMaterials.doubleValue : 0;
+    double rawMaterialsPercentage = (inputData.rawMaterials)? inputData.rawMaterials.doubleValue : 0;
+    
+    return baseRawMaterials + salesIncomes.sales * rawMaterialsPercentage;
 }
 
 - (double)cash
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.periodExpenses.periodCashFlow;
+    PeriodInputData *inputData = periodCashFlow.inputData;
+    
+    double rawMaterialsCashPayment = (inputData.rawMaterialsCashPayment)? inputData.rawMaterialsCashPayment.doubleValue : 0;
+    
+    return self.rawMaterials * rawMaterialsCashPayment;
 }
 
 - (double)credit
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.periodExpenses.periodCashFlow;
+    PeriodInputData *inputData = periodCashFlow.inputData;
+    
+    double rawMaterialsPayment = (inputData.rawMaterialsPayment)? inputData.rawMaterialsPayment.doubleValue : 0;
+    
+    return self.rawMaterials * rawMaterialsPayment;
 }
 
 - (double)total
 {
-    return 0.0;
+    return self.cash + self.credit;
 }
 
 @end

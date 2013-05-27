@@ -12,6 +12,10 @@
 #import "SalaryExpenses.h"
 #import "IncomeTaxesExpenses.h"
 #import "LoanExpenses.h"
+#import "PeriodInputData.h"
+#import "PeriodCashFlow.h"
+#import "PeriodIncomes.h"
+#import "SalesIncomes.h"
 
 @implementation PeriodExpenses
 
@@ -73,22 +77,49 @@
 
 - (double)assetsPurchases
 {
-    return 0.0;
+    PeriodInputData *inputData = self.periodCashFlow.inputData;
+    
+    double assetsPurchases = (inputData.assetsPurchases)? inputData.assetsPurchases.doubleValue : 0;
+    
+    return assetsPurchases;
 }
 
 - (double)taxCredit
 {
-    return 0.0;
+    PeriodInputData *inputData = self.periodCashFlow.inputData;
+    
+    double igvPercentage = (inputData.igv)? inputData.igv.doubleValue : 0;
+    
+    return ((self.rawMaterialExpenses.rawMaterials + self.assetsPurchases) / (1 + igvPercentage)) * igvPercentage;
 }
 
 - (double)administrativeExpenses
 {
-    return 0.0;
+    PeriodInputData *inputData = self.periodCashFlow.inputData;
+    
+    double administrativeExpenses = (inputData.administrativeExpenses)? inputData.administrativeExpenses.doubleValue : 0;
+    
+    return administrativeExpenses;
+}
+
+- (double)salesCommissions
+{
+    PeriodInputData *inputData = self.periodCashFlow.inputData;
+    PeriodIncomes *incomes = self.periodCashFlow.incomes;
+    SalesIncomes *salesIncomes = incomes.salesIncomes;
+    
+    double salesExpenses = (inputData.salesExpenses)? inputData.salesExpenses.doubleValue : 0;
+    
+    return salesExpenses * salesIncomes.sales;
 }
 
 - (double)dividends
 {
-    return 0.0;
+    PeriodInputData *inputData = self.periodCashFlow.inputData;
+    
+    double dividends = (inputData.dividends)? inputData.dividends.doubleValue : 0;
+    
+    return dividends;
 }
 
 
