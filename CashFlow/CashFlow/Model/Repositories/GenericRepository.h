@@ -15,7 +15,6 @@
 - (id)initWithDefaultContext:(NSManagedObjectContext *)defaultContext;
 
 - (void)deleteManagedObject:(NSManagedObject *)managedObject;
-
 - (NSManagedObject *)createManagedObjectWithName:(NSString *)managedObjectName;
 - (NSManagedObject *)getManagedObjectWithName:(NSString *)managedObjectName withPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors;
 - (NSArray *)getManagedObjectsWithName:(NSString *)managedObjectName withPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors fetchLimit:(NSUInteger)fetchLimit;

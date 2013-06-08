@@ -7,4 +7,4 @@
 //
 
 #define DEBUG 1
-#define GENERATE_DUMMY_DATA 0
+#define GENERATE_DUMMY_DATA 1
