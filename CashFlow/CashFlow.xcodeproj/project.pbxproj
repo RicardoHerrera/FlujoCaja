@@ -47,6 +47,7 @@
 		7A7739341751A9DE006430A0 /* GenericRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7739331751A9DE006430A0 /* GenericRepository.m */; };
 		7A7739371751AADC006430A0 /* GenericService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7739361751AADC006430A0 /* GenericService.m */; };
 		7AB073D31752EF7200CEE235 /* PeriodInputData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB073D21752EF7200CEE235 /* PeriodInputData.m */; };
+		A1EA03181753CEAC0030B611 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EA03171753CEAC0030B611 /* MainMenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +121,8 @@
 		7A7739361751AADC006430A0 /* GenericService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericService.m; sourceTree = "<group>"; };
 		7AB073D11752EF7200CEE235 /* PeriodInputData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodInputData.h; sourceTree = "<group>"; };
 		7AB073D21752EF7200CEE235 /* PeriodInputData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodInputData.m; sourceTree = "<group>"; };
+		A1EA03161753CEAC0030B611 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		A1EA03171753CEAC0030B611 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				7A4BCD0F17519E5A00901881 /* CashFlow */,
-				7A4BCD461751A2DD00901881 /* Libraries */,
+				A1EA03261753D73B0030B611 /* Libraries */,
 				7A4BCD0617519E5A00901881 /* Frameworks */,
 				7A4BCD0517519E5A00901881 /* Products */,
 			);
@@ -194,10 +197,10 @@
 			isa = PBXGroup;
 			children = (
 				7A4BCD2917519FFA00901881 /* AppDelegate */,
-				7A4BCD2D1751A00300901881 /* Controllers */,
 				7A77392B1751A8A1006430A0 /* Factories */,
+				A1EA03151753CEAC0030B611 /* Controllers */,
 				7A4BCD2E1751A01E00901881 /* Model */,
-				7A4BCD371751A01E00901881 /* Protocols */,
+				A1EA03191753D4980030B611 /* Protocols */,
 				7A4BCD3A1751A01E00901881 /* Resources */,
 				7A4BCD3B1751A01E00901881 /* Views */,
 				7A4BCD1017519E5A00901881 /* Supporting Files */,
@@ -224,14 +227,6 @@
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
-		};
-		7A4BCD2D1751A00300901881 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Controllers;
-			path = CashFlow/Controllers;
-			sourceTree = SOURCE_ROOT;
 		};
 		7A4BCD2E1751A01E00901881 /* Model */ = {
 			isa = PBXGroup;
@@ -306,20 +301,11 @@
 			path = "Unit of Work";
 			sourceTree = "<group>";
 		};
-		7A4BCD371751A01E00901881 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				7A4BCD471751A57B00901881 /* Controllers */,
-				7A4BCD481751A57B00901881 /* Others */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		7A4BCD3A1751A01E00901881 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				7A4BCD441751A2AF00901881 /* Constants */,
-				7A4BCD451751A2AF00901881 /* Images */,
+				A1EA03201753D4CB0030B611 /* Images */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -327,33 +313,10 @@
 		7A4BCD3B1751A01E00901881 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7A4BCD3C1751A01E00901881 /* Custom Views */,
+				A1EA03231753D5A60030B611 /* Custom Views */,
 				7A4BCD3F1751A01E00901881 /* Storyboards */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		7A4BCD3C1751A01E00901881 /* Custom Views */ = {
-			isa = PBXGroup;
-			children = (
-				7A4BCD3D1751A01E00901881 /* Code */,
-				7A4BCD3E1751A01E00901881 /* XIB */,
-			);
-			path = "Custom Views";
-			sourceTree = "<group>";
-		};
-		7A4BCD3D1751A01E00901881 /* Code */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Code;
-			sourceTree = "<group>";
-		};
-		7A4BCD3E1751A01E00901881 /* XIB */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = XIB;
 			sourceTree = "<group>";
 		};
 		7A4BCD3F1751A01E00901881 /* Storyboards */ = {
@@ -370,34 +333,6 @@
 				7A77392F1751A9A8006430A0 /* ApplicationConstants.h */,
 			);
 			path = Constants;
-			sourceTree = "<group>";
-		};
-		7A4BCD451751A2AF00901881 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Images;
-			sourceTree = "<group>";
-		};
-		7A4BCD461751A2DD00901881 /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Libraries;
-			sourceTree = "<group>";
-		};
-		7A4BCD471751A57B00901881 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		7A4BCD481751A57B00901881 /* Others */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Others;
 			sourceTree = "<group>";
 		};
 		7A67C7561751F91B00136E15 /* Period Cash Flow */ = {
@@ -470,6 +405,75 @@
 				7A77392D1751A8B5006430A0 /* AlertViewsFactory.m */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		A1EA03151753CEAC0030B611 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A1EA03161753CEAC0030B611 /* MainMenuViewController.h */,
+				A1EA03171753CEAC0030B611 /* MainMenuViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A1EA03191753D4980030B611 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A1EA031A1753D4980030B611 /* Controllers */,
+				A1EA031C1753D4980030B611 /* Others */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A1EA031A1753D4980030B611 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A1EA031C1753D4980030B611 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		A1EA03201753D4CB0030B611 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		A1EA03231753D5A60030B611 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				A1EA03241753D5A60030B611 /* Code */,
+				A1EA03251753D5A60030B611 /* XIB */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		A1EA03241753D5A60030B611 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		A1EA03251753D5A60030B611 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = XIB;
+			sourceTree = "<group>";
+		};
+		A1EA03261753D73B0030B611 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -568,6 +572,7 @@
 				7A67C77D1751F91B00136E15 /* PeriodPlannedExpenses.m in Sources */,
 				7A67C77E1751F91B00136E15 /* PeriodPlannedIncomes.m in Sources */,
 				7AB073D31752EF7200CEE235 /* PeriodInputData.m in Sources */,
+				A1EA03181753CEAC0030B611 /* MainMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
