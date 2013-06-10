@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="CashFlow" representedClassName="CashFlow" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="periodType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="firstPeriodInputData" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FirstPeriodInputData" inverseName="cashFlow" inverseEntity="FirstPeriodInputData" syncable="YES"/>
         <relationship name="periods" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Period" inverseName="cashFlow" inverseEntity="Period" syncable="YES"/>
     </entity>
+    <entity name="FirstPeriodInputData" representedClassName="FirstPeriodInputData" syncable="YES">
+        <attribute name="endBalance" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="igv" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="oldLoans" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="rawMaterials" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="sales" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="cashFlow" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CashFlow" inverseName="firstPeriodInputData" inverseEntity="CashFlow" syncable="YES"/>
+    </entity>
     <entity name="Period" representedClassName="Period" syncable="YES">
-        <attribute name="bimester" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="month" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="quarter" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="semester" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="week" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="cashFlow" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CashFlow" inverseName="periods" inverseEntity="CashFlow" syncable="YES"/>
         <relationship name="inputData" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PeriodInputData" inverseName="period" inverseEntity="PeriodInputData" syncable="YES"/>
     </entity>
@@ -46,8 +51,9 @@
         <relationship name="period" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Period" inverseName="inputData" inverseEntity="Period" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CashFlow" positionX="153" positionY="335" width="128" height="88"/>
-        <element name="Period" positionX="342" positionY="275" width="128" height="163"/>
+        <element name="CashFlow" positionX="153" positionY="335" width="128" height="120"/>
+        <element name="Period" positionX="342" positionY="275" width="128" height="88"/>
         <element name="PeriodInputData" positionX="522" positionY="378" width="128" height="465"/>
+        <element name="FirstPeriodInputData" positionX="160" positionY="192" width="128" height="135"/>
     </elements>
 </model>

@@ -2,7 +2,7 @@
 //  PeriodInputData.m
 //  CashFlow
 //
-//  Created by Alex Gutierrez on 5/26/13.
+//  Created by Alex Gutierrez on 6/9/13.
 //  Copyright (c) 2013 UPCFinance. All rights reserved.
 //
 
@@ -12,6 +12,8 @@
 
 @implementation PeriodInputData
 
+@dynamic administrativeExpenses;
+@dynamic assetsPurchases;
 @dynamic badDebts;
 @dynamic baseRawMaterials;
 @dynamic cashDebtCollections;
@@ -24,21 +26,19 @@
 @dynamic igv;
 @dynamic incomeTax;
 @dynamic incomeTaxRegularization;
+@dynamic loanIncomes;
+@dynamic newLoanExpenses;
+@dynamic oldLoanExpenses;
 @dynamic payroll;
 @dynamic rawMaterials;
 @dynamic rawMaterialsCashPayment;
 @dynamic rawMaterialsPayment;
 @dynamic sales;
+@dynamic salesExpenses;
 @dynamic semestralRewards;
+@dynamic socialBenefits;
 @dynamic tea;
 @dynamic variableManpower;
-@dynamic oldLoanExpenses;
-@dynamic newLoanExpenses;
-@dynamic loanIncomes;
-@dynamic assetsPurchases;
-@dynamic administrativeExpenses;
-@dynamic socialBenefits;
-@dynamic salesExpenses;
 @dynamic period;
 
 @end

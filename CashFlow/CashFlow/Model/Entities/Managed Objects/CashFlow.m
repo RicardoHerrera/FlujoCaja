@@ -2,7 +2,7 @@
 //  CashFlow.m
 //  CashFlow
 //
-//  Created by Alex Gutierrez on 5/26/13.
+//  Created by Alex Gutierrez on 6/9/13.
 //  Copyright (c) 2013 UPCFinance. All rights reserved.
 //
 
@@ -14,6 +14,8 @@
 
 @dynamic name;
 @dynamic periodType;
+@dynamic startDate;
 @dynamic periods;
+@dynamic firstPeriodInputData;
 
 @end

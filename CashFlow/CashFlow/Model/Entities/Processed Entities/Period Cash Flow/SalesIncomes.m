@@ -11,6 +11,8 @@
 #import "PeriodCashFlow.h"
 #import "PeriodInputData.h"
 #import "Period.h"
+#import "CashFlow.h"
+#import "FirstPeriodInputData.h"
 
 @implementation SalesIncomes
 
@@ -35,6 +37,13 @@
     PeriodCashFlow *periodCashFlow = self.periodIncomes.periodCashFlow;
     PeriodInputData *inputData = periodCashFlow.inputData;
     
+    if (periodCashFlow.periodNumber == 0) {
+        Period *period = inputData.period;
+        CashFlow *cashFlow = period.cashFlow;
+        FirstPeriodInputData *firstPeriodInputData = cashFlow.firstPeriodInputData;
+        return (firstPeriodInputData.sales)? firstPeriodInputData.sales.doubleValue : 0.0;
+    }
+    
     double sales = (inputData.sales)? inputData.sales.doubleValue : 0;
     
     return sales;
@@ -43,6 +52,10 @@
 - (double)cash
 {
     PeriodCashFlow *periodCashFlow = self.periodIncomes.periodCashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
     PeriodInputData *inputData = periodCashFlow.inputData;
     
     double cashDebtCollections = (inputData.cashDebtCollections)? inputData.cashDebtCollections.doubleValue : 0;
@@ -53,6 +66,10 @@
 - (double)credit
 {
     PeriodCashFlow *periodCashFlow = self.periodIncomes.periodCashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
     PeriodInputData *inputData = periodCashFlow.inputData;
     PeriodCashFlow *lastPeriodCashFlow = periodCashFlow.lastPeriodCashFlow;
     
@@ -64,6 +81,10 @@
 - (double)penalty
 {
     PeriodCashFlow *periodCashFlow = self.periodIncomes.periodCashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
     PeriodInputData *inputData = periodCashFlow.inputData;
     
     double penalty = (inputData.creditSalesPenalty)? inputData.creditSalesPenalty.doubleValue : 0;
@@ -74,6 +95,10 @@
 - (double)badDebts
 {
     PeriodCashFlow *periodCashFlow = self.periodIncomes.periodCashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
     PeriodInputData *inputData = periodCashFlow.inputData;
     
     double badDebtsPercentage = (inputData.badDebts)? inputData.badDebts.doubleValue : 0;

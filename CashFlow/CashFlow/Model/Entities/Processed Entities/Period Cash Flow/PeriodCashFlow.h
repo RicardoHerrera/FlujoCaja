@@ -14,6 +14,8 @@
 
 @interface PeriodCashFlow : NSObject
 
+@property (readonly, strong, nonatomic) NSDate *date;
+@property (readonly, nonatomic) NSInteger periodNumber;
 @property (strong, nonatomic) PeriodInputData *inputData;
 @property (strong, nonatomic) PeriodIncomes *incomes;
 @property (strong, nonatomic) PeriodExpenses *expenses;

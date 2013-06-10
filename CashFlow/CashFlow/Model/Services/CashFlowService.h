@@ -8,8 +8,21 @@
 
 #import "GenericService.h"
 
+@class CashFlow;
+
 @interface CashFlowService : GenericService
 
++ (CashFlowService *)sharedService;
+
+- (void)generateDummyData;
+
+- (NSArray *)getCashFlows;
+- (CashFlow *)createCashFlow;
+- (void)deleteCashFlow:(CashFlow *)cashFlow;
+
+- (Period *)createPeriod;
+
+- (PeriodInputData *)createPeriodInputData;
 
 
 @end

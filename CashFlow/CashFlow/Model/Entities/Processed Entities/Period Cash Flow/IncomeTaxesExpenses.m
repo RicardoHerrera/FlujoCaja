@@ -35,6 +35,11 @@
 - (double)advancePayment
 {
     PeriodCashFlow *periodCashFlow = self.periodExpenses.periodCashFlow;
+    
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
     PeriodInputData *inputData = periodCashFlow.inputData;
     PeriodIncomes *incomes = periodCashFlow.incomes;
     SalesIncomes *salesIncomes = incomes.salesIncomes;
@@ -47,17 +52,26 @@
 - (double)regularization
 {
     PeriodCashFlow *periodCashFlow = self.periodExpenses.periodCashFlow;
+    
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
     PeriodInputData *inputData = periodCashFlow.inputData;
-    Period *period = inputData.period;
     
     double regularization = (inputData.incomeTaxRegularization)? inputData.incomeTaxRegularization.doubleValue : 0;
-    NSInteger month = (period.month)? period.month.integerValue : 0;
+    NSInteger month = (periodCashFlow.date)? periodCashFlow.date.month : 0; 
     
     return (month == 3)? regularization : 0;
 }
 
 - (double)total
 {
+    PeriodCashFlow *periodCashFlow = self.periodExpenses.periodCashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
     return self.advancePayment + self.regularization;
 }
 

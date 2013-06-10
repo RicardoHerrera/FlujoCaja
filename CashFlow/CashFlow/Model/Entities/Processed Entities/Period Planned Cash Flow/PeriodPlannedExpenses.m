@@ -8,6 +8,14 @@
 
 #import "PeriodPlannedExpenses.h"
 #import "PeriodPlannedCashFlow.h"
+#import "PeriodCashFlow.h"
+#import "PeriodExpenses.h"
+#import "PeriodIncomes.h"
+#import "RawMaterialExpenses.h"
+#import "ManpowerExpenses.h"
+#import "SalaryExpenses.h"
+#import "LoanExpenses.h"
+#import "IncomeTaxesExpenses.h"
 
 @implementation PeriodPlannedExpenses
 
@@ -29,47 +37,126 @@
 
 - (double)rawMaterialsAndAssetsPurchases
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.plannedCashFlow.cashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
+    PeriodExpenses *expenses = periodCashFlow.expenses;
+    RawMaterialExpenses *rawMaterialExpenses = expenses.rawMaterialExpenses;
+    
+    return rawMaterialExpenses.total + expenses.assetsPurchases;
 }
 
 - (double)manpower
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.plannedCashFlow.cashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
+    PeriodExpenses *expenses = periodCashFlow.expenses;
+    ManpowerExpenses *manpowerExpenses = expenses.manpowerExpenses;
+
+    return manpowerExpenses.total;
 }
 
 - (double)salaries
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.plannedCashFlow.cashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
+    PeriodExpenses *expenses = periodCashFlow.expenses;
+    SalaryExpenses *salaryExpenses = expenses.salaryExpenses;
+
+    return salaryExpenses.total;
 }
 
 - (double)administrativeExpenses
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.plannedCashFlow.cashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
+    PeriodExpenses *expenses = periodCashFlow.expenses;
+
+    return expenses.administrativeExpenses;
 }
 
 - (double)salesCommissions
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.plannedCashFlow.cashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
+    PeriodExpenses *expenses = periodCashFlow.expenses;
+
+    return expenses.salesCommissions;
 }
 
 - (double)dividends
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.plannedCashFlow.cashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
+    PeriodExpenses *expenses = periodCashFlow.expenses;
+
+    return expenses.dividends;
 }
 
 - (double)loans
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.plannedCashFlow.cashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
+    PeriodExpenses *expenses = periodCashFlow.expenses;
+    LoanExpenses *loanExpenses = expenses.loanExpenses;
+
+    return loanExpenses.newLoans + loanExpenses.oldLoans;
 }
 
 - (double)incomeTaxes
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.plannedCashFlow.cashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
+    PeriodExpenses *expenses = periodCashFlow.expenses;
+    IncomeTaxesExpenses *incomeTaxesExpenses = expenses.incomeTaxesExpenses;
+
+    return incomeTaxesExpenses.total;
 }
 
 - (double)igv
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.plannedCashFlow.cashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
+    PeriodExpenses *expenses = periodCashFlow.expenses;
+    PeriodIncomes *incomes = periodCashFlow.incomes;
+    
+    return (incomes.salesIGV - expenses.taxCredit) * -1;
+}
+
+- (double)total
+{
+    PeriodCashFlow *periodCashFlow = self.plannedCashFlow.cashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
+    return self.rawMaterialsAndAssetsPurchases + self.manpower + self.salaries + self.administrativeExpenses + self.salesCommissions + self.dividends + self.loans + self.incomeTaxes + self.igv;
 }
 
 @end

@@ -16,6 +16,6 @@
 
 @property (readonly, nonatomic) double incomeCollections;
 @property (readonly, nonatomic) double newLoans;
-@property (readonly, nonatomic) double totalIncomes;
+@property (readonly, nonatomic) double total;
 
 @end

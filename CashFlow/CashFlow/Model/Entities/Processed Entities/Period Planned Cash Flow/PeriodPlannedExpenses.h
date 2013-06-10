@@ -23,5 +23,6 @@
 @property (readonly, nonatomic) double loans;
 @property (readonly, nonatomic) double incomeTaxes;
 @property (readonly, nonatomic) double igv;
+@property (readonly, nonatomic) double total;
 
 @end

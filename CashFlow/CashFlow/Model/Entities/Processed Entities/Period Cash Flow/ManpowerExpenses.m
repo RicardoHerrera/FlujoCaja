@@ -34,6 +34,11 @@
 - (double)fixed
 {
     PeriodCashFlow *periodCashFlow = self.periodExpenses.periodCashFlow;
+    
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
     PeriodInputData *inputData = periodCashFlow.inputData;
     
     double fixedManpower = (inputData.fixedManpower)? inputData.fixedManpower.doubleValue : 0;
@@ -44,6 +49,11 @@
 - (double)variable
 {
     PeriodCashFlow *periodCashFlow = self.periodExpenses.periodCashFlow;
+    
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
     PeriodInputData *inputData = periodCashFlow.inputData;
     PeriodIncomes *periodIncomes = periodCashFlow.incomes;
     SalesIncomes *salesIncomes = periodIncomes.salesIncomes;
@@ -55,6 +65,11 @@
 
 - (double)total
 {
+    PeriodCashFlow *periodCashFlow = self.periodExpenses.periodCashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
     return self.fixed + self.variable;
 }
 

@@ -8,6 +8,9 @@
 
 #import "PeriodPlannedIncomes.h"
 #import "PeriodPlannedCashFlow.h"
+#import "PeriodCashFlow.h"
+#import "PeriodIncomes.h"
+
 
 @implementation PeriodPlannedIncomes
 
@@ -29,17 +32,36 @@
 
 - (double)incomeCollections
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.plannedCashFlow.cashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
+    PeriodIncomes *incomes = periodCashFlow.incomes;
+
+    return incomes.debtCollections;
 }
 
 - (double)newLoans
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.plannedCashFlow.cashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
+    PeriodIncomes *incomes = periodCashFlow.incomes;
+    
+    return incomes.loans;
 }
 
-- (double)totalIncomes
+- (double)total
 {
-    return 0.0;
+    PeriodCashFlow *periodCashFlow = self.plannedCashFlow.cashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
+    return self.incomeCollections + self.newLoans;
 }
 
 @end

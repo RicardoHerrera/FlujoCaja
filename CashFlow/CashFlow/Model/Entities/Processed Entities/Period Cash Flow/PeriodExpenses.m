@@ -16,6 +16,9 @@
 #import "PeriodCashFlow.h"
 #import "PeriodIncomes.h"
 #import "SalesIncomes.h"
+#import "FirstPeriodInputData.h"
+#import "CashFlow.h"
+#import "Period.h"
 
 @implementation PeriodExpenses
 
@@ -77,6 +80,11 @@
 
 - (double)assetsPurchases
 {
+    PeriodCashFlow *periodCashFlow = self.periodCashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
     PeriodInputData *inputData = self.periodCashFlow.inputData;
     
     double assetsPurchases = (inputData.assetsPurchases)? inputData.assetsPurchases.doubleValue : 0;
@@ -86,15 +94,35 @@
 
 - (double)taxCredit
 {
+    PeriodCashFlow *periodCashFlow = self.periodCashFlow;
     PeriodInputData *inputData = self.periodCashFlow.inputData;
     
-    double igvPercentage = (inputData.igv)? inputData.igv.doubleValue : 0;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
     
-    return ((self.rawMaterialExpenses.rawMaterials + self.assetsPurchases) / (1 + igvPercentage)) * igvPercentage;
+    double igv;
+
+    if (periodCashFlow.periodNumber == 0) {
+        Period *period = inputData.period;
+        CashFlow *cashFlow = period.cashFlow;
+        FirstPeriodInputData *firstPeriodInputData = cashFlow.firstPeriodInputData;
+        igv = (firstPeriodInputData.igv)? firstPeriodInputData.igv.doubleValue : 0.0;
+    }
+    else {
+        igv = (inputData.igv)? inputData.igv.doubleValue : 0;
+    }
+    
+    return ((self.rawMaterialExpenses.rawMaterials + self.assetsPurchases) / (1 + igv)) * igv;
 }
 
 - (double)administrativeExpenses
 {
+    PeriodCashFlow *periodCashFlow = self.periodCashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
     PeriodInputData *inputData = self.periodCashFlow.inputData;
     
     double administrativeExpenses = (inputData.administrativeExpenses)? inputData.administrativeExpenses.doubleValue : 0;
@@ -104,6 +132,11 @@
 
 - (double)salesCommissions
 {
+    PeriodCashFlow *periodCashFlow = self.periodCashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
     PeriodInputData *inputData = self.periodCashFlow.inputData;
     PeriodIncomes *incomes = self.periodCashFlow.incomes;
     SalesIncomes *salesIncomes = incomes.salesIncomes;
@@ -115,6 +148,11 @@
 
 - (double)dividends
 {
+    PeriodCashFlow *periodCashFlow = self.periodCashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
     PeriodInputData *inputData = self.periodCashFlow.inputData;
     
     double dividends = (inputData.dividends)? inputData.dividends.doubleValue : 0;

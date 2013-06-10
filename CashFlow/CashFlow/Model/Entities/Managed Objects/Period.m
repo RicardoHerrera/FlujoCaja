@@ -2,7 +2,7 @@
 //  Period.m
 //  CashFlow
 //
-//  Created by Alex Gutierrez on 5/26/13.
+//  Created by Alex Gutierrez on 6/9/13.
 //  Copyright (c) 2013 UPCFinance. All rights reserved.
 //
 
@@ -13,12 +13,7 @@
 
 @implementation Period
 
-@dynamic bimester;
-@dynamic month;
-@dynamic quarter;
-@dynamic semester;
-@dynamic week;
-@dynamic year;
+@dynamic number;
 @dynamic cashFlow;
 @dynamic inputData;
 

@@ -10,6 +10,9 @@
 #import "PeriodExpenses.h"
 #import "PeriodInputData.h"
 #import "PeriodCashFlow.h"
+#import "CashFlow.h"
+#import "FirstPeriodInputData.h"
+#import "Period.h"
 
 @implementation LoanExpenses
 
@@ -34,6 +37,13 @@
     PeriodCashFlow *periodCashFlow = self.periodExpenses.periodCashFlow;
     PeriodInputData *inputData = periodCashFlow.inputData;
     
+    if (periodCashFlow.periodNumber == 0) {
+        Period *period = inputData.period;
+        CashFlow *cashFlow = period.cashFlow;
+        FirstPeriodInputData *firstPeriodInputData = cashFlow.firstPeriodInputData;
+        return (firstPeriodInputData.oldLoans)? firstPeriodInputData.oldLoans.doubleValue : 0.0;
+    }
+    
     double oldLoans = (inputData.oldLoanExpenses)? inputData.oldLoanExpenses.doubleValue : 0;
     
     return oldLoans;
@@ -42,6 +52,11 @@
 - (double)newLoans
 {
     PeriodCashFlow *periodCashFlow = self.periodExpenses.periodCashFlow;
+    
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
     PeriodInputData *inputData = periodCashFlow.inputData;
     
     double newLoans = (inputData.newLoanExpenses)? inputData.newLoanExpenses.doubleValue : 0;

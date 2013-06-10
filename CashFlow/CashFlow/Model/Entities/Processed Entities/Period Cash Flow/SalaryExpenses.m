@@ -34,11 +34,14 @@
 - (double)payroll
 {
     PeriodCashFlow *periodCashFlow = self.periodExpenses.periodCashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
     PeriodInputData *inputData = periodCashFlow.inputData;
-    Period *period = inputData.period;
     
     double payroll = (inputData.payroll)? inputData.payroll.doubleValue : 0;
-    NSInteger month = (period.month)? period.month.integerValue : 0;
+    NSInteger month = (periodCashFlow.date)? periodCashFlow.date.month : 0;
     
     return (month == 7 || month == 12)? payroll * 2 : payroll;
 }
@@ -46,6 +49,10 @@
 - (double)socialBenefits
 {
     PeriodCashFlow *periodCashFlow = self.periodExpenses.periodCashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
     PeriodInputData *inputData = periodCashFlow.inputData;
     
     double socialBenefitsPercentage = (inputData.socialBenefits)? inputData.socialBenefits.doubleValue : 0;
@@ -55,6 +62,11 @@
 
 - (double)total
 {
+    PeriodCashFlow *periodCashFlow = self.periodExpenses.periodCashFlow;
+    if (periodCashFlow.periodNumber == 0) {
+        return NSIntegerMin;
+    }
+    
     return self.payroll + self.socialBenefits;
 }
 

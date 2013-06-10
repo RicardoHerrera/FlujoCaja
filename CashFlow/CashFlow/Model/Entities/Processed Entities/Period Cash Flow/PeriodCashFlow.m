@@ -10,11 +10,49 @@
 #import "PeriodIncomes.h"
 #import "PeriodExpenses.h"
 #import "PeriodInputData.h"
+#import "Period.h"
+#import "CashFlow.h"
+#import "CashFlowPeriodType.h"
 
 @implementation PeriodCashFlow
 
 #pragma mark -
 #pragma mark Custom Accessors
+
+- (NSDate *)date
+{
+    Period *period = self.inputData.period;
+    CashFlow *cashFlow = period.cashFlow;
+    NSDate *date = cashFlow.startDate;
+    NSInteger periodNumber = period.number.integerValue;
+    
+    if (periodNumber != 1) {
+        
+        NSDateComponents* dateComponents = [[NSDateComponents alloc]init];
+        NSCalendar* calendar = [NSCalendar currentCalendar];
+        
+        if (cashFlow.periodType.integerValue == CashFlowPeriodTypeMonths) {
+            dateComponents.month = 1;
+        }
+        
+        if (period.number.integerValue == 0) {
+            dateComponents.month *= -1;
+            dateComponents.year *= -1;
+            dateComponents.day *= -1;
+        }
+    
+        date = [calendar dateByAddingComponents:dateComponents toDate:self.lastPeriodCashFlow.date options:0];
+    }
+    
+    return date;
+}
+
+- (NSInteger)periodNumber
+{
+    Period *period = self.inputData.period;
+    
+    return period.number? period.number.integerValue : 0;
+}
 
 - (PeriodIncomes *)incomes
 {

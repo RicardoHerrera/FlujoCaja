@@ -21,8 +21,6 @@
 		7A4BCD401751A01E00901881 /* CashFlow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A4BCD301751A01E00901881 /* CashFlow.xcdatamodeld */; };
 		7A4BCD431751A1D400901881 /* UnitOfWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4BCD421751A1D400901881 /* UnitOfWork.m */; };
 		7A4BCD4A1751A62600901881 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4BCD491751A62600901881 /* MainStoryboard.storyboard */; };
-		7A67C73D1751EB2F00136E15 /* Period.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C73C1751EB2F00136E15 /* Period.m */; };
-		7A67C7431751EB3000136E15 /* CashFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C7421751EB3000136E15 /* CashFlow.m */; };
 		7A67C7721751F91B00136E15 /* IncomeTaxesExpenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C7581751F91B00136E15 /* IncomeTaxesExpenses.m */; };
 		7A67C7731751F91B00136E15 /* LoanExpenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C75A1751F91B00136E15 /* LoanExpenses.m */; };
 		7A67C7741751F91B00136E15 /* ManpowerExpenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C75C1751F91B00136E15 /* ManpowerExpenses.m */; };
@@ -36,6 +34,7 @@
 		7A67C77C1751F91B00136E15 /* PeriodPlannedCashFlowSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C76D1751F91B00136E15 /* PeriodPlannedCashFlowSummary.m */; };
 		7A67C77D1751F91B00136E15 /* PeriodPlannedExpenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C76F1751F91B00136E15 /* PeriodPlannedExpenses.m */; };
 		7A67C77E1751F91B00136E15 /* PeriodPlannedIncomes.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67C7711751F91B00136E15 /* PeriodPlannedIncomes.m */; };
+		7A6D6F221763E31600F45108 /* CashFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6D6F211763E31600F45108 /* CashFlowViewController.m */; };
 		7A7739201751A7E3006430A0 /* 44_no_sort.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A7739191751A7E3006430A0 /* 44_no_sort.png */; };
 		7A7739211751A7E3006430A0 /* 44_no_sort@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A77391A1751A7E3006430A0 /* 44_no_sort@2x.png */; };
 		7A7739221751A7E3006430A0 /* 44_sort_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A77391B1751A7E3006430A0 /* 44_sort_down.png */; };
@@ -46,7 +45,11 @@
 		7A77392E1751A8B5006430A0 /* AlertViewsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A77392D1751A8B5006430A0 /* AlertViewsFactory.m */; };
 		7A7739341751A9DE006430A0 /* GenericRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7739331751A9DE006430A0 /* GenericRepository.m */; };
 		7A7739371751AADC006430A0 /* GenericService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7739361751AADC006430A0 /* GenericService.m */; };
-		7AB073D31752EF7200CEE235 /* PeriodInputData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB073D21752EF7200CEE235 /* PeriodInputData.m */; };
+		7A9E0D74176535CC00E834D1 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9E0D73176535CC00E834D1 /* NSDate+Utilities.m */; };
+		7A9E0D771765516000E834D1 /* CashFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9E0D761765516000E834D1 /* CashFlow.m */; };
+		7A9E0D7A1765516100E834D1 /* PeriodInputData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9E0D791765516100E834D1 /* PeriodInputData.m */; };
+		7A9E0D7D1765516100E834D1 /* Period.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9E0D7C1765516100E834D1 /* Period.m */; };
+		7A9E0D9317655C1400E834D1 /* FirstPeriodInputData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9E0D9217655C1400E834D1 /* FirstPeriodInputData.m */; };
 		A1EA03181753CEAC0030B611 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EA03171753CEAC0030B611 /* MainMenuViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -75,10 +78,6 @@
 		7A4BCD411751A1D400901881 /* UnitOfWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitOfWork.h; sourceTree = "<group>"; };
 		7A4BCD421751A1D400901881 /* UnitOfWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitOfWork.m; sourceTree = "<group>"; };
 		7A4BCD491751A62600901881 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
-		7A67C73B1751EB2F00136E15 /* Period.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Period.h; sourceTree = "<group>"; };
-		7A67C73C1751EB2F00136E15 /* Period.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Period.m; sourceTree = "<group>"; };
-		7A67C7411751EB3000136E15 /* CashFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashFlow.h; sourceTree = "<group>"; };
-		7A67C7421751EB3000136E15 /* CashFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashFlow.m; sourceTree = "<group>"; };
 		7A67C7571751F91B00136E15 /* IncomeTaxesExpenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeTaxesExpenses.h; sourceTree = "<group>"; };
 		7A67C7581751F91B00136E15 /* IncomeTaxesExpenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeTaxesExpenses.m; sourceTree = "<group>"; };
 		7A67C7591751F91B00136E15 /* LoanExpenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanExpenses.h; sourceTree = "<group>"; };
@@ -105,6 +104,8 @@
 		7A67C76F1751F91B00136E15 /* PeriodPlannedExpenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodPlannedExpenses.m; sourceTree = "<group>"; };
 		7A67C7701751F91B00136E15 /* PeriodPlannedIncomes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodPlannedIncomes.h; sourceTree = "<group>"; };
 		7A67C7711751F91B00136E15 /* PeriodPlannedIncomes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodPlannedIncomes.m; sourceTree = "<group>"; };
+		7A6D6F201763E31600F45108 /* CashFlowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashFlowViewController.h; sourceTree = "<group>"; };
+		7A6D6F211763E31600F45108 /* CashFlowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashFlowViewController.m; sourceTree = "<group>"; };
 		7A7739191751A7E3006430A0 /* 44_no_sort.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 44_no_sort.png; sourceTree = "<group>"; };
 		7A77391A1751A7E3006430A0 /* 44_no_sort@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "44_no_sort@2x.png"; sourceTree = "<group>"; };
 		7A77391B1751A7E3006430A0 /* 44_sort_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 44_sort_down.png; sourceTree = "<group>"; };
@@ -119,8 +120,16 @@
 		7A7739331751A9DE006430A0 /* GenericRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericRepository.m; sourceTree = "<group>"; };
 		7A7739351751AADC006430A0 /* GenericService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericService.h; sourceTree = "<group>"; };
 		7A7739361751AADC006430A0 /* GenericService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericService.m; sourceTree = "<group>"; };
-		7AB073D11752EF7200CEE235 /* PeriodInputData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodInputData.h; sourceTree = "<group>"; };
-		7AB073D21752EF7200CEE235 /* PeriodInputData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodInputData.m; sourceTree = "<group>"; };
+		7A9E0D72176535CC00E834D1 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
+		7A9E0D73176535CC00E834D1 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
+		7A9E0D751765516000E834D1 /* CashFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashFlow.h; sourceTree = "<group>"; };
+		7A9E0D761765516000E834D1 /* CashFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashFlow.m; sourceTree = "<group>"; };
+		7A9E0D781765516100E834D1 /* PeriodInputData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodInputData.h; sourceTree = "<group>"; };
+		7A9E0D791765516100E834D1 /* PeriodInputData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodInputData.m; sourceTree = "<group>"; };
+		7A9E0D7B1765516100E834D1 /* Period.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Period.h; sourceTree = "<group>"; };
+		7A9E0D7C1765516100E834D1 /* Period.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Period.m; sourceTree = "<group>"; };
+		7A9E0D9117655C1400E834D1 /* FirstPeriodInputData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstPeriodInputData.h; sourceTree = "<group>"; };
+		7A9E0D9217655C1400E834D1 /* FirstPeriodInputData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstPeriodInputData.m; sourceTree = "<group>"; };
 		A1EA03161753CEAC0030B611 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		A1EA03171753CEAC0030B611 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,12 +162,14 @@
 		7A4891C81751E00600086E39 /* Managed Objects */ = {
 			isa = PBXGroup;
 			children = (
-				7A67C7411751EB3000136E15 /* CashFlow.h */,
-				7A67C7421751EB3000136E15 /* CashFlow.m */,
-				7A67C73B1751EB2F00136E15 /* Period.h */,
-				7A67C73C1751EB2F00136E15 /* Period.m */,
-				7AB073D11752EF7200CEE235 /* PeriodInputData.h */,
-				7AB073D21752EF7200CEE235 /* PeriodInputData.m */,
+				7A9E0D7B1765516100E834D1 /* Period.h */,
+				7A9E0D7C1765516100E834D1 /* Period.m */,
+				7A9E0D781765516100E834D1 /* PeriodInputData.h */,
+				7A9E0D791765516100E834D1 /* PeriodInputData.m */,
+				7A9E0D751765516000E834D1 /* CashFlow.h */,
+				7A9E0D761765516000E834D1 /* CashFlow.m */,
+				7A9E0D9117655C1400E834D1 /* FirstPeriodInputData.h */,
+				7A9E0D9217655C1400E834D1 /* FirstPeriodInputData.m */,
 			);
 			path = "Managed Objects";
 			sourceTree = "<group>";
@@ -197,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				7A4BCD2917519FFA00901881 /* AppDelegate */,
+				7A9E0D71176535CC00E834D1 /* Categories */,
 				7A77392B1751A8A1006430A0 /* Factories */,
 				A1EA03151753CEAC0030B611 /* Controllers */,
 				7A4BCD2E1751A01E00901881 /* Model */,
@@ -407,11 +419,22 @@
 			path = Factories;
 			sourceTree = "<group>";
 		};
+		7A9E0D71176535CC00E834D1 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				7A9E0D72176535CC00E834D1 /* NSDate+Utilities.h */,
+				7A9E0D73176535CC00E834D1 /* NSDate+Utilities.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		A1EA03151753CEAC0030B611 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				A1EA03161753CEAC0030B611 /* MainMenuViewController.h */,
 				A1EA03171753CEAC0030B611 /* MainMenuViewController.m */,
+				7A6D6F201763E31600F45108 /* CashFlowViewController.h */,
+				7A6D6F211763E31600F45108 /* CashFlowViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -556,8 +579,6 @@
 				7A4891A51751D36400086E39 /* CashFlowsRepository.m in Sources */,
 				7A4891A81751D37200086E39 /* PeriodsRepository.m in Sources */,
 				7A4891AB1751D38000086E39 /* PeriodInputDataRepository.m in Sources */,
-				7A67C73D1751EB2F00136E15 /* Period.m in Sources */,
-				7A67C7431751EB3000136E15 /* CashFlow.m in Sources */,
 				7A67C7721751F91B00136E15 /* IncomeTaxesExpenses.m in Sources */,
 				7A67C7731751F91B00136E15 /* LoanExpenses.m in Sources */,
 				7A67C7741751F91B00136E15 /* ManpowerExpenses.m in Sources */,
@@ -571,8 +592,13 @@
 				7A67C77C1751F91B00136E15 /* PeriodPlannedCashFlowSummary.m in Sources */,
 				7A67C77D1751F91B00136E15 /* PeriodPlannedExpenses.m in Sources */,
 				7A67C77E1751F91B00136E15 /* PeriodPlannedIncomes.m in Sources */,
-				7AB073D31752EF7200CEE235 /* PeriodInputData.m in Sources */,
 				A1EA03181753CEAC0030B611 /* MainMenuViewController.m in Sources */,
+				7A6D6F221763E31600F45108 /* CashFlowViewController.m in Sources */,
+				7A9E0D74176535CC00E834D1 /* NSDate+Utilities.m in Sources */,
+				7A9E0D771765516000E834D1 /* CashFlow.m in Sources */,
+				7A9E0D7A1765516100E834D1 /* PeriodInputData.m in Sources */,
+				7A9E0D7D1765516100E834D1 /* Period.m in Sources */,
+				7A9E0D9317655C1400E834D1 /* FirstPeriodInputData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
