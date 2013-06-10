@@ -10,12 +10,14 @@
 #import "PeriodsRepository.h"
 #import "CashFlowsRepository.h"
 #import "PeriodInputDataRepository.h"
+#import "FirstPeriodInputDataRepository.h"
 
 @interface UnitOfWork : NSObject
 
 @property (readonly, strong, nonatomic) PeriodsRepository *periodsRepository;
 @property (readonly, strong, nonatomic) CashFlowsRepository *cashFlowsRepository;
 @property (readonly, strong, nonatomic) PeriodInputDataRepository *periodInputDataRepository;
+@property (readonly, strong, nonatomic) FirstPeriodInputDataRepository *firstPeriodInputDataRepository;
 
 + (id)sharedUnitOfWork;
 

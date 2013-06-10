@@ -97,10 +97,6 @@
     PeriodCashFlow *periodCashFlow = self.periodCashFlow;
     PeriodInputData *inputData = self.periodCashFlow.inputData;
     
-    if (periodCashFlow.periodNumber == 0) {
-        return NSIntegerMin;
-    }
-    
     double igv;
 
     if (periodCashFlow.periodNumber == 0) {

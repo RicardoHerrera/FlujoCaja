@@ -13,6 +13,7 @@
 @property (strong, nonatomic) PeriodsRepository *periodsRepository;
 @property (strong, nonatomic) CashFlowsRepository *cashFlowsRepository;
 @property (strong, nonatomic) PeriodInputDataRepository *periodInputDataRepository;
+@property (strong, nonatomic) FirstPeriodInputDataRepository *firstPeriodInputDataRepository;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
@@ -69,6 +70,15 @@
     }
     
     return _periodInputDataRepository;
+}
+
+- (FirstPeriodInputDataRepository *)firstPeriodInputDataRepository
+{
+    if (!_firstPeriodInputDataRepository) {
+        self.firstPeriodInputDataRepository = [[FirstPeriodInputDataRepository alloc] initWithDefaultContext:self.managedObjectContext];
+    }
+    
+    return _firstPeriodInputDataRepository;
 }
 
 #pragma mark -
