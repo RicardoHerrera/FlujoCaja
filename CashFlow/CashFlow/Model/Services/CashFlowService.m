@@ -12,6 +12,8 @@
 #import "Period.h"
 #import "PeriodInputData.h"
 #import "FirstPeriodInputData.h"
+#import "PeriodCashFlow.h"
+#import "PeriodPlannedCashFlow.h"
 
 @implementation CashFlowService
 
@@ -225,6 +227,29 @@
 - (FirstPeriodInputData *)createFirstPeriodInputData
 {
     return [self.unitOfWork.firstPeriodInputDataRepository createFirstPeriodInputData];
+}
+
+#pragma mark -
+#pragma mark Period Cash Flow Methods
+
+- (NSArray *)getPeriodCashFlowsForCashFlow:(CashFlow *)cashFlow
+{
+    NSArray *periods = [[cashFlow.periods allObjects] sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"number" ascending:YES]]];
+    NSMutableArray *periodCashFlows = [NSMutableArray array];
+    
+    PeriodCashFlow *lastPeriodCashFlow = nil;
+    
+    for (Period *period in periods) {
+        PeriodCashFlow *periodCashFlow = [[PeriodCashFlow alloc] init];
+        periodCashFlow.inputData = period.inputData;
+        periodCashFlow.lastPeriodCashFlow = lastPeriodCashFlow;
+        
+        lastPeriodCashFlow = periodCashFlow;
+        
+        [periodCashFlows addObject:periodCashFlow];
+    }
+    
+    return periodCashFlows;
 }
 
 @end

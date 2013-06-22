@@ -24,5 +24,7 @@
 
 - (PeriodInputData *)createPeriodInputData;
 
+- (NSArray *)getPeriodCashFlowsForCashFlow:(CashFlow *)cashFlow;
+
 
 @end
