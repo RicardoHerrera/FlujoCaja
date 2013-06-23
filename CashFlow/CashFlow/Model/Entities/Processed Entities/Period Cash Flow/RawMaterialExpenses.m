@@ -77,10 +77,11 @@
     }
     
     PeriodInputData *inputData = periodCashFlow.inputData;
+    PeriodCashFlow *lastPeriodCashFlow = periodCashFlow.lastPeriodCashFlow;
     
     double rawMaterialsPayment = (inputData.rawMaterialsPayment)? inputData.rawMaterialsPayment.doubleValue : 0;
     
-    return self.rawMaterials * rawMaterialsPayment;
+    return lastPeriodCashFlow.expenses.rawMaterialExpenses.rawMaterials * rawMaterialsPayment;
 }
 
 - (double)total

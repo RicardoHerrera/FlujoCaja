@@ -79,6 +79,7 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="H71-7a-pje"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7mg-Ty-LcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -94,11 +95,34 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pqx-ke-osh"/>
+                    <navigationItem key="navigationItem" id="pqx-ke-osh">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="A0R-Fq-csM">
+                            <connections>
+                                <segue destination="uaL-Rm-8qF" kind="push" id="jzF-dG-fX2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LMj-0R-3Th" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1382" y="-732"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7ws-Ec-scF">
+            <objects>
+                <viewController id="uaL-Rm-8qF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A6G-vq-yWX">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1TL-8N-GeH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rNo-PL-eyU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2536" y="-732"/>
         </scene>
     </scenes>
     <classes>

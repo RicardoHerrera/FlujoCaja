@@ -41,6 +41,7 @@
         Period *period = inputData.period;
         CashFlow *cashFlow = period.cashFlow;
         FirstPeriodInputData *firstPeriodInputData = cashFlow.firstPeriodInputData;
+        
         return (firstPeriodInputData.sales)? firstPeriodInputData.sales.doubleValue : 0.0;
     }
     
@@ -73,9 +74,9 @@
     PeriodInputData *inputData = periodCashFlow.inputData;
     PeriodCashFlow *lastPeriodCashFlow = periodCashFlow.lastPeriodCashFlow;
     
-    double cashDebtCollections = (inputData.cashDebtCollections)? inputData.cashDebtCollections.doubleValue : 0;
+    double debtCollections = (inputData.debtCollections)? inputData.debtCollections.doubleValue : 0;
     
-    return lastPeriodCashFlow.incomes.salesIncomes.sales * cashDebtCollections;
+    return lastPeriodCashFlow.incomes.salesIncomes.sales * debtCollections;
 }
 
 - (double)penalty

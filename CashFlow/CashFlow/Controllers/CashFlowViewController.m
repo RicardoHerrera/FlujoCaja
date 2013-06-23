@@ -17,6 +17,7 @@
 #import "ManpowerExpenses.h"
 #import "RawMaterialExpenses.h"
 #import "SalaryExpenses.h"
+#import "CashFlowService.h"
 
 #define ROW_INCOMES_SALES 0
 #define ROW_INCOMES_SALES_CASH 1
@@ -64,6 +65,8 @@
 @property (strong, nonatomic) ProcessedCashFlow *processedCashFlow;
 
 - (void)setupGrid;
+- (void)fixupGridWithOrientation:(UIInterfaceOrientation)toInterfaceOrientation;
+- (CGRect)gridFrameForOrientation:(UIInterfaceOrientation)interfaceOrientation;
 - (void)prepareEntryCellForDisplay:(SDataGridCell *)cell withCoordinates:(SDataGridCoord *)coordinates;
 - (void)prepareFirstPeriodCellForDisplay:(SDataGridCell *)cell withCoordinates:(SDataGridCoord *)coordinates;
 - (void)preparePeriodCellForDisplay:(SDataGridCell *)cell withCoordinates:(SDataGridCoord *)coordinates andPeriodNumber:(NSInteger)periodNumber;
@@ -80,9 +83,16 @@
 {
     [super viewDidLoad];
     
+    self.cashFlow = [[CashFlowService sharedService] getCashFlowWithPredicate:[NSPredicate predicateWithFormat:@"name == %@",@"Hello Cash Flow"]];
+    
     self.processedCashFlow = [[ProcessedCashFlow alloc] initWithCashFlow:self.cashFlow];
     
     [self setupGrid];
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self fixupGridWithOrientation:toInterfaceOrientation];
 }
 
 #pragma mark -
@@ -149,11 +159,9 @@
 
 - (void)setupGrid
 {
-    if (self.grid) {
-        [self.grid removeFromSuperview];
-    }
+    self.grid = [[ShinobiDataGrid alloc] initWithFrame:[self gridFrameForOrientation:self.interfaceOrientation]];
+    [self.view addSubview:self.grid];
     
-    self.grid = [[ShinobiDataGrid alloc] initWithFrame:CGRectInset(self.view.bounds, 30, 30)];
 	self.grid.licenseKey = kLicenseKey;
     self.grid.dataSource = self;
     
@@ -170,7 +178,7 @@
     [SDataGridGradient gradientWithColors:colors locations:stops];
     
     SDataGridColumn* entryColumn = [[SDataGridColumn alloc] initWithTitle:@""];
-    entryColumn.width = @200;
+    entryColumn.width = @300;
     entryColumn.tag = -1;
     [self.grid addColumn:entryColumn];
     
@@ -181,7 +189,7 @@
     for (int i = 0; i < self.processedCashFlow.periodCashFlows.count; i++) {
         PeriodCashFlow *periodCashFlow = self.processedCashFlow.periodCashFlows[i];
         SDataGridColumn* periodColumn = [[SDataGridColumn alloc] initWithTitle:periodCashFlow.dateString];
-        periodColumn.width = @80;
+        periodColumn.width = @120;
         periodColumn.tag = periodCashFlow.periodNumber;
         
         [self.grid addColumn:periodColumn];
@@ -194,8 +202,23 @@
     }
     
     self.grid.dataSource = self;
-    
-    [self.view addSubview:self.grid];
+}
+
+- (void)fixupGridWithOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    if (self.grid) {
+        self.grid.frame = [self gridFrameForOrientation:toInterfaceOrientation];
+    }
+}
+
+- (CGRect)gridFrameForOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    if (UIInterfaceOrientationIsLandscape(interfaceOrientation)) {
+        return CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 44);
+    }
+    else {
+        return CGRectMake(0, 0, SCREEN_HEIGHT, SCREEN_WIDTH - 44);
+    }
 }
 
 - (void)prepareEntryCellForDisplay:(SDataGridCell *)cell withCoordinates:(SDataGridCoord *)coordinates
@@ -332,6 +355,8 @@
             switch (row) {
                 case ROW_INCOMES_SALES:
                     textCell.textField.text = [NSString stringWithFormat:@"%.2f", firstPeriodCashFlow.incomes.salesIncomes.sales];
+                    NSLog(@"%@",textCell.textField.text);
+                    break;
                 case ROW_INCOMES_SALES_IGV:
                     textCell.textField.text = [NSString stringWithFormat:@"%.2f", firstPeriodCashFlow.incomes.salesIGV];
                     break;
@@ -424,7 +449,6 @@
                     break;
                 case ROW_EXPENSES_MANPOWER_FIXED:
                     textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.manpowerExpenses.fixed];
-                    textCell.textField.text = @"Fija";
                     break;
                 case ROW_EXPENSES_MANPOWER_VARIABLE:
                     textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.manpowerExpenses.variable];

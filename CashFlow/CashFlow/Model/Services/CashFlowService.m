@@ -38,6 +38,7 @@
     CashFlow *cashFlow = [self createCashFlow];
     cashFlow.name = @"Hello Cash Flow";
     cashFlow.periodType = [NSNumber numberWithInt:CashFlowPeriodTypeMonths];
+    cashFlow.startDate = [[NSDate date] dateBySubtractingDays:150];
     
     //First Period Input
     FirstPeriodInputData *firstPeriodInputData = [self createFirstPeriodInputData];
@@ -46,6 +47,8 @@
     firstPeriodInputData.oldLoans = [NSNumber numberWithDouble:3589.0];
     firstPeriodInputData.endBalance = [NSNumber numberWithDouble:28589.0];
     firstPeriodInputData.igv = [NSNumber numberWithDouble:0.18];
+    
+    firstPeriodInputData.cashFlow = cashFlow;
     
     for (int periodNumber = 0; periodNumber < 14; periodNumber++) {
         Period *period = [self createPeriod];
@@ -62,11 +65,11 @@
             inputData.cashDebtCollections = [NSNumber numberWithDouble:0.2];
             inputData.creditSalesPenalty = [NSNumber numberWithDouble:0.01];
             inputData.debtCollections = [NSNumber numberWithDouble:0.78];
-            inputData.dividends = [NSNumber numberWithDouble:80000.0];
+            inputData.dividends = [NSNumber numberWithDouble:0.0];
             inputData.fixedAssetsExpense = [NSNumber numberWithDouble:30000.0];
             inputData.fixedManpower = [NSNumber numberWithDouble:2400.0];
             inputData.freights = [NSNumber numberWithDouble:0.025];
-            inputData.igv = [NSNumber numberWithDouble:18.0];
+            inputData.igv = [NSNumber numberWithDouble:0.18];
             inputData.incomeTax = [NSNumber numberWithDouble:0.02];
             inputData.incomeTaxRegularization = [NSNumber numberWithDouble:20000.0];
             inputData.payroll = [NSNumber numberWithDouble:3500.0];
@@ -88,6 +91,7 @@
                     inputData.loanIncomes = [NSNumber numberWithDouble:0.0];
                     inputData.newLoanExpenses = [NSNumber numberWithDouble:0.0];
                     inputData.oldLoanExpenses = [NSNumber numberWithDouble:3589.0];
+                    inputData.dividends = [NSNumber numberWithDouble:80000.0];
                     break;
                 case 2:
                     inputData.assetsPurchases = [NSNumber numberWithDouble:0.0];
@@ -172,6 +176,7 @@
                     inputData.loanIncomes = [NSNumber numberWithDouble:0.0];
                     inputData.newLoanExpenses = [NSNumber numberWithDouble:0.0];
                     inputData.oldLoanExpenses = [NSNumber numberWithDouble:3589.0];
+                    inputData.dividends = [NSNumber numberWithDouble:80000.0];
                     break;
                     
                 default:
@@ -189,6 +194,11 @@
 
 #pragma mark -
 #pragma mark Cash Flow Methods
+
+- (CashFlow *)getCashFlowWithPredicate:(NSPredicate *)predicate
+{
+    return [self.unitOfWork.cashFlowsRepository getCashFlowWithPredicate:predicate sortDescriptors:nil];
+}
 
 - (NSArray *)getCashFlows
 {

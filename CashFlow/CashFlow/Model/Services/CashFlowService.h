@@ -16,6 +16,7 @@
 
 - (void)generateDummyData;
 
+- (CashFlow *)getCashFlowWithPredicate:(NSPredicate *)predicate;
 - (NSArray *)getCashFlows;
 - (CashFlow *)createCashFlow;
 - (void)deleteCashFlow:(CashFlow *)cashFlow;

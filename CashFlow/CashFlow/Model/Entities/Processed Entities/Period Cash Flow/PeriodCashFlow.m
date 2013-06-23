@@ -49,6 +49,10 @@
         NSDateComponents* dateComponents = [[NSDateComponents alloc]init];
         NSCalendar* calendar = [NSCalendar currentCalendar];
         
+        dateComponents.month = 0;
+        dateComponents.year = 0;
+        dateComponents.day = 0;
+        
         if (cashFlow.periodType.integerValue == CashFlowPeriodTypeMonths) {
             dateComponents.month = 1;
         }
@@ -59,7 +63,7 @@
             dateComponents.day *= -1;
         }
     
-        date = [calendar dateByAddingComponents:dateComponents toDate:self.lastPeriodCashFlow.date options:0];
+        date = [calendar dateByAddingComponents:dateComponents toDate:((periodNumber == 0)? date : self.lastPeriodCashFlow.date) options:0];
     }
     
     return date;
