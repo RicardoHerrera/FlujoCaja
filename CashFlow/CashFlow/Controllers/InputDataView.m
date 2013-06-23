@@ -7,6 +7,7 @@
 //
 
 #import "InputDataView.h"
+#import "AlertViewsFactory.h"
 
 @interface InputDataView ()
 
@@ -35,4 +36,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)onTapHelpMessage:(id)sender {
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Messages" ofType:@"plist"];
+    
+    NSDictionary *root = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    NSArray *messages = [root objectForKey:@"PeriodInputDataMessages"];
+    
+    [[[AlertViewsFactory sharedFactory] createAlertViewWithTitle:@"Cash Flow" andMessage:[messages objectAtIndex:[sender tag]]] show];
+}
+
+- (IBAction)onTapCancel:(id)sender {
+    [self dismissViewControllerAnimated:TRUE completion:Nil];
+}
+
+- (IBAction)onTapDone:(id)sender {
+    [self onTapCancel:Nil];
+    //verify fields
+}
 @end

@@ -10,5 +10,35 @@
 		<string>Costo total de la materia prima del período anterior.</string>
 		<string>Total de ventas del período anterior.</string>
 	</array>
+	<key>PeriodInputDataMessages</key>
+	<array>
+		<string>Gastos generados por temas administrativos.</string>
+		<string>Bienes adquiridos anteriormente.</string>
+		<string>Deudas que son difíciles, casi imposibles, de cobrar.</string>
+		<string>Costo de las materias prima base</string>
+		<string>Cobro de deudas en efectivo.</string>
+		<string>Penalidad por ventas al crédito.</string>
+		<string>Cobro de deudas.</string>
+		<string>Dividendos.</string>
+		<string>Gastos en activos fijos.</string>
+		<string>Mano de obra fija.</string>
+		<string>Fletes.</string>
+		<string>Impuesto general a las ventas.</string>
+		<string>Impuesto sobre la renta.</string>
+		<string>Regularización de impuesto sobre la renta.</string>
+		<string>Ingresos que se obtienen por préstamos.</string>
+		<string>Gastos reciente por préstamos.</string>
+		<string>Gastos antiguos por préstamos.</string>
+		<string>Gastos por pagos de sueldos.</string>
+		<string>Gastos por materia prima.</string>
+		<string>Pagos al contado de materia prima.</string>
+		<string>Otros pagos por materia prima.</string>
+		<string>Ingreso por ventas</string>
+		<string>Costo de ventas.</string>
+		<string>Ganancia semestral.</string>
+		<string>Gastos en beneficio social.</string>
+		<string>Tasa Efectiva Anual.</string>
+		<string>Mano de obra variable</string>
+	</array>
 </dict>
 </plist>

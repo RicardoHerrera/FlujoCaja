@@ -41,5 +41,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *txtTea;
 @property (strong, nonatomic) IBOutlet UITextField *txtVariableManpower;
 
+- (IBAction)onTapHelpMessage:(id)sender;
+- (IBAction)onTapCancel:(id)sender;
+- (IBAction)onTapDone:(id)sender;
 
 @end

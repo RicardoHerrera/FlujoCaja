@@ -43,6 +43,11 @@
 }
 
 - (IBAction)onTapDone:(id)sender {
+    
+    //Verify fields
+    //Save data
+    
+    [self onTapCancel:Nil];
     /*
     FirstPeriodInputData *Fpd = [[FirstPeriodInputData alloc] init];
     
@@ -61,11 +66,7 @@
     
     NSDictionary *root = [NSDictionary dictionaryWithContentsOfFile:path];
     
-    
-    
     NSArray *messages = [root objectForKey:@"FirstPeriodInputDataMessages"];
-    
-    NSLog(@"messages : %@", [messages objectAtIndex:[sender tag]]);
     
     [[[AlertViewsFactory sharedFactory] createAlertViewWithTitle:@"Cash Flow" andMessage:[messages objectAtIndex:[sender tag]]] show];
 }
