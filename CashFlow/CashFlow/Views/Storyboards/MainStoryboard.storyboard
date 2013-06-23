@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Gvb-2c-RMM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Gvb-2c-RMM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -1349,6 +1349,9 @@
             <point key="canvasLocation" x="1382" y="-732"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg_cork.png" width="400" height="400"/>
+    </resources>
     <classes>
         <class className="CashFlowViewController" superclassName="GridOrientationSupportViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CashFlowViewController.h"/>
@@ -1356,8 +1359,56 @@
                 <relationship kind="action" name="toggleCashFlowViewMode:" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>
+        <class className="FirstInputDataView" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstInputDataView.h"/>
+            <relationships>
+                <relationship kind="action" name="onTapCancel:"/>
+                <relationship kind="action" name="onTapDone:"/>
+                <relationship kind="action" name="onTapHelpMessage:"/>
+                <relationship kind="outlet" name="txtFinalBalance" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtIgv" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtOldLoan" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtRawMaterial" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtSales" candidateClass="UITextField"/>
+            </relationships>
+        </class>
         <class className="GridOrientationSupportViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GridOrientationSupportViewController.h"/>
+        </class>
+        <class className="InputDataView" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InputDataView.h"/>
+            <relationships>
+                <relationship kind="action" name="onTapCancel:"/>
+                <relationship kind="action" name="onTapDone:"/>
+                <relationship kind="action" name="onTapHelpMessage:"/>
+                <relationship kind="outlet" name="administrativeExpenses" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="assetsPurchases" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtBadDebt" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtBaseRawMaterial" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtCashDebtCollections" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtCreditSalesPenalty" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtDebtCollections" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtDividends" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtFixedAssetsExpense" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtFixedManPower" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtFreights" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtIgv" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtIncomeTaxRegularization" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtIncomeTaxes" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtLoanIncomes" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtNewLoanExpenses" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="txtOldLoanExpenses" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtPayroll" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="txtRawMaterials" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtRawMaterialsCashPayment" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtRawMaterialsPayment" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtSales" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtSalesExpenses" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtSemestralReward" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtSocialBenefit" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtTea" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtVariableManpower" candidateClass="UITextField"/>
+            </relationships>
         </class>
         <class className="MainMenuViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuViewController.h"/>

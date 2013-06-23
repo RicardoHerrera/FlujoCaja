@@ -685,6 +685,8 @@
 				7A9E0D9317655C1400E834D1 /* FirstPeriodInputData.m in Sources */,
 				7A9E0D961765930D00E834D1 /* FirstPeriodInputDataRepository.m in Sources */,
 				7A0EFA5A177675C700C245B3 /* ProcessedCashFlow.m in Sources */,
+				A112FF3217775346003A33EE /* FirstInputDataView.m in Sources */,
+				A112FF351777539C003A33EE /* InputDataView.m in Sources */,
 				7A7FEF59177762B4004FBCB9 /* GridOrientationSupportViewController.m in Sources */,
 				7A7FEF5D17776953004FBCB9 /* CashFlowGridDataSource.m in Sources */,
 				7A7FEF6017776E23004FBCB9 /* PlannedCashFlowGridDataSource.m in Sources */,
