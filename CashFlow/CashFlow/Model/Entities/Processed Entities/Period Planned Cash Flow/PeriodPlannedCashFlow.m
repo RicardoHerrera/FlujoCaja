@@ -56,14 +56,13 @@
     return _cashFlowSummary;
 }
 
-- (PeriodPlannedCashFlowSummary *)lastCashFlowSummary
+- (PeriodPlannedCashFlow *)lastPlannedCashFlow
 {
-    if (!_lastCashFlowSummary) {
-        self.lastCashFlowSummary = [[PeriodPlannedCashFlowSummary alloc] init];
-        self.lastCashFlowSummary.plannedCashFlow = self;
+    if (!_lastPlannedCashFlow) {
+        self.lastPlannedCashFlow = [[PeriodPlannedCashFlow alloc] init];
     }
     
-    return _lastCashFlowSummary;
+    return _lastPlannedCashFlow;
 }
 
 @end

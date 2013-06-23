@@ -14,6 +14,7 @@
 @interface PeriodIncomes : NSObject
 
 @property (strong, nonatomic) PeriodCashFlow *periodCashFlow;
+
 @property (strong, nonatomic) SalesIncomes *salesIncomes;
 
 @property (readonly, nonatomic) double debtCollections;

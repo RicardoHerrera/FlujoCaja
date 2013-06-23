@@ -18,6 +18,7 @@
 @interface PeriodExpenses : NSObject
 
 @property (strong, nonatomic) PeriodCashFlow *periodCashFlow;
+
 @property (strong, nonatomic) RawMaterialExpenses *rawMaterialExpenses;
 @property (strong, nonatomic) ManpowerExpenses *manpowerExpenses;
 @property (strong, nonatomic) SalaryExpenses *salaryExpenses;

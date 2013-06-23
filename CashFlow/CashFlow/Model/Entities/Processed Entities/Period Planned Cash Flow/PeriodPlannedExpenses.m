@@ -143,8 +143,9 @@
         return NSIntegerMin;
     }
     
-    PeriodExpenses *expenses = periodCashFlow.expenses;
-    PeriodIncomes *incomes = periodCashFlow.incomes;
+    PeriodCashFlow *lastPeriodCashFlow = periodCashFlow.lastPeriodCashFlow;
+    PeriodExpenses *expenses = lastPeriodCashFlow.expenses;
+    PeriodIncomes *incomes = lastPeriodCashFlow.incomes;
     
     return (incomes.salesIGV - expenses.taxCredit) * -1;
 }

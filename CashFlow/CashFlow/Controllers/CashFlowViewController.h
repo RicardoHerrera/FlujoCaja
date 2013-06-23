@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CashFlow.h"
 
 @interface CashFlowViewController : UIViewController
+
+@property (strong, nonatomic) CashFlow *cashFlow;
 
 @end

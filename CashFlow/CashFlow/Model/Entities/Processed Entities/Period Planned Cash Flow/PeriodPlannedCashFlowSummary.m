@@ -56,9 +56,11 @@
     }
     
     PeriodPlannedCashFlow *periodPlannedCashFlow = self.plannedCashFlow;
-    PeriodPlannedCashFlowSummary *lastCashFlowSummary = periodPlannedCashFlow.lastCashFlowSummary;
+    PeriodPlannedCashFlow *lastPeriodPlannedCashFlow = periodPlannedCashFlow.lastPlannedCashFlow;
     
-    return lastCashFlowSummary.endBalance;
+    PeriodPlannedCashFlowSummary *cashFlowSummary = lastPeriodPlannedCashFlow.cashFlowSummary;
+    
+    return cashFlowSummary.endBalance;
 }
 
 - (double)endBalance
