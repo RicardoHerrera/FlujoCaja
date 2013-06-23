@@ -256,11 +256,30 @@
                                     <outlet property="delegate" destination="eqm-MX-KAK" id="Duu-P6-lkb"/>
                                 </connections>
                             </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMC-jB-CVS">
+                                <items>
+                                    <navigationItem title="Firs input data" id="1Py-Gi-dwl">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="aDO-Ex-zV6">
+                                            <connections>
+                                                <action selector="onTapCancel:" destination="eqm-MX-KAK" id="z7X-2I-DMJ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="jIw-J8-l2k">
+                                            <connections>
+                                                <action selector="onTapDone:" destination="eqm-MX-KAK" id="eTV-nB-VhZ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.31763243880000003" green="0.78945658110000005" blue="0.94769021740000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="GTd-uh-ofy" firstAttribute="leading" secondItem="o95-kp-YS7" secondAttribute="leading" type="default" id="2cA-h3-MbV"/>
                             <constraint firstItem="32L-aS-vcg" firstAttribute="leading" secondItem="ehT-bY-eWw" secondAttribute="leading" constant="42" id="3em-v4-bdX"/>
+                            <constraint firstItem="hMC-jB-CVS" firstAttribute="trailing" secondItem="ehT-bY-eWw" secondAttribute="trailing" type="default" id="6M5-JK-2ZI"/>
+                            <constraint firstItem="hMC-jB-CVS" firstAttribute="centerX" secondItem="fbp-ws-cEs" secondAttribute="centerX" type="default" id="9LA-9W-Siv"/>
+                            <constraint firstItem="hMC-jB-CVS" firstAttribute="top" secondItem="ehT-bY-eWw" secondAttribute="top" type="default" id="9WP-W2-Xwe"/>
                             <constraint firstItem="GTd-uh-ofy" firstAttribute="trailing" secondItem="o95-kp-YS7" secondAttribute="trailing" type="default" id="BuC-wK-Dqg"/>
                             <constraint firstItem="o95-kp-YS7" firstAttribute="trailing" secondItem="YA7-ml-oe9" secondAttribute="trailing" type="default" id="Drj-4a-hW2"/>
                             <constraint firstItem="FNv-V7-5iM" firstAttribute="trailing" secondItem="zw2-ZZ-8tE" secondAttribute="trailing" type="default" id="Elf-Qp-scA"/>
@@ -274,6 +293,7 @@
                             <constraint firstItem="zw2-ZZ-8tE" firstAttribute="centerY" secondItem="M0I-7v-6Lf" secondAttribute="centerY" type="default" id="Nc0-xb-gr9"/>
                             <constraint firstItem="9cU-Rd-OGh" firstAttribute="trailing" secondItem="GTd-uh-ofy" secondAttribute="trailing" type="default" id="Prg-Tq-K7m"/>
                             <constraint firstItem="M0I-7v-6Lf" firstAttribute="leading" secondItem="GiL-Mf-GWM" secondAttribute="leading" type="default" id="QhY-c9-NpG"/>
+                            <constraint firstItem="hMC-jB-CVS" firstAttribute="leading" secondItem="ehT-bY-eWw" secondAttribute="leading" type="default" id="Sfk-Hl-Vtb"/>
                             <constraint firstItem="HwK-iy-n1J" firstAttribute="leading" secondItem="fbp-ws-cEs" secondAttribute="leading" type="default" id="Smo-pS-G7t"/>
                             <constraint firstItem="cUR-jD-o4X" firstAttribute="trailing" secondItem="32L-aS-vcg" secondAttribute="trailing" type="default" id="UWZ-Ph-GaJ"/>
                             <constraint firstItem="zw2-ZZ-8tE" firstAttribute="leading" secondItem="Yce-pv-jd5" secondAttribute="leading" type="default" id="UtE-vX-jRo"/>
@@ -293,7 +313,6 @@
                             <constraint firstItem="YA7-ml-oe9" firstAttribute="centerY" secondItem="fbp-ws-cEs" secondAttribute="centerY" type="default" id="okh-XN-1V4"/>
                             <constraint firstItem="9cU-Rd-OGh" firstAttribute="leading" secondItem="GTd-uh-ofy" secondAttribute="leading" type="default" id="uCj-46-EpI"/>
                             <constraint firstItem="zw2-ZZ-8tE" firstAttribute="trailing" secondItem="Yce-pv-jd5" secondAttribute="trailing" type="default" id="vIS-ed-EoO"/>
-                            <constraint firstItem="044-70-9f7" firstAttribute="centerX" secondItem="ehT-bY-eWw" secondAttribute="centerX" type="default" id="vZo-Id-G4v"/>
                             <constraint firstItem="9cU-Rd-OGh" firstAttribute="top" secondItem="ehT-bY-eWw" secondAttribute="top" constant="277" id="vwE-kh-y7P"/>
                             <constraint firstItem="cUR-jD-o4X" firstAttribute="top" secondItem="ehT-bY-eWw" secondAttribute="top" constant="153" id="yrH-nw-V1u"/>
                             <constraint firstItem="GiL-Mf-GWM" firstAttribute="leading" secondItem="HwK-iy-n1J" secondAttribute="leading" type="default" id="z7O-07-h2d"/>
@@ -569,7 +588,7 @@
                                 <items>
                                     <navigationItem title="Datos de entrada" id="Nwu-jV-gke">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="Uym-7w-zMb"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Save" id="7gc-Vm-Aj6"/>
+                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="7gc-Vm-Aj6"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -1226,6 +1245,8 @@
         <class className="FirstInputDataView" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstInputDataView.h"/>
             <relationships>
+                <relationship kind="action" name="onTapCancel:"/>
+                <relationship kind="action" name="onTapDone:"/>
                 <relationship kind="outlet" name="txtFinalBalance" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtIgv" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtOldLoan" candidateClass="UITextField"/>

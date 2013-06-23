@@ -19,5 +19,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *txtRawMaterial;
 @property (strong, nonatomic) IBOutlet UITextField *txtSales;
 
+- (IBAction)onTapCancel:(id)sender;
+- (IBAction)onTapDone:(id)sender;
 
 @end

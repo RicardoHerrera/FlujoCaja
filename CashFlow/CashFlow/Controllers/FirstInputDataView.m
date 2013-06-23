@@ -7,6 +7,7 @@
 //
 
 #import "FirstInputDataView.h"
+#import "FirstPeriodInputData.h"
 
 @interface FirstInputDataView ()
 
@@ -35,4 +36,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)onTapCancel:(id)sender {
+    
+    [self dismissViewControllerAnimated:TRUE completion:nil];
+}
+
+- (IBAction)onTapDone:(id)sender {
+    
+    FirstPeriodInputData *Fpd = [[FirstPeriodInputData alloc] init];
+    
+    Fpd.endBalance = [NSNumber numberWithFloat:[_txtFinalBalance.text floatValue]];
+    Fpd.igv = [NSNumber numberWithFloat:[_txtIgv.text floatValue]];
+    Fpd.oldLoans = [NSNumber numberWithFloat:[_txtOldLoan.text floatValue]];
+    Fpd.rawMaterials = [NSNumber numberWithFloat:[_txtRawMaterial.text floatValue]];
+    Fpd.sales = [NSNumber numberWithFloat:[_txtSales.text floatValue]];
+    
+    
+}
 @end
