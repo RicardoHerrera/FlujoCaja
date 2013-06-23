@@ -189,7 +189,7 @@
     for (int i = 0; i < self.processedCashFlow.periodCashFlows.count; i++) {
         PeriodCashFlow *periodCashFlow = self.processedCashFlow.periodCashFlows[i];
         SDataGridColumn* periodColumn = [[SDataGridColumn alloc] initWithTitle:periodCashFlow.dateString];
-        periodColumn.width = @120;
+        periodColumn.width = @150;
         periodColumn.tag = periodCashFlow.periodNumber;
         
         [self.grid addColumn:periodColumn];
@@ -355,7 +355,6 @@
             switch (row) {
                 case ROW_INCOMES_SALES:
                     textCell.textField.text = [NSString stringWithFormat:@"%.2f", firstPeriodCashFlow.incomes.salesIncomes.sales];
-                    NSLog(@"%@",textCell.textField.text);
                     break;
                 case ROW_INCOMES_SALES_IGV:
                     textCell.textField.text = [NSString stringWithFormat:@"%.2f", firstPeriodCashFlow.incomes.salesIGV];
@@ -368,13 +367,13 @@
         case 1:
             switch (row) {
                 case ROW_EXPENSES_RAW_MATERIAL:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", firstPeriodCashFlow.expenses.rawMaterialExpenses.rawMaterials];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", firstPeriodCashFlow.expenses.rawMaterialExpenses.rawMaterials];
                     break;
                 case ROW_EXPENSES_TAX_CREDIT:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", firstPeriodCashFlow.expenses.taxCredit];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", firstPeriodCashFlow.expenses.taxCredit];
                     break;
                 case ROW_EXPENSES_LOANS_OLD:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", firstPeriodCashFlow.expenses.loanExpenses.oldLoans];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", firstPeriodCashFlow.expenses.loanExpenses.oldLoans];
                     break;
                 default:
                     textCell.textField.text = @"";
@@ -430,64 +429,64 @@
         case 1:
             switch (row) {
                 case ROW_EXPENSES_RAW_MATERIAL:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.rawMaterialExpenses.rawMaterials];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", periodCashFlow.expenses.rawMaterialExpenses.rawMaterials];
                     break;
                 case ROW_EXPENSES_RAW_MATERIAL_CASH:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.rawMaterialExpenses.cash];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", periodCashFlow.expenses.rawMaterialExpenses.cash];
                     break;
                 case ROW_EXPENSES_RAW_MATERIAL_CREDIT:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.rawMaterialExpenses.credit];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", periodCashFlow.expenses.rawMaterialExpenses.credit];
                     break;
                 case ROW_EXPENSES_RAW_MATERIAL_TOTAL:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.rawMaterialExpenses.total];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", periodCashFlow.expenses.rawMaterialExpenses.total];
                     break;
                 case ROW_EXPENSES_ASSETS_PURCHASES:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.assetsPurchases];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", periodCashFlow.expenses.assetsPurchases];
                     break;
                 case ROW_EXPENSES_TAX_CREDIT:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.taxCredit];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", periodCashFlow.expenses.taxCredit];
                     break;
                 case ROW_EXPENSES_MANPOWER_FIXED:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.manpowerExpenses.fixed];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", periodCashFlow.expenses.manpowerExpenses.fixed];
                     break;
                 case ROW_EXPENSES_MANPOWER_VARIABLE:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.manpowerExpenses.variable];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", periodCashFlow.expenses.manpowerExpenses.variable];
                     break;
                 case ROW_EXPENSES_MANPOWER_TOTAL:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.manpowerExpenses.total];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", periodCashFlow.expenses.manpowerExpenses.total];
                     break;
                 case ROW_EXPENSES_SALARY_PAYROLL:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.salaryExpenses.payroll];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", periodCashFlow.expenses.salaryExpenses.payroll];
                     break;
                 case ROW_EXPENSES_SALARY_SOCIAL_BENEFITS:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.salaryExpenses.socialBenefits];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", periodCashFlow.expenses.salaryExpenses.socialBenefits];
                     break;
                 case ROW_EXPENSES_SALARY_TOTAL:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.salaryExpenses.total];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", periodCashFlow.expenses.salaryExpenses.total];
                     break;
                 case ROW_EXPENSES_ADMINISTRATIVE_EXPENSES:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.administrativeExpenses];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", periodCashFlow.expenses.administrativeExpenses];
                     break;
                 case ROW_EXPENSES_SALES_COMMISIONS:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.salesCommissions];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", periodCashFlow.expenses.salesCommissions];
                     break;
                 case ROW_EXPENSES_INCOME_TAXES_ADVANCE_PAYMENT:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.incomeTaxesExpenses.advancePayment];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", periodCashFlow.expenses.incomeTaxesExpenses.advancePayment];
                     break;
                 case ROW_EXPENSES_INCOME_TAXES_REGULARIZATION:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.incomeTaxesExpenses.regularization];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", periodCashFlow.expenses.incomeTaxesExpenses.regularization];
                     break;
                 case ROW_EXPENSES_INCOME_TAXES_TOTAL:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.incomeTaxesExpenses.total];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", periodCashFlow.expenses.incomeTaxesExpenses.total];
                     break;
                 case ROW_EXPENSES_DIVIDENDS:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.dividends];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", periodCashFlow.expenses.dividends];
                     break;
                 case ROW_EXPENSES_LOANS_NEW:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.loanExpenses.newLoans];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", periodCashFlow.expenses.loanExpenses.newLoans];
                     break;
                 case ROW_EXPENSES_LOANS_OLD:
-                    textCell.textField.text = [NSString stringWithFormat:@"%.2f", periodCashFlow.expenses.loanExpenses.oldLoans];
+                    textCell.textField.text = [NSString stringWithFormat:@"(%.2f)", periodCashFlow.expenses.loanExpenses.oldLoans];
                     break;
                 default:
                     textCell.textField.text = @"";
