@@ -1,53 +1,72 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="AV8-du-xvv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Gvb-2c-RMM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Main Menu View Controller-->
-        <scene sceneID="XVd-2t-aeK">
+        <!--Navigation Controller-->
+        <scene sceneID="ePa-A6-A8x">
             <objects>
-                <viewController id="AV8-du-xvv" customClass="MainMenuViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0px-7I-dNW">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                <navigationController definesPresentationContext="YES" id="Gvb-2c-RMM" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="78f-UF-VqL">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wjz-Qf-SNp" kind="relationship" relationship="rootViewController" id="Pbr-z9-tfA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X5J-zP-2jo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-423" y="-739"/>
+        </scene>
+        <!--Main Menu View Controller-->
+        <scene sceneID="qob-0p-J9I">
+            <objects>
+                <viewController id="wjz-Qf-SNp" customClass="MainMenuViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XXS-Al-GG4">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RrZ-e3-9eg">
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MEW-M1-cm3">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CashFlow" id="bmD-US-W3b">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrW-p7-xvI">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="PRESS 4 THE LULZ">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <outlet property="dataSource" destination="AV8-du-xvv" id="Hql-8a-CwY"/>
-                                    <outlet property="delegate" destination="AV8-du-xvv" id="3BQ-tf-ndS"/>
+                                    <segue destination="jtK-MN-CMk" kind="push" id="wHc-ah-Drt"/>
                                 </connections>
-                            </collectionView>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RrZ-e3-9eg" firstAttribute="trailing" secondItem="0px-7I-dNW" secondAttribute="trailing" type="default" id="0ml-o0-pbY"/>
-                            <constraint firstItem="RrZ-e3-9eg" firstAttribute="bottom" secondItem="0px-7I-dNW" secondAttribute="bottom" type="default" id="0zh-Fm-OFU"/>
-                            <constraint firstItem="RrZ-e3-9eg" firstAttribute="top" secondItem="0px-7I-dNW" secondAttribute="top" type="default" id="62j-AM-yt4"/>
-                            <constraint firstItem="RrZ-e3-9eg" firstAttribute="leading" secondItem="0px-7I-dNW" secondAttribute="leading" type="default" id="pBl-bk-WEv"/>
+                            <constraint firstAttribute="bottom" secondItem="BrW-p7-xvI" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="JS0-CC-bcO"/>
+                            <constraint firstAttribute="trailing" secondItem="BrW-p7-xvI" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="cey-ut-W7M"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="H71-7a-pje"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z3F-2M-0mU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7mg-Ty-LcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-54" y="-929"/>
+            <point key="canvasLocation" x="485" y="-732"/>
+        </scene>
+        <!--Cash Flow View Controller-->
+        <scene sceneID="Eyt-BT-BUs">
+            <objects>
+                <viewController id="jtK-MN-CMk" customClass="CashFlowViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uhX-Ct-ufR">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pqx-ke-osh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LMj-0R-3Th" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1382" y="-732"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="AdP-Iu-sFW">

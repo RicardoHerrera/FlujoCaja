@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7A0EFA5A177675C700C245B3 /* ProcessedCashFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0EFA59177675C700C245B3 /* ProcessedCashFlow.m */; };
+		7A0EFA5C177680C100C245B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A0EFA5B177680C100C245B3 /* QuartzCore.framework */; };
+		7A0EFA5E177680C700C245B3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A0EFA5D177680C700C245B3 /* Security.framework */; };
 		7A4891A21751D33C00086E39 /* CashFlowService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4891A11751D33C00086E39 /* CashFlowService.m */; };
 		7A4891A51751D36400086E39 /* CashFlowsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4891A41751D36400086E39 /* CashFlowsRepository.m */; };
 		7A4891A81751D37200086E39 /* PeriodsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4891A71751D37200086E39 /* PeriodsRepository.m */; };
@@ -58,6 +60,8 @@
 /* Begin PBXFileReference section */
 		7A0EFA58177675C700C245B3 /* ProcessedCashFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessedCashFlow.h; sourceTree = "<group>"; };
 		7A0EFA59177675C700C245B3 /* ProcessedCashFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessedCashFlow.m; sourceTree = "<group>"; };
+		7A0EFA5B177680C100C245B3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7A0EFA5D177680C700C245B3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		7A4891891751B02C00086E39 /* CashFlowPeriodType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashFlowPeriodType.h; sourceTree = "<group>"; };
 		7A4891A01751D33C00086E39 /* CashFlowService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashFlowService.h; sourceTree = "<group>"; };
 		7A4891A11751D33C00086E39 /* CashFlowService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashFlowService.m; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A0EFA5E177680C700C245B3 /* Security.framework in Frameworks */,
+				7A0EFA5C177680C100C245B3 /* QuartzCore.framework in Frameworks */,
 				7A4BCD0817519E5A00901881 /* UIKit.framework in Frameworks */,
 				7A4BCD0A17519E5A00901881 /* Foundation.framework in Frameworks */,
 				7A4BCD0C17519E5A00901881 /* CoreGraphics.framework in Frameworks */,
@@ -203,6 +209,8 @@
 		7A4BCD0617519E5A00901881 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A0EFA5D177680C700C245B3 /* Security.framework */,
+				7A0EFA5B177680C100C245B3 /* QuartzCore.framework */,
 				7A7739171751A7E3006430A0 /* ShinobiGrids.embeddedframework */,
 				7A4BCD0717519E5A00901881 /* UIKit.framework */,
 				7A4BCD0917519E5A00901881 /* Foundation.framework */,

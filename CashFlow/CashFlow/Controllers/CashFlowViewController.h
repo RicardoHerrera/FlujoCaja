@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CashFlow.h"
 
-@interface CashFlowViewController : UIViewController
+@interface CashFlowViewController : UIViewController<SDataGridDataSource>
 
 @property (strong, nonatomic) CashFlow *cashFlow;
 
