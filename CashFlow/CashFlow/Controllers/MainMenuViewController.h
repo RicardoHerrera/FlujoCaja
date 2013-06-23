@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainMenuViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>{
+@interface MainMenuViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>{
     
     NSArray *arraryData;
     
