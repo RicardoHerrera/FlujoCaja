@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Gvb-2c-RMM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Gvb-2c-RMM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -29,15 +29,16 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="P6H-S9-Noa">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="748" id="JRe-iU-ZrJ"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ubv-rW-Z5o">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <imageView key="backgroundView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="bg_cork.png" id="q2e-8R-WMY">
+                                    <rect key="frame" x="0.0" y="0.0" width="1023" height="704"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </imageView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CashFlow" id="cfZ-w8-gqR">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -70,9 +71,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="P6H-S9-Noa" firstAttribute="leading" secondItem="XXS-Al-GG4" secondAttribute="leading" constant="1" id="0P4-dX-ynH"/>
                             <constraint firstItem="P6H-S9-Noa" firstAttribute="top" secondItem="XXS-Al-GG4" secondAttribute="top" type="default" id="DGs-gf-XDW"/>
                             <constraint firstAttribute="bottom" secondItem="BrW-p7-xvI" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="JS0-CC-bcO"/>
+                            <constraint firstItem="P6H-S9-Noa" firstAttribute="centerX" secondItem="XXS-Al-GG4" secondAttribute="centerX" type="default" id="PoF-IQ-G5j"/>
+                            <constraint firstItem="P6H-S9-Noa" firstAttribute="trailing" secondItem="XXS-Al-GG4" secondAttribute="trailing" type="default" id="cYc-8X-NXH"/>
                             <constraint firstAttribute="trailing" secondItem="BrW-p7-xvI" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="cey-ut-W7M"/>
                             <constraint firstItem="P6H-S9-Noa" firstAttribute="bottom" secondItem="XXS-Al-GG4" secondAttribute="bottom" type="default" id="h8l-yK-mBa"/>
                         </constraints>
@@ -125,6 +127,9 @@
             <point key="canvasLocation" x="2536" y="-732"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg_cork.png" width="400" height="400"/>
+    </resources>
     <classes>
         <class className="CashFlowViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CashFlowViewController.h"/>
