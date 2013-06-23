@@ -16,6 +16,8 @@
 
 @interface PeriodCashFlow ()
 
+@property (strong, nonatomic) NSDateFormatter *dateFormatter;
+
 @property (strong, nonatomic) PeriodIncomes *incomes;
 @property (strong, nonatomic) PeriodExpenses *expenses;
 
@@ -25,6 +27,15 @@
 
 #pragma mark -
 #pragma mark Custom Accessors
+
+- (NSDateFormatter *)dateFormatter
+{
+    if (!_dateFormatter) {
+        self.dateFormatter = [[NSDateFormatter alloc] init];
+    }
+    
+    return _dateFormatter;
+}
 
 - (NSDate *)date
 {
@@ -52,6 +63,18 @@
     }
     
     return date;
+}
+
+- (NSString *)dateString
+{
+    Period *period = self.inputData.period;
+    CashFlow *cashFlow = period.cashFlow;
+    
+    if (cashFlow.periodType.integerValue == CashFlowPeriodTypeMonths) {
+        self.dateFormatter.dateFormat = @"MMM";
+    }
+    
+    return [self.dateFormatter stringFromDate:self.date];
 }
 
 - (NSInteger)periodNumber

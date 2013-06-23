@@ -16,6 +16,7 @@
 
 @property (readonly, nonatomic) NSInteger periodNumber;
 @property (readonly, strong, nonatomic) NSDate *date;
+@property (readonly, strong, nonatomic) NSString *dateString;
 @property (readonly, strong, nonatomic) PeriodIncomes *incomes;
 @property (readonly, strong, nonatomic) PeriodExpenses *expenses;
 
