@@ -52,7 +52,11 @@
 }
 
 - (IBAction)onTapDone:(id)sender {
+    
+    //Verify fields
+    //Save Data
+    
     [self onTapCancel:Nil];
-    //verify fields
+    
 }
 @end
