@@ -10,7 +10,7 @@
 
 @interface MainMenuViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>{
     
-    NSArray *arraryData;
+    NSArray *arrayData;
     
 }
 

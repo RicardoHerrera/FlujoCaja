@@ -31,14 +31,14 @@
 	// Do any additional setup after loading the view.
     CashFlowService *cashService = [[CashFlowService alloc] init];
     
-    arraryData = [[NSArray alloc] init];
-    arraryData = [cashService getCashFlows];
+    arrayData = [[NSArray alloc] init];
+    arrayData = [cashService getCashFlows];
 }
 
 #pragma mark CollectionView DataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    return [arraryData count];
+    return [arrayData count];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
@@ -50,7 +50,7 @@
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CashFlow" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor redColor];
     
-    CashFlow *aCash = [arraryData objectAtIndex:indexPath.row];
+    CashFlow *aCash = [arrayData objectAtIndex:indexPath.row];
     
     UILabel *lblName = [[UILabel alloc]
                         initWithFrame:CGRectMake(0, 0, cell.frame.size.width, cell.frame.size.height)];
