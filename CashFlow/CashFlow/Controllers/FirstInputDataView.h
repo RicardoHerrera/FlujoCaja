@@ -22,4 +22,7 @@
 - (IBAction)onTapCancel:(id)sender;
 - (IBAction)onTapDone:(id)sender;
 
+- (IBAction)onTapHelpMessage:(id)sender;
+
+
 @end

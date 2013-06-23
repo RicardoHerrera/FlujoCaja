@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FirstPeriodInputDataMessages</key>
+	<array>
+		<string>Balance al final del periodo anterior.</string>
+		<string>Impuesto general a la Venta.</string>
+		<string>Total en préstamos pasados.</string>
+		<string>Costo total de la materia prima del período anterior.</string>
+		<string>Total de ventas del período anterior.</string>
+	</array>
+</dict>
+</plist>
