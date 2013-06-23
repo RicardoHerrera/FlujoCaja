@@ -64,6 +64,7 @@
     
     [cell addSubview:lblName];
     
+    [self addGradient:cell];
     
     return cell;
 }
@@ -81,7 +82,7 @@
 // 1
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    CGSize retval = CGSizeMake(120, 120);
+    CGSize retval = CGSizeMake(100, 100);
     
     return retval;
 }
@@ -90,6 +91,32 @@
 - (UIEdgeInsets)collectionView:
 (UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(50, 20, 50, 20);
+}
+
+#pragma mark view style
+- (void) addGradient:(UIView *) aView {
+    
+    // Add Border
+    CALayer *layer = aView.layer;
+    
+    // Add Shine
+    CAGradientLayer *shineLayer = [CAGradientLayer layer];
+    shineLayer.frame = layer.bounds;
+    shineLayer.colors = [NSArray arrayWithObjects:
+                         (id)[UIColor colorWithWhite:1.0f alpha:0.4f].CGColor,
+                         (id)[UIColor colorWithWhite:1.0f alpha:0.2f].CGColor,
+                         (id)[UIColor colorWithWhite:0.75f alpha:0.2f].CGColor,
+                         (id)[UIColor colorWithWhite:0.4f alpha:0.2f].CGColor,
+                         (id)[UIColor colorWithWhite:1.0f alpha:0.4f].CGColor,
+                         nil];
+    shineLayer.locations = [NSArray arrayWithObjects:
+                            [NSNumber numberWithFloat:0.0f],
+                            [NSNumber numberWithFloat:0.5f],
+                            [NSNumber numberWithFloat:0.5f],
+                            [NSNumber numberWithFloat:0.8f],
+                            [NSNumber numberWithFloat:1.0f],
+                            nil];
+    [layer addSublayer:shineLayer];
 }
 
 - (void)didReceiveMemoryWarning

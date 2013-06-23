@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface MainMenuViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>{
     
     NSArray *arrayData;
     
 }
+
+- (void) addGradient:(UIView *) aView;
 
 @end

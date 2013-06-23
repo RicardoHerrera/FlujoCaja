@@ -400,6 +400,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="WDQ-PO-IU1"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rje-KL-6Aa">
                                 <constraints>
@@ -425,6 +428,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="Wc8-cl-4hF"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0zJ-IQ-2rF">
                                 <constraints>
@@ -451,7 +457,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="otB-tO-CIb"/>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="rd9-Kh-mgM"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PvV-HE-nRi">
@@ -478,6 +484,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="Y7f-cq-813"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ab8-o3-tBS">
                                 <constraints>
@@ -503,6 +512,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="wIm-4k-19W"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wfK-k3-9bU">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -525,6 +537,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="gcV-3j-sTm"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vYk-cT-XSz">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -547,6 +562,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="vzY-gd-pH4"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LnP-zh-Um3">
                                 <constraints>
@@ -597,6 +615,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="EJY-yL-p25"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ed-hY-24U">
                                 <constraints>
@@ -638,6 +659,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="txR-zi-YFl"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZNQ-Gi-Vqg">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -661,7 +685,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="nnd-zN-Wzu"/>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="aNQ-Yw-6rt"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LBi-yQ-en8">
@@ -686,7 +710,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="eLW-z6-ga8"/>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="R1q-QJ-F2h"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I21-ev-V4B">
@@ -710,6 +734,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="ZT2-W0-UQT"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fgQ-Gd-ZzE">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -734,7 +761,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="UYZ-Jb-0lb"/>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="g4P-Y4-o8c"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lhy-cO-j6S">
@@ -761,6 +788,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="sUT-2F-M64"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bup-eh-UuR">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -783,6 +813,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="qaJ-un-L2p"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BR2-20-Dym">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -802,6 +835,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="sQT-yb-z0C"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aKY-Qg-swg">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -825,7 +861,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="3IY-hO-1OC"/>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="IBX-g2-4on"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7C4-Ss-AN1">
@@ -846,6 +882,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="cob-wD-8cI"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BUt-vu-dXK">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -868,6 +907,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="3Ma-QK-YlB"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vP5-0a-p4b">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -887,6 +929,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="S2d-uE-KhM"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bCC-OD-L68">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -909,6 +954,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="XeZ-7h-iuA"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ksX-aT-sRH">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -931,6 +979,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="CKZ-So-fCp"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xxc-oY-MTs">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -950,6 +1001,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="Xey-6C-yD3"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zMY-UW-NPw">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -969,6 +1023,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="5CW-u4-GE9"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ewJ-BS-bGe">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -991,6 +1048,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onTapHelpMessage:" destination="Tdf-q8-Stp" eventType="touchUpInside" id="bTI-yF-Vqf"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ht5-Ip-ll9">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1308,77 +1368,6 @@
     <resources>
         <image name="bg_cork.png" width="400" height="400"/>
     </resources>
-    <classes>
-        <class className="CashFlowViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CashFlowViewController.h"/>
-        </class>
-        <class className="FirstInputDataView" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstInputDataView.h"/>
-            <relationships>
-                <relationship kind="action" name="onTapCancel:"/>
-                <relationship kind="action" name="onTapDone:"/>
-                <relationship kind="action" name="onTapHelpMessage:"/>
-                <relationship kind="outlet" name="txtFinalBalance" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtIgv" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtOldLoan" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtRawMaterial" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtSales" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="InputDataView" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InputDataView.h"/>
-            <relationships>
-                <relationship kind="action" name="onTapCancel:"/>
-                <relationship kind="action" name="onTapDone:"/>
-                <relationship kind="action" name="onTapHelpMessage:"/>
-                <relationship kind="outlet" name="administrativeExpenses" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="assetsPurchases" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtBadDebt" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtBaseRawMaterial" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtCashDebtCollections" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtCreditSalesPenalty" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtDebtCollections" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtDividends" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtFixedAssetsExpense" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtFixedManPower" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtFreights" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtIgv" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtIncomeTaxRegularization" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtIncomeTaxes" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtLoanIncomes" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtNewLoanExpenses" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="txtOldLoanExpenses" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtPayroll" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="txtRawMaterials" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtRawMaterialsCashPayment" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtRawMaterialsPayment" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtSales" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtSalesExpenses" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtSemestralReward" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtSocialBenefit" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtTea" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtVariableManpower" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MainMenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

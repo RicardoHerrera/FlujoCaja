@@ -44,6 +44,7 @@
     
     NSArray *messages = [root objectForKey:@"PeriodInputDataMessages"];
     
+    NSLog(@"message: %@", [messages objectAtIndex:[sender tag]]);
     [[[AlertViewsFactory sharedFactory] createAlertViewWithTitle:@"Cash Flow" andMessage:[messages objectAtIndex:[sender tag]]] show];
 }
 
