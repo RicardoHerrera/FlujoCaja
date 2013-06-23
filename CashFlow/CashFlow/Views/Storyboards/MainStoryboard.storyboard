@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Gvb-2c-RMM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Gvb-2c-RMM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="ePa-A6-A8x">
             <objects>
                 <navigationController definesPresentationContext="YES" id="Gvb-2c-RMM" sceneMemberID="viewController">
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="78f-UF-VqL">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -17,14 +18,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5J-zP-2jo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-423" y="-739"/>
+            <point key="canvasLocation" x="-1367" y="-732"/>
         </scene>
         <!--Main Menu View Controller-->
         <scene sceneID="qob-0p-J9I">
             <objects>
                 <viewController id="wjz-Qf-SNp" customClass="MainMenuViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XXS-Al-GG4">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="P6H-S9-Noa">
@@ -75,21 +76,23 @@
                             <constraint firstAttribute="trailing" secondItem="BrW-p7-xvI" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="cey-ut-W7M"/>
                             <constraint firstItem="P6H-S9-Noa" firstAttribute="bottom" secondItem="XXS-Al-GG4" secondAttribute="bottom" type="default" id="h8l-yK-mBa"/>
                         </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="H71-7a-pje"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7mg-Ty-LcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="485" y="-732"/>
+            <point key="canvasLocation" x="-27" y="-732"/>
         </scene>
         <!--Cash Flow View Controller-->
         <scene sceneID="Eyt-BT-BUs">
             <objects>
                 <viewController id="jtK-MN-CMk" customClass="CashFlowViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uhX-Ct-ufR">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="pqx-ke-osh"/>
                 </viewController>
