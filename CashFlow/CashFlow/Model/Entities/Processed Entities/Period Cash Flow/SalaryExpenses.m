@@ -43,7 +43,7 @@
     double payroll = (inputData.payroll)? inputData.payroll.doubleValue : 0;
     NSInteger month = (periodCashFlow.date)? periodCashFlow.date.month : 0;
     
-    return (month == 7 || month == 12)? payroll * 2 : payroll;
+    return ((month == 7 || month == 12)? payroll * 2 : payroll) * -1;
 }
 
 - (double)socialBenefits

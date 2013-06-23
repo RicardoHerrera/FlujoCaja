@@ -56,6 +56,7 @@
         for (PeriodCashFlow *periodCashFlow in self.periodCashFlows) {
             
             PeriodPlannedCashFlow *periodPlannedCashFlow = [[PeriodPlannedCashFlow alloc] init];
+            periodPlannedCashFlow.cashFlow = periodCashFlow;
             periodPlannedCashFlow.lastPlannedCashFlow = lastPlannedCashFlow;
             
             lastPlannedCashFlow = periodPlannedCashFlow;

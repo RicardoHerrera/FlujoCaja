@@ -46,7 +46,7 @@
     
     double incomeTax = (inputData.incomeTax)? inputData.incomeTax.doubleValue : 0;
     
-    return salesIncomes.sales * incomeTax;
+    return salesIncomes.sales * incomeTax * -1;
 }
 
 - (double)regularization
@@ -62,7 +62,7 @@
     double regularization = (inputData.incomeTaxRegularization)? inputData.incomeTaxRegularization.doubleValue : 0;
     NSInteger month = (periodCashFlow.date)? periodCashFlow.date.month : 0; 
     
-    return (month == 3)? regularization : 0;
+    return (month == 3)? regularization * -1 : 0;
 }
 
 - (double)total

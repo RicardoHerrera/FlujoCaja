@@ -147,7 +147,7 @@
     PeriodExpenses *expenses = lastPeriodCashFlow.expenses;
     PeriodIncomes *incomes = lastPeriodCashFlow.incomes;
     
-    return (incomes.salesIGV - expenses.taxCredit) * -1;
+    return (incomes.salesIGV + expenses.taxCredit) * -1;
 }
 
 - (double)total

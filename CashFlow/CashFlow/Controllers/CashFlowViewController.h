@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CashFlow.h"
+#import "GridOrientationSupportViewController.h"
 
-@interface CashFlowViewController : UIViewController<SDataGridDataSource>
+@interface CashFlowViewController : GridOrientationSupportViewController
 
 @property (strong, nonatomic) CashFlow *cashFlow;
 

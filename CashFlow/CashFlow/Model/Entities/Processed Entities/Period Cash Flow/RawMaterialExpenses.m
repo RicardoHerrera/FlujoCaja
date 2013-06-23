@@ -43,7 +43,7 @@
         Period *period = inputData.period;
         CashFlow *cashFlow = period.cashFlow;
         FirstPeriodInputData *firstPeriodInputData = cashFlow.firstPeriodInputData;
-        return (firstPeriodInputData.rawMaterials)? firstPeriodInputData.rawMaterials.doubleValue : 0.0;
+        return (firstPeriodInputData.rawMaterials)? firstPeriodInputData.rawMaterials.doubleValue * -1 : 0.0;
     }
     
     PeriodIncomes *incomes = periodCashFlow.incomes;
@@ -52,7 +52,7 @@
     double baseRawMaterials = (inputData.baseRawMaterials)? inputData.baseRawMaterials.doubleValue : 0;
     double rawMaterialsPercentage = (inputData.rawMaterials)? inputData.rawMaterials.doubleValue : 0;
     
-    return baseRawMaterials + salesIncomes.sales * rawMaterialsPercentage;
+    return (baseRawMaterials + salesIncomes.sales * rawMaterialsPercentage) * -1;
 }
 
 - (double)cash
@@ -81,7 +81,7 @@
     
     double rawMaterialsPayment = (inputData.rawMaterialsPayment)? inputData.rawMaterialsPayment.doubleValue : 0;
     
-    return lastPeriodCashFlow.expenses.rawMaterialExpenses.rawMaterials * rawMaterialsPayment;
+    return (lastPeriodCashFlow.expenses.rawMaterialExpenses.rawMaterials * rawMaterialsPayment);
 }
 
 - (double)total
