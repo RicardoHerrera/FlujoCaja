@@ -41,12 +41,12 @@
         Period *period = inputData.period;
         CashFlow *cashFlow = period.cashFlow;
         FirstPeriodInputData *firstPeriodInputData = cashFlow.firstPeriodInputData;
-        return (firstPeriodInputData.oldLoans)? firstPeriodInputData.oldLoans.doubleValue : 0.0;
+        return (firstPeriodInputData.oldLoans)? firstPeriodInputData.oldLoans.doubleValue * -1 : 0.0;
     }
     
     double oldLoans = (inputData.oldLoanExpenses)? inputData.oldLoanExpenses.doubleValue : 0;
     
-    return oldLoans;
+    return oldLoans * -1;
 }
 
 - (double)newLoans
@@ -61,7 +61,7 @@
     
     double newLoans = (inputData.newLoanExpenses)? inputData.newLoanExpenses.doubleValue : 0;
     
-    return newLoans;
+    return newLoans * -1;
 }
 
 @end

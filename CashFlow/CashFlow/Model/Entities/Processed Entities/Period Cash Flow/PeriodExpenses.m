@@ -93,7 +93,7 @@
     
     double assetsPurchases = (inputData.assetsPurchases)? inputData.assetsPurchases.doubleValue : 0;
     
-    return assetsPurchases;
+    return assetsPurchases * -1;
 }
 
 - (double)taxCredit
@@ -108,12 +108,12 @@
         CashFlow *cashFlow = period.cashFlow;
         FirstPeriodInputData *firstPeriodInputData = cashFlow.firstPeriodInputData;
         igv = (firstPeriodInputData.igv)? firstPeriodInputData.igv.doubleValue : 0.0;
+        return ((self.rawMaterialExpenses.rawMaterials) / (1 + igv)) * igv;
     }
     else {
         igv = (inputData.igv)? inputData.igv.doubleValue : 0;
+        return ((self.rawMaterialExpenses.rawMaterials + self.assetsPurchases) / (1 + igv)) * igv;
     }
-    
-    return ((self.rawMaterialExpenses.rawMaterials + self.assetsPurchases) / (1 + igv)) * igv;
 }
 
 - (double)administrativeExpenses
@@ -127,7 +127,7 @@
     
     double administrativeExpenses = (inputData.administrativeExpenses)? inputData.administrativeExpenses.doubleValue : 0;
     
-    return administrativeExpenses;
+    return administrativeExpenses * -1;
 }
 
 - (double)salesCommissions
@@ -143,7 +143,7 @@
     
     double salesExpenses = (inputData.salesExpenses)? inputData.salesExpenses.doubleValue : 0;
     
-    return salesExpenses * salesIncomes.sales;
+    return salesExpenses * salesIncomes.sales * -1;
 }
 
 - (double)dividends
@@ -157,7 +157,7 @@
     
     double dividends = (inputData.dividends)? inputData.dividends.doubleValue : 0;
     
-    return dividends;
+    return dividends * -1;
 }
 
 

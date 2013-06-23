@@ -32,6 +32,7 @@
 {
     if (!_dateFormatter) {
         self.dateFormatter = [[NSDateFormatter alloc] init];
+        self.dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"es_ES"];
     }
     
     return _dateFormatter;
@@ -75,7 +76,7 @@
     CashFlow *cashFlow = period.cashFlow;
     
     if (cashFlow.periodType.integerValue == CashFlowPeriodTypeMonths) {
-        self.dateFormatter.dateFormat = @"MMM";
+        self.dateFormatter.dateFormat = @"MMMM";
     }
     
     return [self.dateFormatter stringFromDate:self.date];

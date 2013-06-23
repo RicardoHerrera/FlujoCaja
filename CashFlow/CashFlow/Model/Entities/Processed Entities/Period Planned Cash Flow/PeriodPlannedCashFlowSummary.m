@@ -45,7 +45,7 @@
     PeriodPlannedExpenses *expenses = periodPlannedCashFlow.expenses;
     PeriodPlannedIncomes *incomes = periodPlannedCashFlow.incomes;
     
-    return incomes.total - expenses.total;
+    return incomes.total + expenses.total;
 }
 
 - (double)startBalance

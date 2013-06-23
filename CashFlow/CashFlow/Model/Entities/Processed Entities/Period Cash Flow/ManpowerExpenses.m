@@ -43,7 +43,7 @@
     
     double fixedManpower = (inputData.fixedManpower)? inputData.fixedManpower.doubleValue : 0;
     
-    return fixedManpower;
+    return fixedManpower * -1;
 }
 
 - (double)variable
@@ -60,7 +60,7 @@
     
     double variableManpowerPercentage = (inputData.variableManpower)? inputData.variableManpower.doubleValue : 0;
     
-    return variableManpowerPercentage * salesIncomes.sales;
+    return variableManpowerPercentage * salesIncomes.sales * -1;
 }
 
 - (double)total
