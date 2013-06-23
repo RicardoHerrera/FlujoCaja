@@ -20,12 +20,12 @@
 #pragma mark -
 #pragma mark Class Methods
 
-+ (GenericService *)sharedService
++ (CashFlowService *)sharedService
 {
-    static GenericService *_sharedGenericService = nil;
+    static CashFlowService *_sharedGenericService = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedGenericService = [[GenericService alloc] init];
+        _sharedGenericService = [[CashFlowService alloc] init];
     });
     return _sharedGenericService;
 }

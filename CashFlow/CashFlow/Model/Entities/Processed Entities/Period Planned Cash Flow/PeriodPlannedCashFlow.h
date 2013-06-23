@@ -20,6 +20,7 @@
 @property (strong, nonatomic) PeriodPlannedIncomes *incomes;
 @property (strong, nonatomic) PeriodPlannedExpenses *expenses;
 @property (strong, nonatomic) PeriodPlannedCashFlowSummary *cashFlowSummary;
-@property (strong, nonatomic) PeriodPlannedCashFlowSummary *lastCashFlowSummary;
+
+@property (strong, nonatomic) PeriodPlannedCashFlow *lastPlannedCashFlow;
 
 @end

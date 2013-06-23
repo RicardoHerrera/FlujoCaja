@@ -14,6 +14,13 @@
 #import "CashFlow.h"
 #import "CashFlowPeriodType.h"
 
+@interface PeriodCashFlow ()
+
+@property (strong, nonatomic) PeriodIncomes *incomes;
+@property (strong, nonatomic) PeriodExpenses *expenses;
+
+@end
+
 @implementation PeriodCashFlow
 
 #pragma mark -

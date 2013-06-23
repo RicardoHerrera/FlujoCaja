@@ -14,6 +14,10 @@
 #import "FirstPeriodInputData.h"
 #import "Period.h"
 
+@interface PeriodIncomes ()
+
+@end
+
 @implementation PeriodIncomes
 
 #pragma mark -
@@ -23,6 +27,7 @@
 {
     if (!_salesIncomes) {
         self.salesIncomes = [[SalesIncomes alloc] init];
+        self.salesIncomes.periodIncomes = self;
     }
     
     return _salesIncomes;

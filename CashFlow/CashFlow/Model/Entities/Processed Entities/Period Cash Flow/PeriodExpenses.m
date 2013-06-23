@@ -20,6 +20,10 @@
 #import "CashFlow.h"
 #import "Period.h"
 
+@interface PeriodExpenses ()
+
+@end
+
 @implementation PeriodExpenses
 
 #pragma mark -
