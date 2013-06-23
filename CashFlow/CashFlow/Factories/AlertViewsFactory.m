@@ -28,8 +28,8 @@
 
 - (UIAlertView *)createAlertViewWithTitle:(NSString *)title andMessage:(NSString *)message
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-                                                              message:title
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                              message:message
                                                              delegate:nil
                                               cancelButtonTitle:NSLocalizedString(@"OK", nil)
                                                     otherButtonTitles:nil];

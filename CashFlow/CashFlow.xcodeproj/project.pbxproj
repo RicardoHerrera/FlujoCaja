@@ -58,6 +58,11 @@
 		7A9E0D7D1765516100E834D1 /* Period.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9E0D7C1765516100E834D1 /* Period.m */; };
 		7A9E0D9317655C1400E834D1 /* FirstPeriodInputData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9E0D9217655C1400E834D1 /* FirstPeriodInputData.m */; };
 		7A9E0D961765930D00E834D1 /* FirstPeriodInputDataRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9E0D951765930D00E834D1 /* FirstPeriodInputDataRepository.m */; };
+		A112FF2C17773AD4003A33EE /* bg_cork.png in Resources */ = {isa = PBXBuildFile; fileRef = A112FF2A17773AD4003A33EE /* bg_cork.png */; };
+		A112FF2D17773AD4003A33EE /* bg_cork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A112FF2B17773AD4003A33EE /* bg_cork@2x.png */; };
+		A112FF3217775346003A33EE /* FirstInputDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = A112FF3117775346003A33EE /* FirstInputDataView.m */; };
+		A112FF351777539C003A33EE /* InputDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = A112FF341777539C003A33EE /* InputDataView.m */; };
+		A112FF3817776459003A33EE /* Messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = A112FF3717776459003A33EE /* Messages.plist */; };
 		A1EA03181753CEAC0030B611 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EA03171753CEAC0030B611 /* MainMenuViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +157,13 @@
 		7A9E0D9217655C1400E834D1 /* FirstPeriodInputData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstPeriodInputData.m; sourceTree = "<group>"; };
 		7A9E0D941765930D00E834D1 /* FirstPeriodInputDataRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstPeriodInputDataRepository.h; sourceTree = "<group>"; };
 		7A9E0D951765930D00E834D1 /* FirstPeriodInputDataRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstPeriodInputDataRepository.m; sourceTree = "<group>"; };
+		A112FF2A17773AD4003A33EE /* bg_cork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_cork.png; sourceTree = "<group>"; };
+		A112FF2B17773AD4003A33EE /* bg_cork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cork@2x.png"; sourceTree = "<group>"; };
+		A112FF3017775346003A33EE /* FirstInputDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstInputDataView.h; sourceTree = "<group>"; };
+		A112FF3117775346003A33EE /* FirstInputDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstInputDataView.m; sourceTree = "<group>"; };
+		A112FF331777539C003A33EE /* InputDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputDataView.h; sourceTree = "<group>"; };
+		A112FF341777539C003A33EE /* InputDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputDataView.m; sourceTree = "<group>"; };
+		A112FF3717776459003A33EE /* Messages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Messages.plist; sourceTree = "<group>"; };
 		A1EA03161753CEAC0030B611 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		A1EA03171753CEAC0030B611 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,8 +173,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A0EFA5E177680C700C245B3 /* Security.framework in Frameworks */,
 				7A0EFA5C177680C100C245B3 /* QuartzCore.framework in Frameworks */,
+				7A0EFA5E177680C700C245B3 /* Security.framework in Frameworks */,
 				7A4BCD0817519E5A00901881 /* UIKit.framework in Frameworks */,
 				7A4BCD0A17519E5A00901881 /* Foundation.framework in Frameworks */,
 				7A4BCD0C17519E5A00901881 /* CoreGraphics.framework in Frameworks */,
@@ -349,6 +361,7 @@
 			children = (
 				7A4BCD441751A2AF00901881 /* Constants */,
 				A1EA03201753D4CB0030B611 /* Images */,
+				A112FF36177763FF003A33EE /* Property lists */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -472,9 +485,29 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		A112FF2F17775307003A33EE /* Input Views */ = {
+			isa = PBXGroup;
+			children = (
+				A112FF3017775346003A33EE /* FirstInputDataView.h */,
+				A112FF3117775346003A33EE /* FirstInputDataView.m */,
+				A112FF331777539C003A33EE /* InputDataView.h */,
+				A112FF341777539C003A33EE /* InputDataView.m */,
+			);
+			name = "Input Views";
+			sourceTree = "<group>";
+		};
+		A112FF36177763FF003A33EE /* Property lists */ = {
+			isa = PBXGroup;
+			children = (
+				A112FF3717776459003A33EE /* Messages.plist */,
+			);
+			path = "Property lists";
+			sourceTree = "<group>";
+		};
 		A1EA03151753CEAC0030B611 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A112FF2F17775307003A33EE /* Input Views */,
 				A1EA03161753CEAC0030B611 /* MainMenuViewController.h */,
 				A1EA03171753CEAC0030B611 /* MainMenuViewController.m */,
 				7A6D6F201763E31600F45108 /* CashFlowViewController.h */,
@@ -511,6 +544,8 @@
 		A1EA03201753D4CB0030B611 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A112FF2A17773AD4003A33EE /* bg_cork.png */,
+				A112FF2B17773AD4003A33EE /* bg_cork@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -604,6 +639,9 @@
 				7A7739231751A7E3006430A0 /* 44_sort_down@2x.png in Resources */,
 				7A7739241751A7E3006430A0 /* 44_sort_up.png in Resources */,
 				7A7739251751A7E3006430A0 /* 44_sort_up@2x.png in Resources */,
+				A112FF2C17773AD4003A33EE /* bg_cork.png in Resources */,
+				A112FF2D17773AD4003A33EE /* bg_cork@2x.png in Resources */,
+				A112FF3817776459003A33EE /* Messages.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
