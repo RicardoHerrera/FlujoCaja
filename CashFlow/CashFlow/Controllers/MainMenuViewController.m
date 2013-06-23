@@ -57,7 +57,7 @@
     lblName.text = aCash.name;
     lblName.font = [UIFont fontWithName:@"System" size:20.0f];
     [lblName setTextAlignment:NSTextAlignmentCenter];
-    [lblName setCenter:CGPointMake(60, 40)];
+    [lblName setCenter:CGPointMake(50, 40)];
     [lblName setNumberOfLines:2];
     [lblName setLineBreakMode:NSLineBreakByWordWrapping];
     [lblName setBackgroundColor:[UIColor clearColor]];
