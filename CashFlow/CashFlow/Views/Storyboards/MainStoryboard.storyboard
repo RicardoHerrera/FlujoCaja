@@ -152,6 +152,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eqm-MX-KAK" id="3xe-RA-A04"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="I.G.V.:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUR-jD-o4X">
                                 <constraints>
@@ -174,6 +177,9 @@
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o95-kp-YS7">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eqm-MX-KAK" id="wBA-xk-GCK"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Préstamos antiguos:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yce-pv-jd5">
                                 <constraints>
@@ -196,6 +202,9 @@
                             <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GTd-uh-ofy">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eqm-MX-KAK" id="oek-Sf-hxc"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Materia Prima:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zw2-ZZ-8tE">
                                 <constraints>
@@ -218,6 +227,9 @@
                             <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9cU-Rd-OGh">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eqm-MX-KAK" id="jfO-pv-oCx"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ventas:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNv-V7-5iM">
                                 <constraints>
@@ -240,9 +252,12 @@
                             <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aac-Et-kOe">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eqm-MX-KAK" id="Duu-P6-lkb"/>
+                                </connections>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.31763243880000003" green="0.78945658110000005" blue="0.94769021740000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="GTd-uh-ofy" firstAttribute="leading" secondItem="o95-kp-YS7" secondAttribute="leading" type="default" id="2cA-h3-MbV"/>
                             <constraint firstItem="32L-aS-vcg" firstAttribute="leading" secondItem="ehT-bY-eWw" secondAttribute="leading" constant="42" id="3em-v4-bdX"/>
@@ -285,6 +300,13 @@
                         </constraints>
                     </view>
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="txtFinalBalance" destination="YA7-ml-oe9" id="3hw-kH-OQc"/>
+                        <outlet property="txtIgv" destination="o95-kp-YS7" id="DcU-Wr-Hnq"/>
+                        <outlet property="txtOldLoan" destination="GTd-uh-ofy" id="T2i-H5-ZKP"/>
+                        <outlet property="txtRawMaterial" destination="9cU-Rd-OGh" id="UOr-qU-BOu"/>
+                        <outlet property="txtSales" destination="Aac-Et-kOe" id="IqH-OS-FPY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wtb-kG-HkJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1203,6 +1225,13 @@
         </class>
         <class className="FirstInputDataView" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstInputDataView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="txtFinalBalance" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtIgv" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtOldLoan" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtRawMaterial" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtSales" candidateClass="UITextField"/>
+            </relationships>
         </class>
         <class className="InputDataView" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/InputDataView.h"/>
@@ -1221,9 +1250,6 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

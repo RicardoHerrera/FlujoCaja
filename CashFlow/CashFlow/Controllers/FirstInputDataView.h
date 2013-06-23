@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstInputDataView : UIViewController
+@interface FirstInputDataView : UIViewController{
+    
+    
+}
+
+@property (strong, nonatomic) IBOutlet UITextField *txtFinalBalance;
+@property (strong, nonatomic) IBOutlet UITextField *txtIgv;
+@property (strong, nonatomic) IBOutlet UITextField *txtOldLoan;
+@property (strong, nonatomic) IBOutlet UITextField *txtRawMaterial;
+@property (strong, nonatomic) IBOutlet UITextField *txtSales;
+
 
 @end
