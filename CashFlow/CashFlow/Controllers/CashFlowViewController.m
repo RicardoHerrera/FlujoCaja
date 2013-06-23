@@ -97,8 +97,7 @@ typedef enum {
     for (int i = 0; i < self.processedCashFlow.periodCashFlows.count; i++) {
         PeriodCashFlow *periodCashFlow = self.processedCashFlow.periodCashFlows[i];
         SDataGridColumn* periodColumn = [[SDataGridColumn alloc] initWithTitle:periodCashFlow.dateString];
-        
-        periodColumn.width = @150;
+        periodColumn.width = @200;
         periodColumn.tag = periodCashFlow.periodNumber;
         
         [self.grid addColumn:periodColumn];
