@@ -15,8 +15,8 @@
 
 @interface ProcessedCashFlow()
 
-@property (strong, nonatomic) NSArray *periodCashFlows;
-@property (strong, nonatomic) NSArray *periodPlannedCashFlows;
+@property (strong, nonatomic) NSMutableArray *periodCashFlows;
+@property (strong, nonatomic) NSMutableArray *periodPlannedCashFlows;
 
 @end
 
@@ -48,7 +48,7 @@
             [periodCashFlows addObject:periodCashFlow];
         }
         
-        self.periodCashFlows = [NSArray arrayWithArray:periodCashFlows];
+        self.periodCashFlows = [NSMutableArray arrayWithArray:periodCashFlows];
         
         NSMutableArray *periodPlannedCashFlows = [NSMutableArray array];
         
@@ -64,7 +64,7 @@
             [periodPlannedCashFlows addObject:periodPlannedCashFlow];
         }
         
-        self.periodPlannedCashFlows = [NSArray arrayWithArray:periodPlannedCashFlows];
+        self.periodPlannedCashFlows = [NSMutableArray arrayWithArray:periodPlannedCashFlows];
     }
     
     return self;
@@ -73,19 +73,19 @@
 #pragma mark -
 #pragma mark Custom Accessors
 
-- (NSArray *)periodCashFlows
+- (NSMutableArray *)periodCashFlows
 {
     if (!_periodCashFlows) {
-        self.periodCashFlows = [NSArray array];
+        self.periodCashFlows = [NSMutableArray array];
     }
     
     return _periodCashFlows;
 }
 
-- (NSArray *)periodPlannedCashFlows
+- (NSMutableArray *)periodPlannedCashFlows
 {
     if (!_periodPlannedCashFlows) {
-        self.periodPlannedCashFlows = [NSArray array];
+        self.periodPlannedCashFlows = [NSMutableArray array];
     }
     
     return _periodPlannedCashFlows;

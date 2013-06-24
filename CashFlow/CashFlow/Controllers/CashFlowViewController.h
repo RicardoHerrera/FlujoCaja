@@ -23,4 +23,6 @@
 - (void)flowWasSelected:(NSNumber *)selectedIndex element:(id)element;
 - (void)actionPickerCancelled:(id)sender;
 
+- (void)updateArray:(NSNotification *)notification;
+
 @end

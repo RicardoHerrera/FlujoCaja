@@ -18,6 +18,7 @@
 @implementation InputDataView
 
 @synthesize period;
+@synthesize isLastPeriod;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -148,5 +149,50 @@
     
     [self onTapCancel:Nil];
     
+}
+
+- (IBAction)onTapDeleteData:(id)sender {
+    
+    if (isLastPeriod) {
+        //delete the period
+        PeriodInputDataRepository *prdInputData = [[PeriodInputDataRepository alloc] init];
+        [prdInputData deletePeriodInputData:period.inputData];
+        
+        [[GenericService sharedService] commitChanges];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"updateArrayFlows" object:nil];
+    }else{
+        period.inputData.badDebts = [NSNumber numberWithFloat:0.0f];
+        period.inputData.baseRawMaterials = [NSNumber numberWithFloat:0.0f];
+        period.inputData.cashDebtCollections = [NSNumber numberWithFloat:0.0f];
+        period.inputData.creditSalesPenalty = [NSNumber numberWithFloat:0.0f];
+        period.inputData.debtCollections = [NSNumber numberWithFloat:0.0f];
+        period.inputData.dividends = [NSNumber numberWithFloat:0.0f];
+        period.inputData.fixedAssetsExpense = [NSNumber numberWithFloat:0.0f];
+        period.inputData.fixedManpower = [NSNumber numberWithFloat:0.0f];
+        period.inputData.freights = [NSNumber numberWithFloat:0.0f];
+        period.inputData.badDebts = [NSNumber numberWithFloat:0.0f];
+        period.inputData.incomeTax = [NSNumber numberWithFloat:0.0f];
+        period.inputData.incomeTaxRegularization = [NSNumber numberWithFloat:0.0f];
+        period.inputData.loanIncomes = [NSNumber numberWithFloat:0.0f];
+        period.inputData.newLoanExpenses = [NSNumber numberWithFloat:0.0f];
+        period.inputData.oldLoanExpenses = [NSNumber numberWithFloat:0.0f];
+        period.inputData.payroll = [NSNumber numberWithFloat:0.0f];
+        period.inputData.rawMaterials = [NSNumber numberWithFloat:0.0f];
+        period.inputData.rawMaterialsCashPayment = [NSNumber numberWithFloat:0.0f];
+        period.inputData.rawMaterialsPayment = [NSNumber numberWithFloat:0.0f];
+        period.inputData.sales = [NSNumber numberWithFloat:0.0f];
+        period.inputData.salesExpenses = [NSNumber numberWithFloat:0.0f];
+        period.inputData.semestralRewards = [NSNumber numberWithFloat:0.0f];
+        period.inputData.socialBenefits = [NSNumber numberWithFloat:0.0f];
+        period.inputData.tea = [NSNumber numberWithFloat:0.0f];
+        period.inputData.variableManpower = [NSNumber numberWithFloat:0.0f];
+        period.inputData.assetsPurchases = [NSNumber numberWithFloat:0.0f];
+        period.inputData.administrativeExpenses = [NSNumber numberWithFloat:0.0f];
+        
+        [[GenericService sharedService] commitChanges];
+    }
+    
+    [self onTapCancel:nil];
 }
 @end

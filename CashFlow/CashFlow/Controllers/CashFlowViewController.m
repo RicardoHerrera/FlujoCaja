@@ -37,6 +37,12 @@ typedef enum {
 
 @synthesize selectedIndex = _selectedIndex;
 
+#pragma mark notification methods
+- (void)updateArray:(NSNotification *)notification{
+    [self.processedCashFlow.periodCashFlows removeLastObject];
+    [self.grid reload];
+}
+
 #pragma mark -
 #pragma mark View Lifecycle
 
@@ -63,6 +69,7 @@ typedef enum {
     [self setupGrid];
     
     [[NSNotificationCenter defaultCenter] addObserver:self.grid selector:@selector(reload) name:@"ReloadGrid" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateArray:) name:@"updateArrayFlows" object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -141,7 +148,7 @@ typedef enum {
 
 
 - (IBAction)onTapModify:(id)sender {
-    [ActionSheetStringPicker showPickerWithTitle:@"Seleccione Flujo" rows:arrayFlujos initialSelection:self.selectedIndex target:self successAction:@selector(flowWasSelected:element:) cancelAction:@selector(actionPickerCancelled:) origin:sender];
+    [ActionSheetStringPicker showPickerWithTitle:@"Seleccione Periodo" rows:arrayFlujos initialSelection:self.selectedIndex target:self successAction:@selector(flowWasSelected:element:) cancelAction:@selector(actionPickerCancelled:) origin:sender];
 }
 
 - (void)flowWasSelected:(NSNumber *)selectedIndex element:(id)element {
@@ -166,6 +173,11 @@ typedef enum {
         
         // Pass any objects to the view controller here, like...
         [vc setPeriod:self.processedCashFlow.periodCashFlows[self.selectedIndex]];
+        
+        if (self.selectedIndex == [self.processedCashFlow.periodCashFlows count] -1) {
+            [vc setIsLastPeriod:TRUE];
+        }
+        
     }
     if ([[segue identifier] isEqualToString:@"ToFirstPeriodInputData"])
     {

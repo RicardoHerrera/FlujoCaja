@@ -14,7 +14,7 @@
 
 - (id)initWithCashFlow:(CashFlow *)cashFlow;
 
-@property (readonly, strong, nonatomic) NSArray *periodCashFlows;
-@property (readonly, strong, nonatomic) NSArray *periodPlannedCashFlows;
+@property (readonly, strong, nonatomic) NSMutableArray *periodCashFlows;
+@property (readonly, strong, nonatomic) NSMutableArray *periodPlannedCashFlows;
 
 @end
