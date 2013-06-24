@@ -18,6 +18,7 @@
 
 @property (strong, nonatomic) CashFlow *cashFlow;
 @property (nonatomic, assign) NSInteger selectedIndex;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *viewModeButton;
 
 - (IBAction)onTapModify:(id)sender;
 - (void)flowWasSelected:(NSNumber *)selectedIndex element:(id)element;

@@ -97,6 +97,7 @@ typedef enum {
     if (self.viewMode != viewMode) {
         _viewMode = viewMode;
         self.grid.dataSource = (self.viewMode == CashFlowViewModeDefault)? self.cashFlowDataSource : self.plannedCashFlowDataSource;
+        self.viewModeButton.title = (self.viewMode != CashFlowViewModeDefault)? @"Flujo detallado" : @"Flujo planeado";
         [self.grid reload];
     }
 }
