@@ -80,9 +80,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="eqm-MX-KAK" kind="modal" modalPresentationStyle="formSheet" id="dF3-tS-fLV"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKw-I2-Fbt">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -93,9 +90,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="Tdf-q8-Stp" kind="modal" identifier="" id="Zp7-r6-rgT"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -344,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wtb-kG-HkJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-27" y="155"/>
+            <point key="canvasLocation" x="-179" y="158"/>
         </scene>
         <!--Input Data View-->
         <scene sceneID="Ghz-pf-8KJ">
@@ -1323,7 +1317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XmM-mK-acQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="569" y="155"/>
+            <point key="canvasLocation" x="406" y="163"/>
         </scene>
         <!--Cash Flow View Controller-->
         <scene sceneID="Eyt-BT-BUs">
@@ -1349,6 +1343,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <segue destination="Tdf-q8-Stp" kind="modal" identifier="ToPeriodInputData" id="gkz-ZA-nkx"/>
+                        <segue destination="eqm-MX-KAK" kind="modal" identifier="ToFirstPeriodInputData" modalPresentationStyle="formSheet" id="EHt-cN-lpw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LMj-0R-3Th" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1403,9 +1398,9 @@
                 <relationship kind="outlet" name="txtIncomeTaxRegularization" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtIncomeTaxes" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtLoanIncomes" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtNewLoanExpenses" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="txtNewLoanExpenses" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtOldLoanExpenses" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtPayroll" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="txtPayroll" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtRawMaterials" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtRawMaterialsCashPayment" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtRawMaterialsPayment" candidateClass="UITextField"/>
@@ -1438,7 +1433,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="gkz-ZA-nkx"/>
-    </inferredMetricsTieBreakers>
 </document>

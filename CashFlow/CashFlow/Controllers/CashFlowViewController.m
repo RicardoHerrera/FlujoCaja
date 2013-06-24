@@ -16,6 +16,7 @@
 #import "CashFlowService.h"
 #import "CashFlow.h"
 #import "InputDataView.h"
+#import "FirstInputDataView.h"
 
 typedef enum {
     CashFlowViewModeDefault,
@@ -60,6 +61,8 @@ typedef enum {
     }
     
     [self setupGrid];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self.grid selector:@selector(reload) name:@"ReloadGrid" object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -118,9 +121,9 @@ typedef enum {
     
     for (int i = 0; i < self.processedCashFlow.periodCashFlows.count; i++) {
         PeriodCashFlow *periodCashFlow = self.processedCashFlow.periodCashFlows[i];
-        SDataGridColumn* periodColumn = [[SDataGridColumn alloc] initWithTitle:periodCashFlow.dateString forProperty:@"header" cellType:nil headerCellType:[MyHeaderCell class]];
+        SDataGridColumn* periodColumn = [[SDataGridColumn alloc] initWithTitle:periodCashFlow.dateString];
         
-        //[[SDataGridColumn alloc] initWithTitle:periodCashFlow.dateString];
+        //[[SDataGridColumn alloc] initWithTitle:periodCashFlow.dateString forProperty:@"header" cellType:nil headerCellType:[MyHeaderCell class]];
         periodColumn.width = @200;
         periodColumn.tag = periodCashFlow.periodNumber;
         
@@ -145,7 +148,11 @@ typedef enum {
     
     self.selectedIndex = [selectedIndex intValue];
     
-    [self performSegueWithIdentifier:@"ToPeriodInputData" sender:self];
+    if (self.selectedIndex == 0) {
+        [self performSegueWithIdentifier:@"ToFirstPeriodInputData" sender:self];
+    }else{
+        [self performSegueWithIdentifier:@"ToPeriodInputData" sender:self];
+    }
     
 }
 
@@ -160,9 +167,19 @@ typedef enum {
         // Pass any objects to the view controller here, like...
         [vc setPeriod:self.processedCashFlow.periodCashFlows[self.selectedIndex]];
     }
+    if ([[segue identifier] isEqualToString:@"ToFirstPeriodInputData"])
+    {
+        // Get reference to the destination view controller
+        FirstInputDataView *vc = [segue destinationViewController];
+        
+        // Pass any objects to the view controller here, like...
+        [vc setPeriod: self.cashFlow.firstPeriodInputData];
+    }
+
 }
 
 - (void)actionPickerCancelled:(id)sender {
     NSLog(@"Delegate has been informed that ActionSheetPicker was cancelled");
+
 }
 @end

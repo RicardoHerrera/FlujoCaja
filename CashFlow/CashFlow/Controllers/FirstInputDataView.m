@@ -9,12 +9,15 @@
 #import "FirstInputDataView.h"
 #import "FirstPeriodInputData.h"
 #import "AlertViewsFactory.h"
+#import "GenericService.h"
 
 @interface FirstInputDataView ()
 
 @end
 
 @implementation FirstInputDataView
+
+@synthesize period;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,6 +32,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self fullFields];
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,7 +40,37 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark interfaceMethods
+- (void)fullFields{
+    
+    self.txtFinalBalance.text = [self transformNsNumberToNsstring:period.endBalance];
+    self.txtIgv.text = [self transformNsNumberToNsstring:period.igv];
+    self.txtOldLoan.text = [self transformNsNumberToNsstring:period.oldLoans];
+    self.txtRawMaterial.text = [self transformNsNumberToNsstring:period.rawMaterials];
+    self.txtSales.text = [self transformNsNumberToNsstring:period.sales];
+}
 
+#pragma mark helper methods
+- (NSString *)transformNsNumberToNsstring:(NSNumber *)theNumber{
+    
+    NSString *str = [NSString stringWithFormat:@"%.2f", [theNumber floatValue]];
+    
+    return  str;
+    
+}
+
+- (NSNumber *)transformNsstrinToNsnumber:(NSString *)theString{
+    
+    if ([@"" isEqualToString:theString]) {
+        theString = @"0.0";
+    }
+    
+    NSNumber *number = [NSNumber numberWithFloat:[theString floatValue]];
+    
+    return number;
+}
+
+#pragma mark on tap methods
 - (IBAction)onTapCancel:(id)sender {
     
     [self dismissViewControllerAnimated:TRUE completion:nil];
@@ -46,18 +80,17 @@
     
     //Verify fields
     //Save data
+    period.endBalance = [self transformNsstrinToNsnumber:self.txtFinalBalance.text];
+    period.igv = [self transformNsstrinToNsnumber:self.txtIgv.text];
+    period.oldLoans = [self transformNsstrinToNsnumber:self.txtOldLoan.text];
+    period.rawMaterials = [self transformNsstrinToNsnumber:self.txtRawMaterial.text];
+    period.sales = [self transformNsstrinToNsnumber:self.txtSales.text];
+    
+    [[GenericService sharedService] commitChanges];
     
     [self onTapCancel:Nil];
-    /*
-    FirstPeriodInputData *Fpd = [[FirstPeriodInputData alloc] init];
     
-    Fpd.endBalance = [NSNumber numberWithFloat:[_txtFinalBalance.text floatValue]];
-    Fpd.igv = [NSNumber numberWithFloat:[_txtIgv.text floatValue]];
-    Fpd.oldLoans = [NSNumber numberWithFloat:[_txtOldLoan.text floatValue]];
-    Fpd.rawMaterials = [NSNumber numberWithFloat:[_txtRawMaterial.text floatValue]];
-    Fpd.sales = [NSNumber numberWithFloat:[_txtSales.text floatValue]];
-    */
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ReloadGrid" object:nil];
 }
 
 - (IBAction)onTapHelpMessage:(id)sender {

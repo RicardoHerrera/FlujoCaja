@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "FirstPeriodInputData.h"
+
 @interface FirstInputDataView : UIViewController{
     
     
@@ -19,10 +21,14 @@
 @property (strong, nonatomic) IBOutlet UITextField *txtRawMaterial;
 @property (strong, nonatomic) IBOutlet UITextField *txtSales;
 
+@property(strong, nonatomic) FirstPeriodInputData *period;
+
 - (IBAction)onTapCancel:(id)sender;
 - (IBAction)onTapDone:(id)sender;
 
 - (IBAction)onTapHelpMessage:(id)sender;
+
+- (void)fullFields;
 
 
 @end
