@@ -17,6 +17,7 @@
 #import "ManpowerExpenses.h"
 #import "RawMaterialExpenses.h"
 #import "SalaryExpenses.h"
+#import "MyHeaderCell.h"
 
 #define ROW_INCOMES_SALES 0
 #define ROW_INCOMES_SALES_CASH 1
@@ -356,6 +357,28 @@
         default:
             break;
     }
+}
+-(BOOL)dataGridDataSourceHelper:(SDataGridDataSourceHelper *)helper populateCell:(SDataGridCell *)cell withValue:(id)value forProperty:(NSString *)propertyKey sourceObject:(id)object {
+    
+    
+    // I only want to populate the third column (our checkbox column) manually.
+    if ([propertyKey isEqualToString:@"header"]) {
+        
+        MyHeaderCell *headerCell = (MyHeaderCell *)cell;
+        
+        // As the datasource-helper handles the cell reuse we need to set the check box's delegate here.
+        //headerCell.myHeaderCellDelegate = self;
+        
+        // Make the checkbox show whether the student can graduate.
+        headerCell.codPeriod = cell.tag;
+        NSLog(@"tag %d", cell.tag);
+        
+        // Return YES to tell the data-source helper that we have manually populated this cell.
+        return YES;
+    }
+    
+    // For all other cell types (other than our custom checkbox) we want to return NO to let the data-source helper know it needs to handle the cell population.
+    return NO;
 }
 
 @end

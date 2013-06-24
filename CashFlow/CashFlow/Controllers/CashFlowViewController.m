@@ -96,9 +96,13 @@ typedef enum {
     
     for (int i = 0; i < self.processedCashFlow.periodCashFlows.count; i++) {
         PeriodCashFlow *periodCashFlow = self.processedCashFlow.periodCashFlows[i];
-        SDataGridColumn* periodColumn = [[SDataGridColumn alloc] initWithTitle:periodCashFlow.dateString];
+        SDataGridColumn* periodColumn = [[SDataGridColumn alloc] initWithTitle:periodCashFlow.dateString forProperty:@"header" cellType:nil headerCellType:[MyHeaderCell class]];
+        
+        //[[SDataGridColumn alloc] initWithTitle:periodCashFlow.dateString];
         periodColumn.width = @200;
         periodColumn.tag = periodCashFlow.periodNumber;
+        
+        NSLog(@"header: %@", periodColumn.headerCell);
         
         [self.grid addColumn:periodColumn];
         
@@ -111,7 +115,6 @@ typedef enum {
     
     self.grid.dataSource = self.cashFlowDataSource;
 }
-
 
 
 @end

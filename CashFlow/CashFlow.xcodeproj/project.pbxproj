@@ -63,6 +63,7 @@
 		A112FF3217775346003A33EE /* FirstInputDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = A112FF3117775346003A33EE /* FirstInputDataView.m */; };
 		A112FF351777539C003A33EE /* InputDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = A112FF341777539C003A33EE /* InputDataView.m */; };
 		A112FF3817776459003A33EE /* Messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = A112FF3717776459003A33EE /* Messages.plist */; };
+		A112FF4F1777D683003A33EE /* MyHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A112FF4E1777D683003A33EE /* MyHeaderCell.m */; };
 		A1EA03181753CEAC0030B611 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EA03171753CEAC0030B611 /* MainMenuViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -164,6 +165,8 @@
 		A112FF331777539C003A33EE /* InputDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputDataView.h; sourceTree = "<group>"; };
 		A112FF341777539C003A33EE /* InputDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputDataView.m; sourceTree = "<group>"; };
 		A112FF3717776459003A33EE /* Messages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Messages.plist; sourceTree = "<group>"; };
+		A112FF4D1777D683003A33EE /* MyHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHeaderCell.h; sourceTree = "<group>"; };
+		A112FF4E1777D683003A33EE /* MyHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHeaderCell.m; sourceTree = "<group>"; };
 		A1EA03161753CEAC0030B611 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		A1EA03171753CEAC0030B611 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -466,6 +469,8 @@
 		7A7FEF5A1777690D004FBCB9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A112FF4D1777D683003A33EE /* MyHeaderCell.h */,
+				A112FF4E1777D683003A33EE /* MyHeaderCell.m */,
 				7A7FEF5B17776953004FBCB9 /* CashFlowGridDataSource.h */,
 				7A7FEF5C17776953004FBCB9 /* CashFlowGridDataSource.m */,
 				7A7FEF5E17776E23004FBCB9 /* PlannedCashFlowGridDataSource.h */,
@@ -691,6 +696,7 @@
 				7A7FEF5D17776953004FBCB9 /* CashFlowGridDataSource.m in Sources */,
 				7A7FEF6017776E23004FBCB9 /* PlannedCashFlowGridDataSource.m in Sources */,
 				7A7FEF6317777065004FBCB9 /* GenericCashFlowGridDataSource.m in Sources */,
+				A112FF4F1777D683003A33EE /* MyHeaderCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CashFlow.h"
 #import "GridOrientationSupportViewController.h"
+#import "MyHeaderCell.h"
 
 @interface CashFlowViewController : GridOrientationSupportViewController
 
