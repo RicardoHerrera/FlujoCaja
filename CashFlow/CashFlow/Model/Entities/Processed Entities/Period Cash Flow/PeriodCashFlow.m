@@ -76,7 +76,7 @@
     CashFlow *cashFlow = period.cashFlow;
     
     if (cashFlow.periodType.integerValue == CashFlowPeriodTypeMonths) {
-        self.dateFormatter.dateFormat = @"MMMM";
+        self.dateFormatter.dateFormat = @"MMM - YYYY";
     }
     
     return [self.dateFormatter stringFromDate:self.date];
