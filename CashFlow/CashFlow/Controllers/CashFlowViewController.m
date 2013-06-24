@@ -15,6 +15,7 @@
 
 #import "CashFlowService.h"
 #import "CashFlow.h"
+#import "InputDataView.h"
 
 typedef enum {
     CashFlowViewModeDefault,
@@ -138,7 +139,23 @@ typedef enum {
     
     self.selectedIndex = [selectedIndex intValue];
     
+    [self performSegueWithIdentifier:@"ToPeriodInputData" sender:self];
+    
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"ToPeriodInputData"])
+    {
+        // Get reference to the destination view controller
+        InputDataView *vc = [segue destinationViewController];
+        
+        // Pass any objects to the view controller here, like...
+        [vc setPeriod:self.processedCashFlow.periodCashFlows[self.selectedIndex]];
+    }
+}
+
 - (void)actionPickerCancelled:(id)sender {
     NSLog(@"Delegate has been informed that ActionSheetPicker was cancelled");
 }

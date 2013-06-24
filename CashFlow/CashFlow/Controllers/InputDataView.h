@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "PeriodCashFlow.h"
+
 @interface InputDataView : UIViewController{
     
 }
@@ -41,8 +43,12 @@
 @property (strong, nonatomic) IBOutlet UITextField *txtTea;
 @property (strong, nonatomic) IBOutlet UITextField *txtVariableManpower;
 
+@property(strong, nonatomic) PeriodCashFlow *period;
+
 - (IBAction)onTapHelpMessage:(id)sender;
 - (IBAction)onTapCancel:(id)sender;
 - (IBAction)onTapDone:(id)sender;
+
+- (void)fullFields;
 
 @end
