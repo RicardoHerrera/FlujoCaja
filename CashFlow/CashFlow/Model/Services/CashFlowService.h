@@ -27,6 +27,8 @@
 - (PeriodInputData *)createPeriodInputData;
 - (void)deletePeriodInputData:(PeriodInputData *)periodInputData;
 
+- (FirstPeriodInputData *)createFirstPeriodInputData;
+
 - (NSArray *)getPeriodCashFlowsForCashFlow:(CashFlow *)cashFlow;
 
 

@@ -44,6 +44,7 @@
     txtFlowName.placeholder = @"Nombre del Flujo de caja";
     txtFlowName.textAlignment = NSTextAlignmentCenter;
     txtFlowName.font = [UIFont fontWithName:@"System" size:24.0f];
+    txtFlowName.delegate = self;
     
     [self.view addSubview:txtFlowName];
     
@@ -87,6 +88,9 @@
 #pragma mark CollectionView Delegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (isCreatingNew) {
+        return;
+    }
     // TODO: Select Item
     [self performSegueWithIdentifier:@"ToGrid" sender:self];
 }
@@ -145,6 +149,8 @@
         strFlowName = textField.text;
         [self performSegueWithIdentifier:@"ToCreateNewFlow" sender:self];
     }
+    
+    [self onTapCancelAdd:nil];
     
     return YES;
 }

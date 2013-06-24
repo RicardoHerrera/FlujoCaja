@@ -12,6 +12,9 @@
 #import "GenericService.h"
 #import "CashFlow.h"
 #import "FirstPeriodInputData.h"
+#import "PeriodInputData.h"
+#import "Period.h"
+#import "CashFlowService.h"
 
 @interface FirstInputDataView ()
 
@@ -77,15 +80,11 @@
 
 - (void)createNewFlow{
     
-    CashFlowsRepository *cashRep = [[CashFlowsRepository alloc] init];
-    
-    CashFlow *aCash = [cashRep createCashFlow];
+    CashFlow *aCash = [[CashFlowService sharedService] createCashFlow];
     
     aCash.name = self.flowName;
     
-    FirstPeriodInputDataRepository *firstRep = [[FirstPeriodInputDataRepository alloc] init];
-    
-    FirstPeriodInputData *firstData = [firstRep createFirstPeriodInputData];
+    FirstPeriodInputData *firstData = [[CashFlowService sharedService] createFirstPeriodInputData];
     
     firstData.endBalance = [self transformNsstrinToNsnumber:self.txtFinalBalance.text];
     firstData.igv = [self transformNsstrinToNsnumber:self.txtIgv.text];
@@ -94,6 +93,12 @@
     firstData.sales = [self transformNsstrinToNsnumber:self.txtSales.text];
     
     firstData.cashFlow = aCash;
+    
+    Period *aPeriod = [[CashFlowService sharedService] createPeriod];
+    
+    aPeriod.inputData = nil;
+    aPeriod.number = 0;
+    aPeriod.cashFlow = aCash;
     
     [[GenericService sharedService] commitChanges];
     
