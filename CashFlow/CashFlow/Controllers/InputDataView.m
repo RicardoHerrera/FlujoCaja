@@ -11,6 +11,7 @@
 #import "PeriodInputData.h"
 #import "GenericService.h"
 #import "CashFlowService.h"
+#import "Period.h"
 
 @interface InputDataView ()
 
@@ -20,6 +21,8 @@
 
 @synthesize period;
 @synthesize isLastPeriod;
+@synthesize cashFlow;
+@synthesize lastPeriodNumber;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,6 +41,10 @@
         [self fullFields];
     }
     
+    UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:@"OK" style:UIBarButtonItemStyleDone target:self action:@selector(onTapDone:)];
+    UIBarButtonItem *deleteItem = [[UIBarButtonItem alloc] initWithTitle:@"Delete" style:UIBarButtonItemStyleBordered target:self action:@selector(onTapDeleteData:)];
+    
+    self.navItem.rightBarButtonItems = @[doneItem, deleteItem];
 }
 
 - (void)didReceiveMemoryWarning
@@ -112,8 +119,51 @@
 
 - (void)createNewPeriod{
     
+    PeriodsRepository *prdRep = [[PeriodsRepository alloc] init];
     
+    Period *aPeriod = [prdRep createPeriod];
     
+    aPeriod.number = [NSNumber numberWithInt:lastPeriodNumber];
+    
+    PeriodInputDataRepository *prdInputRep = [[PeriodInputDataRepository alloc] init];
+    
+    PeriodInputData *anInput = [prdInputRep createPeriodInputData];
+    
+    anInput.badDebts = [self transformNsstrinToNsnumber:self.txtBadDebt.text];
+    anInput.baseRawMaterials = [self transformNsstrinToNsnumber:self.txtRawMaterials.text];
+    anInput.cashDebtCollections = [self transformNsstrinToNsnumber:self.txtCashDebtCollections.text];
+    anInput.creditSalesPenalty = [self transformNsstrinToNsnumber:self.txtCreditSalesPenalty.text];
+    anInput.debtCollections = [self transformNsstrinToNsnumber:self.txtDebtCollections.text];
+    anInput.dividends = [self transformNsstrinToNsnumber:self.txtDividends.text];
+    anInput.fixedAssetsExpense = [self transformNsstrinToNsnumber:self.txtFixedAssetsExpense.text];
+    anInput.fixedManpower = [self transformNsstrinToNsnumber:self.txtFixedManPower.text];
+    anInput.freights = [self transformNsstrinToNsnumber:self.txtFreights.text];
+    anInput.badDebts = [self transformNsstrinToNsnumber:self.txtBadDebt.text];
+    anInput.incomeTax = [self transformNsstrinToNsnumber:self.txtIncomeTaxes.text];
+    anInput.incomeTaxRegularization = [self transformNsstrinToNsnumber:self.txtIncomeTaxRegularization.text];
+    anInput.loanIncomes = [self transformNsstrinToNsnumber:self.txtLoanIncomes.text];
+    anInput.newLoanExpenses = [self transformNsstrinToNsnumber:self.txtNewLoanExpenses.text];
+    anInput.oldLoanExpenses = [self transformNsstrinToNsnumber:self.txtOldLoanExpenses.text];
+    anInput.payroll = [self transformNsstrinToNsnumber:self.txtPayroll.text];
+    anInput.rawMaterials = [self transformNsstrinToNsnumber:self.txtRawMaterials.text];
+    anInput.rawMaterialsCashPayment = [self transformNsstrinToNsnumber:self.txtRawMaterialsCashPayment.text];
+    anInput.rawMaterialsPayment = [self transformNsstrinToNsnumber:self.txtRawMaterialsPayment.text];
+    anInput.sales = [self transformNsstrinToNsnumber:self.txtSales.text];
+    anInput.salesExpenses = [self transformNsstrinToNsnumber:self.txtSemestralReward.text];
+    anInput.semestralRewards = [self transformNsstrinToNsnumber:self.txtSocialBenefit.text];
+    anInput.socialBenefits = [self transformNsstrinToNsnumber:self.txtRawMaterialsPayment.text];
+    anInput.tea = [self transformNsstrinToNsnumber:self.txtTea.text];
+    anInput.variableManpower = [self transformNsstrinToNsnumber:self.txtVariableManpower.text];
+    anInput.assetsPurchases = [self transformNsstrinToNsnumber:self.assetsPurchases.text];
+    anInput.administrativeExpenses = [self transformNsstrinToNsnumber:self.administrativeExpenses.text];
+    
+    anInput.period = aPeriod;
+    
+    aPeriod.cashFlow = self.cashFlow;
+    
+    [[GenericService sharedService] commitChanges];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"updateWithNewFlow" object:nil];
 }
 
 #pragma mark buttons actions
@@ -154,12 +204,12 @@
         period.inputData.variableManpower = [self transformNsstrinToNsnumber:self.txtVariableManpower.text];
         period.inputData.assetsPurchases = [self transformNsstrinToNsnumber:self.assetsPurchases.text];
         period.inputData.administrativeExpenses = [self transformNsstrinToNsnumber:self.administrativeExpenses.text];
+        
+        [[GenericService sharedService] commitChanges];
+        
     }else{
         [self createNewPeriod];
     }
-    
-    [[GenericService sharedService] commitChanges];
-    
     
     [self onTapCancel:Nil];
     

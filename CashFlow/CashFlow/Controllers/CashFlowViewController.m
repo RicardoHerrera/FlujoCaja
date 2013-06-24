@@ -17,6 +17,7 @@
 #import "CashFlow.h"
 #import "InputDataView.h"
 #import "FirstInputDataView.h"
+#import "Period.h"
 
 typedef enum {
     CashFlowViewModeDefault,
@@ -54,12 +55,26 @@ typedef enum {
     [self.grid reload];
 }
 
+- (void)updateWithNewFlow:(NSNotification *)notification{
+    
+    self.processedCashFlow = [[ProcessedCashFlow alloc] initWithCashFlow:self.cashFlow];
+    self.cashFlowDataSource = [[CashFlowGridDataSource alloc] initWithProcessedCashFlow:self.processedCashFlow];
+    self.plannedCashFlowDataSource = [[PlannedCashFlowGridDataSource alloc] initWithProcessedCashFlow:self.processedCashFlow];
+    [self setupGrid];
+    [self.grid reload];
+}
+
 #pragma mark -
 #pragma mark View Lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:@"Flujo planeado" style:UIBarButtonItemStyleDone target:self action:@selector(toggleCashFlowViewMode:)];
+    UIBarButtonItem *deleteItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addFlow:)];
+    
+    self.navItem.rightBarButtonItems = @[doneItem, deleteItem];
     
     self.cashFlow = [[CashFlowService sharedService] getCashFlowWithPredicate:[NSPredicate predicateWithFormat:@"name == %@",@"Hello Cash Flow"]];
     
@@ -81,6 +96,7 @@ typedef enum {
     
     [[NSNotificationCenter defaultCenter] addObserver:self.grid selector:@selector(reload) name:@"ReloadGrid" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateArray:) name:@"updateArrayFlows" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateWithNewFlow:) name:@"updateWithNewFlow" object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -163,6 +179,11 @@ typedef enum {
     [ActionSheetStringPicker showPickerWithTitle:@"Seleccione Periodo" rows:arrayFlujos initialSelection:self.selectedIndex target:self successAction:@selector(flowWasSelected:element:) cancelAction:@selector(actionPickerCancelled:) origin:sender];
 }
 
+- (IBAction)addFlow:(id)sender{
+    
+    [self performSegueWithIdentifier:@"ToAddPeriodInputData" sender:self];
+}
+
 - (void)flowWasSelected:(NSNumber *)selectedIndex element:(id)element {
     
     self.selectedIndex = [selectedIndex intValue];
@@ -190,15 +211,27 @@ typedef enum {
             [vc setIsLastPeriod:TRUE];
         }
         
+    }else{
+        if ([[segue identifier] isEqualToString:@"ToFirstPeriodInputData"])
+        {
+            // Get reference to the destination view controller
+            FirstInputDataView *vc = [segue destinationViewController];
+            
+            // Pass any objects to the view controller here, like...
+            [vc setPeriod: self.cashFlow.firstPeriodInputData];
+        }else{
+            if ([[segue identifier] isEqualToString:@"ToAddPeriodInputData"])
+            {
+                // Get reference to the destination view controller
+               InputDataView *vc = [segue destinationViewController];
+                
+                Period *period = [[self.cashFlow.periods allObjects] lastObject];
+                
+                [vc setLastPeriodNumber: [period.number intValue]];
+            }
+        }
     }
-    if ([[segue identifier] isEqualToString:@"ToFirstPeriodInputData"])
-    {
-        // Get reference to the destination view controller
-        FirstInputDataView *vc = [segue destinationViewController];
-        
-        // Pass any objects to the view controller here, like...
-        [vc setPeriod: self.cashFlow.firstPeriodInputData];
-    }
+    
 
 }
 

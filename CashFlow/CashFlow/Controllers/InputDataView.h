@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "PeriodCashFlow.h"
+#import "CashFlow.h"
 
 @interface InputDataView : UIViewController{
     
@@ -46,7 +47,9 @@
 @property (strong, nonatomic) IBOutlet UITextField *txtVariableManpower;
 
 @property(strong, nonatomic) PeriodCashFlow *period;
+@property(strong, nonatomic) CashFlow *cashFlow;
 @property(nonatomic) BOOL isLastPeriod;
+@property(nonatomic) int lastPeriodNumber;
 
 - (IBAction)onTapHelpMessage:(id)sender;
 - (IBAction)onTapCancel:(id)sender;

@@ -16,6 +16,7 @@
     NSMutableArray *arrayFlujos;
 }
 
+@property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 @property (strong, nonatomic) CashFlow *cashFlow;
 @property (nonatomic, assign) NSInteger selectedIndex;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *viewModeButton;
@@ -25,5 +26,7 @@
 - (void)actionPickerCancelled:(id)sender;
 
 - (void)updateArray:(NSNotification *)notification;
+- (void)updateWithNewFlow:(NSNotification *)notification;
+- (IBAction)addFlow:(id)sender;
 
 @end
