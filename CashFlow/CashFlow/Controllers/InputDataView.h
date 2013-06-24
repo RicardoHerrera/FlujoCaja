@@ -30,9 +30,9 @@
 @property (strong, nonatomic) IBOutlet UITextField *txtIncomeTaxes;
 @property (strong, nonatomic) IBOutlet UITextField *txtIncomeTaxRegularization;
 @property (strong, nonatomic) IBOutlet UITextField *txtLoanIncomes;
-@property (strong, nonatomic) IBOutlet UILabel *txtNewLoanExpenses;
+@property (strong, nonatomic) IBOutlet UITextField *txtNewLoanExpenses;
 @property (strong, nonatomic) IBOutlet UITextField *txtOldLoanExpenses;
-@property (strong, nonatomic) IBOutlet UILabel *txtPayroll;
+@property (strong, nonatomic) IBOutlet UITextField *txtPayroll;
 @property (strong, nonatomic) IBOutlet UITextField *txtRawMaterials;
 @property (strong, nonatomic) IBOutlet UITextField *txtRawMaterialsCashPayment;
 @property (strong, nonatomic) IBOutlet UITextField *txtRawMaterialsPayment;
