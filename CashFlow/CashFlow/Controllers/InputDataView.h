@@ -14,6 +14,8 @@
     
 }
 
+@property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
+
 @property (strong, nonatomic) IBOutlet UITextField *administrativeExpenses;
 
 @property (strong, nonatomic) IBOutlet UITextField *assetsPurchases;

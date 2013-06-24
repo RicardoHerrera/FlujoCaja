@@ -35,6 +35,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self fullFields];
+    
+    UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:@"OK" style:UIBarButtonItemStyleDone target:self action:@selector(onTapDone:)];
+    UIBarButtonItem *deleteItem = [[UIBarButtonItem alloc] initWithTitle:@"Delete" style:UIBarButtonItemStyleBordered target:self action:@selector(onTapDeleteData:)];
+    
+    self.navItem.rightBarButtonItems = @[doneItem, deleteItem];
 }
 
 - (void)didReceiveMemoryWarning
