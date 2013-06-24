@@ -104,7 +104,7 @@
 
 - (NSString *)transformNsNumberToNsstring:(NSNumber *)theNumber{
     
-    NSString *str = [NSString stringWithFormat:@"%.2f", [theNumber floatValue]];
+    NSString *str = [NSString stringWithFormat:@"%.8f", [theNumber floatValue]];
     
     return  str;
     
