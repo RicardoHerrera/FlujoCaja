@@ -9,12 +9,15 @@
 #import "MainMenuViewController.h"
 #import "CashFlowService.h"
 #import "CashFlow.h"
+#import "FirstInputDataView.h"
 
 @interface MainMenuViewController ()
 
 @end
 
 @implementation MainMenuViewController
+
+@synthesize txtFlowName;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,6 +36,19 @@
     
     arrayData = [[NSArray alloc] init];
     arrayData = [cashService getCashFlows];
+    
+    txtFlowName = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 160, 60)];
+    
+    [txtFlowName setCenter:CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2)];
+    txtFlowName.textColor = [UIColor blackColor];
+    txtFlowName.placeholder = @"Nombre del Flujo de caja";
+    txtFlowName.textAlignment = NSTextAlignmentCenter;
+    txtFlowName.font = [UIFont fontWithName:@"System" size:24.0f];
+    
+    [self.view addSubview:txtFlowName];
+    
+    [txtFlowName setHidden:TRUE];
+    
 }
 
 #pragma mark CollectionView DataSource
@@ -72,6 +88,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     // TODO: Select Item
+    [self performSegueWithIdentifier:@"ToGrid" sender:self];
 }
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     // TODO: Deselect item
@@ -117,6 +134,53 @@
                             [NSNumber numberWithFloat:1.0f],
                             nil];
     [layer addSublayer:shineLayer];
+}
+
+#pragma mark UITextField Delegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    if ([ @"" isEqualToString:textField.text]) {
+        return NO;
+    }else{
+        strFlowName = textField.text;
+        [self performSegueWithIdentifier:@"ToCreateNewFlow" sender:self];
+    }
+    
+    return YES;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"ToCreateNewFlow"])
+    {
+        // Get reference to the destination view controller
+        FirstInputDataView *vc = [segue destinationViewController];
+        
+        [vc setState:1];
+        [vc setFlowName:strFlowName];
+        
+    }
+    
+    
+}
+
+#pragma mark ontap Methods
+- (IBAction)onTapAddFlow:(id)sender {
+    
+    isCreatingNew = TRUE;
+    [txtFlowName setHidden:FALSE];
+    
+    self.navItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancelar" style:UIBarButtonSystemItemCancel target:self action:@selector(onTapCancelAdd:)];
+    
+}
+
+- (IBAction)onTapCancelAdd:(id)sender{
+    
+    [txtFlowName setHidden:TRUE];
+    
+    self.navItem.leftBarButtonItem = nil;
+    
 }
 
 - (void)didReceiveMemoryWarning

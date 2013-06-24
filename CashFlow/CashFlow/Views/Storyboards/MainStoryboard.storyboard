@@ -20,7 +20,7 @@
             </objects>
             <point key="canvasLocation" x="-1367" y="-732"/>
         </scene>
-        <!--Main Menu View Controller-->
+        <!--Main Menu View Controller - Flujos de caja-->
         <scene sceneID="qob-0p-J9I">
             <objects>
                 <viewController id="wjz-Qf-SNp" customClass="MainMenuViewController" sceneMemberID="viewController">
@@ -62,21 +62,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="jtK-MN-CMk" kind="push" id="wHc-ah-Drt"/>
+                                    <segue destination="jtK-MN-CMk" kind="push" identifier="ToGrid" id="wHc-ah-Drt"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pti-cO-u0k">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="127" id="X9m-Hf-wDf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="First input Data">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKw-I2-Fbt">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -91,11 +78,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="pti-cO-u0k" secondAttribute="trailing" constant="362" id="8jK-nP-fzW"/>
                             <constraint firstItem="P6H-S9-Noa" firstAttribute="leading" secondItem="XXS-Al-GG4" secondAttribute="leading" type="default" id="AzM-ah-8OA"/>
                             <constraint firstItem="P6H-S9-Noa" firstAttribute="top" secondItem="XXS-Al-GG4" secondAttribute="top" type="default" id="DGs-gf-XDW"/>
                             <constraint firstAttribute="bottom" secondItem="BrW-p7-xvI" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="JS0-CC-bcO"/>
-                            <constraint firstAttribute="bottom" secondItem="pti-cO-u0k" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="LT0-lt-zOb"/>
                             <constraint firstAttribute="trailing" secondItem="gKw-I2-Fbt" secondAttribute="trailing" constant="252" id="aNp-sU-FCL"/>
                             <constraint firstItem="P6H-S9-Noa" firstAttribute="trailing" secondItem="XXS-Al-GG4" secondAttribute="trailing" type="default" id="cYc-8X-NXH"/>
                             <constraint firstAttribute="trailing" secondItem="BrW-p7-xvI" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="cey-ut-W7M"/>
@@ -103,8 +88,18 @@
                             <constraint firstItem="P6H-S9-Noa" firstAttribute="bottom" secondItem="XXS-Al-GG4" secondAttribute="bottom" type="default" id="h8l-yK-mBa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="H71-7a-pje"/>
+                    <navigationItem key="navigationItem" title="Flujos de caja" id="H71-7a-pje">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZHK-sj-Gdd">
+                            <connections>
+                                <action selector="onTapAddFlow:" destination="wjz-Qf-SNp" id="fNL-bO-oCd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="navItem" destination="H71-7a-pje" id="aae-bH-vhS"/>
+                        <segue destination="eqm-MX-KAK" kind="modal" identifier="ToCreateNewFlow" id="7Kc-0M-wwm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7mg-Ty-LcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,7 +110,7 @@
             <objects>
                 <viewController id="eqm-MX-KAK" customClass="FirstInputDataView" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ehT-bY-eWw">
-                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <rect key="frame" x="0.0" y="20" width="540" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Balance Final:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32L-aS-vcg">
@@ -1418,6 +1413,11 @@
         </class>
         <class className="MainMenuViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="onTapAddFlow:"/>
+                <relationship kind="action" name="onTapCancelAdd:"/>
+                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
@@ -1431,6 +1431,9 @@
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
         </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
+        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
@@ -1438,6 +1441,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="7Kc-0M-wwm"/>
         <segue reference="Ovf-kh-ufQ"/>
     </inferredMetricsTieBreakers>
 </document>

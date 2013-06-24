@@ -9,12 +9,21 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface MainMenuViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>{
+@interface MainMenuViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,
+        UITextFieldDelegate>{
     
     NSArray *arrayData;
+    BOOL isCreatingNew;
+    
+    NSString *strFlowName;
     
 }
 
 - (void) addGradient:(UIView *) aView;
+- (IBAction)onTapAddFlow:(id)sender;
+- (IBAction)onTapCancelAdd:(id)sender;
+
+@property(nonatomic, retain) UITextField *txtFlowName;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 
 @end

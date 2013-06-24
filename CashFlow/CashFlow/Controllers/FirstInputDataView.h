@@ -22,6 +22,9 @@
 @property (strong, nonatomic) IBOutlet UITextField *txtSales;
 
 @property(strong, nonatomic) FirstPeriodInputData *period;
+@property(strong, nonatomic) NSString *flowName;
+@property(nonatomic) int state; //0 = modify
+                                //1 = new
 
 - (IBAction)onTapCancel:(id)sender;
 - (IBAction)onTapDone:(id)sender;

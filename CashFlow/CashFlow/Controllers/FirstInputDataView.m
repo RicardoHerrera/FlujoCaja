@@ -10,6 +10,8 @@
 #import "FirstPeriodInputData.h"
 #import "AlertViewsFactory.h"
 #import "GenericService.h"
+#import "CashFlow.h"
+#import "FirstPeriodInputData.h"
 
 @interface FirstInputDataView ()
 
@@ -32,7 +34,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self fullFields];
+    if (self.state != 1) {
+        [self fullFields];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,6 +75,30 @@
     return number;
 }
 
+- (void)createNewFlow{
+    
+    CashFlowsRepository *cashRep = [[CashFlowsRepository alloc] init];
+    
+    CashFlow *aCash = [cashRep createCashFlow];
+    
+    aCash.name = self.flowName;
+    
+    FirstPeriodInputDataRepository *firstRep = [[FirstPeriodInputDataRepository alloc] init];
+    
+    FirstPeriodInputData *firstData = [firstRep createFirstPeriodInputData];
+    
+    firstData.endBalance = [self transformNsstrinToNsnumber:self.txtFinalBalance.text];
+    firstData.igv = [self transformNsstrinToNsnumber:self.txtIgv.text];
+    firstData.oldLoans = [self transformNsstrinToNsnumber:self.txtOldLoan.text];
+    firstData.rawMaterials = [self transformNsstrinToNsnumber:self.txtRawMaterial.text];
+    firstData.sales = [self transformNsstrinToNsnumber:self.txtSales.text];
+    
+    firstData.cashFlow = aCash;
+    
+    [[GenericService sharedService] commitChanges];
+    
+}
+
 #pragma mark on tap methods
 - (IBAction)onTapCancel:(id)sender {
     
@@ -80,17 +109,23 @@
     
     //Verify fields
     //Save data
-    period.endBalance = [self transformNsstrinToNsnumber:self.txtFinalBalance.text];
-    period.igv = [self transformNsstrinToNsnumber:self.txtIgv.text];
-    period.oldLoans = [self transformNsstrinToNsnumber:self.txtOldLoan.text];
-    period.rawMaterials = [self transformNsstrinToNsnumber:self.txtRawMaterial.text];
-    period.sales = [self transformNsstrinToNsnumber:self.txtSales.text];
-    
-    [[GenericService sharedService] commitChanges];
+    if (self.state != 1) {
+        period.endBalance = [self transformNsstrinToNsnumber:self.txtFinalBalance.text];
+        period.igv = [self transformNsstrinToNsnumber:self.txtIgv.text];
+        period.oldLoans = [self transformNsstrinToNsnumber:self.txtOldLoan.text];
+        period.rawMaterials = [self transformNsstrinToNsnumber:self.txtRawMaterial.text];
+        period.sales = [self transformNsstrinToNsnumber:self.txtSales.text];
+        
+        [[GenericService sharedService] commitChanges];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"ReloadGrid" object:nil];
+    }else{
+        
+        [self createNewFlow];
+    }
     
     [self onTapCancel:Nil];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ReloadGrid" object:nil];
 }
 
 - (IBAction)onTapHelpMessage:(id)sender {
