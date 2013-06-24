@@ -43,6 +43,13 @@ typedef enum {
     [self.processedCashFlow.periodCashFlows removeLastObject];
     [self.processedCashFlow.periodPlannedCashFlows removeLastObject];
     
+    for (PeriodCashFlow *aFlow in self.processedCashFlow.periodCashFlows) {
+        if (aFlow.dateString != nil) {
+            [arrayFlujos addObject:aFlow.dateString];
+        }else{
+            [arrayFlujos addObject:@""];
+        }
+    }
     
     [self.grid reload];
 }
