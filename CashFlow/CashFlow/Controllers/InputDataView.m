@@ -22,7 +22,6 @@
 @synthesize period;
 @synthesize isLastPeriod;
 @synthesize cashFlow;
-@synthesize lastPeriodNumber;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,7 +36,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    if (period != nil) {
+    if (period || self.lastPeriod) {
         [self fullFields];
     }
     
@@ -68,33 +67,38 @@
 #pragma mark Interface's Methods
 - (void)fullFields{
     
-    self.txtBadDebt.text = [self transformNsNumberToNsstring:period.inputData.badDebts];
-    self.txtBaseRawMaterial.text = [self transformNsNumberToNsstring:period.inputData.baseRawMaterials];
-    self.txtCashDebtCollections.text = [self transformNsNumberToNsstring:period.inputData.cashDebtCollections];
-    self.txtCreditSalesPenalty.text = [self transformNsNumberToNsstring:period.inputData.creditSalesPenalty];
-    self.txtDebtCollections.text = [self transformNsNumberToNsstring:period.inputData.debtCollections];
-    self.txtDividends.text = [self transformNsNumberToNsstring:period.inputData.dividends];
-    self.txtFixedAssetsExpense.text = [self transformNsNumberToNsstring:period.inputData.fixedAssetsExpense];
-    self.txtFixedManPower.text = [self transformNsNumberToNsstring:period.inputData.fixedManpower];
-    self.txtFreights.text = [self transformNsNumberToNsstring:period.inputData.freights];
-    self.txtIgv.text = [self transformNsNumberToNsstring:period.inputData.badDebts];
-    self.txtIncomeTaxes.text = [self transformNsNumberToNsstring:period.inputData.incomeTax];
-    self.txtIncomeTaxRegularization.text = [self transformNsNumberToNsstring:period.inputData.incomeTaxRegularization];
-    self.txtLoanIncomes.text = [self transformNsNumberToNsstring:period.inputData.loanIncomes];
-    self.txtNewLoanExpenses.text = [self transformNsNumberToNsstring:period.inputData.newLoanExpenses];
-    self.txtOldLoanExpenses.text = [self transformNsNumberToNsstring:period.inputData.oldLoanExpenses];
-    self.txtPayroll.text = [self transformNsNumberToNsstring:period.inputData.payroll];
-    self.txtRawMaterials.text = [self transformNsNumberToNsstring:period.inputData.rawMaterials];
-    self.txtRawMaterialsCashPayment.text = [self transformNsNumberToNsstring:period.inputData.rawMaterialsCashPayment];
-    self.txtRawMaterialsPayment.text = [self transformNsNumberToNsstring:period.inputData.rawMaterialsPayment];
-    self.txtSales.text = [self transformNsNumberToNsstring:period.inputData.sales];
-    self.txtSalesExpenses.text = [self transformNsNumberToNsstring:period.inputData.salesExpenses];
-    self.txtSemestralReward.text = [self transformNsNumberToNsstring:period.inputData.semestralRewards];
-    self.txtSocialBenefit.text = [self transformNsNumberToNsstring:period.inputData.socialBenefits];
-    self.txtTea.text = [self transformNsNumberToNsstring:period.inputData.tea];
-    self.txtVariableManpower.text = [self transformNsNumberToNsstring:period.inputData.variableManpower];
-    self.assetsPurchases.text = [self transformNsNumberToNsstring:period.inputData.assetsPurchases];
-    self.administrativeExpenses.text = [self transformNsNumberToNsstring:period.inputData.administrativeExpenses];
+    PeriodCashFlow *p = (self.period)? self.period : self.lastPeriod;
+    if (p.periodNumber == 0) {
+        return;
+    }
+    
+    self.txtBadDebt.text = [self transformNsNumberToNsstring:p.inputData.badDebts];
+    self.txtBaseRawMaterial.text = [self transformNsNumberToNsstring:p.inputData.baseRawMaterials];
+    self.txtCashDebtCollections.text = [self transformNsNumberToNsstring:p.inputData.cashDebtCollections];
+    self.txtCreditSalesPenalty.text = [self transformNsNumberToNsstring:p.inputData.creditSalesPenalty];
+    self.txtDebtCollections.text = [self transformNsNumberToNsstring:p.inputData.debtCollections];
+    self.txtDividends.text = [self transformNsNumberToNsstring:p.inputData.dividends];
+    self.txtFixedAssetsExpense.text = [self transformNsNumberToNsstring:p.inputData.fixedAssetsExpense];
+    self.txtFixedManPower.text = [self transformNsNumberToNsstring:p.inputData.fixedManpower];
+    self.txtFreights.text = [self transformNsNumberToNsstring:p.inputData.freights];
+    self.txtIgv.text = [self transformNsNumberToNsstring:p.inputData.igv];
+    self.txtIncomeTaxes.text = [self transformNsNumberToNsstring:p.inputData.incomeTax];
+    self.txtIncomeTaxRegularization.text = [self transformNsNumberToNsstring:p.inputData.incomeTaxRegularization];
+    self.txtLoanIncomes.text = [self transformNsNumberToNsstring:p.inputData.loanIncomes];
+    self.txtNewLoanExpenses.text = [self transformNsNumberToNsstring:p.inputData.newLoanExpenses];
+    self.txtOldLoanExpenses.text = [self transformNsNumberToNsstring:p.inputData.oldLoanExpenses];
+    self.txtPayroll.text = [self transformNsNumberToNsstring:p.inputData.payroll];
+    self.txtRawMaterials.text = [self transformNsNumberToNsstring:p.inputData.rawMaterials];
+    self.txtRawMaterialsCashPayment.text = [self transformNsNumberToNsstring:p.inputData.rawMaterialsCashPayment];
+    self.txtRawMaterialsPayment.text = [self transformNsNumberToNsstring:p.inputData.rawMaterialsPayment];
+    self.txtSales.text = [self transformNsNumberToNsstring:p.inputData.sales];
+    self.txtSalesExpenses.text = [self transformNsNumberToNsstring:p.inputData.salesExpenses];
+    self.txtSemestralReward.text = [self transformNsNumberToNsstring:p.inputData.semestralRewards];
+    self.txtSocialBenefit.text = [self transformNsNumberToNsstring:p.inputData.socialBenefits];
+    self.txtTea.text = [self transformNsNumberToNsstring:p.inputData.tea];
+    self.txtVariableManpower.text = [self transformNsNumberToNsstring:p.inputData.variableManpower];
+    self.assetsPurchases.text = [self transformNsNumberToNsstring:p.inputData.assetsPurchases];
+    self.administrativeExpenses.text = [self transformNsNumberToNsstring:p.inputData.administrativeExpenses];
     
 }
 
@@ -119,18 +123,15 @@
 
 - (void)createNewPeriod{
     
-    PeriodsRepository *prdRep = [[PeriodsRepository alloc] init];
     
-    Period *aPeriod = [prdRep createPeriod];
+    Period *aPeriod = [[CashFlowService sharedService] createPeriod];
     
-    aPeriod.number = [NSNumber numberWithInt:lastPeriodNumber];
+    aPeriod.number = [NSNumber numberWithInteger:self.lastPeriod.periodNumber + 1 ];
     
-    PeriodInputDataRepository *prdInputRep = [[PeriodInputDataRepository alloc] init];
-    
-    PeriodInputData *anInput = [prdInputRep createPeriodInputData];
+    PeriodInputData *anInput = [[CashFlowService sharedService] createPeriodInputData];
     
     anInput.badDebts = [self transformNsstrinToNsnumber:self.txtBadDebt.text];
-    anInput.baseRawMaterials = [self transformNsstrinToNsnumber:self.txtRawMaterials.text];
+    anInput.baseRawMaterials = [self transformNsstrinToNsnumber:self.txtBaseRawMaterial.text];
     anInput.cashDebtCollections = [self transformNsstrinToNsnumber:self.txtCashDebtCollections.text];
     anInput.creditSalesPenalty = [self transformNsstrinToNsnumber:self.txtCreditSalesPenalty.text];
     anInput.debtCollections = [self transformNsstrinToNsnumber:self.txtDebtCollections.text];
@@ -149,13 +150,14 @@
     anInput.rawMaterialsCashPayment = [self transformNsstrinToNsnumber:self.txtRawMaterialsCashPayment.text];
     anInput.rawMaterialsPayment = [self transformNsstrinToNsnumber:self.txtRawMaterialsPayment.text];
     anInput.sales = [self transformNsstrinToNsnumber:self.txtSales.text];
-    anInput.salesExpenses = [self transformNsstrinToNsnumber:self.txtSemestralReward.text];
-    anInput.semestralRewards = [self transformNsstrinToNsnumber:self.txtSocialBenefit.text];
-    anInput.socialBenefits = [self transformNsstrinToNsnumber:self.txtRawMaterialsPayment.text];
+    anInput.salesExpenses = [self transformNsstrinToNsnumber:self.txtSalesExpenses.text];
+    anInput.semestralRewards = [self transformNsstrinToNsnumber:self.txtSemestralReward.text];
+    anInput.socialBenefits = [self transformNsstrinToNsnumber:self.txtSocialBenefit.text];
     anInput.tea = [self transformNsstrinToNsnumber:self.txtTea.text];
     anInput.variableManpower = [self transformNsstrinToNsnumber:self.txtVariableManpower.text];
     anInput.assetsPurchases = [self transformNsstrinToNsnumber:self.assetsPurchases.text];
     anInput.administrativeExpenses = [self transformNsstrinToNsnumber:self.administrativeExpenses.text];
+    anInput.igv = [self transformNsstrinToNsnumber:self.txtIgv.text];
     
     anInput.period = aPeriod;
     
@@ -178,7 +180,7 @@
     //Save Data
     if (period != nil) {
         period.inputData.badDebts = [self transformNsstrinToNsnumber:self.txtBadDebt.text];
-        period.inputData.baseRawMaterials = [self transformNsstrinToNsnumber:self.txtRawMaterials.text];
+        period.inputData.baseRawMaterials = [self transformNsstrinToNsnumber:self.txtBaseRawMaterial.text];
         period.inputData.cashDebtCollections = [self transformNsstrinToNsnumber:self.txtCashDebtCollections.text];
         period.inputData.creditSalesPenalty = [self transformNsstrinToNsnumber:self.txtCreditSalesPenalty.text];
         period.inputData.debtCollections = [self transformNsstrinToNsnumber:self.txtDebtCollections.text];
@@ -197,13 +199,14 @@
         period.inputData.rawMaterialsCashPayment = [self transformNsstrinToNsnumber:self.txtRawMaterialsCashPayment.text];
         period.inputData.rawMaterialsPayment = [self transformNsstrinToNsnumber:self.txtRawMaterialsPayment.text];
         period.inputData.sales = [self transformNsstrinToNsnumber:self.txtSales.text];
-        period.inputData.salesExpenses = [self transformNsstrinToNsnumber:self.txtSemestralReward.text];
-        period.inputData.semestralRewards = [self transformNsstrinToNsnumber:self.txtSocialBenefit.text];
-        period.inputData.socialBenefits = [self transformNsstrinToNsnumber:self.txtRawMaterialsPayment.text];
+        period.inputData.salesExpenses = [self transformNsstrinToNsnumber:self.txtSalesExpenses.text];
+        period.inputData.semestralRewards = [self transformNsstrinToNsnumber:self.txtSemestralReward.text];
+        period.inputData.socialBenefits = [self transformNsstrinToNsnumber:self.txtSocialBenefit.text];
         period.inputData.tea = [self transformNsstrinToNsnumber:self.txtTea.text];
         period.inputData.variableManpower = [self transformNsstrinToNsnumber:self.txtVariableManpower.text];
         period.inputData.assetsPurchases = [self transformNsstrinToNsnumber:self.assetsPurchases.text];
         period.inputData.administrativeExpenses = [self transformNsstrinToNsnumber:self.administrativeExpenses.text];
+        period.inputData.igv = [self transformNsstrinToNsnumber:self.txtIgv.text];
         
         [[GenericService sharedService] commitChanges];
         

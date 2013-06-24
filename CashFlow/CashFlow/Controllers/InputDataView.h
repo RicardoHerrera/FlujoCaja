@@ -47,9 +47,9 @@
 @property (strong, nonatomic) IBOutlet UITextField *txtVariableManpower;
 
 @property(strong, nonatomic) PeriodCashFlow *period;
+@property(strong, nonatomic) PeriodCashFlow *lastPeriod;
 @property(strong, nonatomic) CashFlow *cashFlow;
 @property(nonatomic) BOOL isLastPeriod;
-@property(nonatomic) int lastPeriodNumber;
 
 - (IBAction)onTapHelpMessage:(id)sender;
 - (IBAction)onTapCancel:(id)sender;

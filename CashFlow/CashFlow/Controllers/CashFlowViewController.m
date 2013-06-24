@@ -44,6 +44,7 @@ typedef enum {
     [self.processedCashFlow.periodCashFlows removeLastObject];
     [self.processedCashFlow.periodPlannedCashFlows removeLastObject];
     
+    [arrayFlujos removeAllObjects];
     for (PeriodCashFlow *aFlow in self.processedCashFlow.periodCashFlows) {
         if (aFlow.dateString != nil) {
             [arrayFlujos addObject:aFlow.dateString];
@@ -92,6 +93,8 @@ typedef enum {
         }
     }
     
+    self.viewMode = CashFlowViewModeDefault;
+    
     [self setupGrid];
     
     [[NSNotificationCenter defaultCenter] addObserver:self.grid selector:@selector(reload) name:@"ReloadGrid" object:nil];
@@ -128,6 +131,11 @@ typedef enum {
 
 - (void)setupGrid
 {
+    if (self.grid) {
+        [self.grid removeFromSuperview];
+        self.grid = nil;
+    }
+    
     self.grid = [[ShinobiDataGrid alloc] initWithFrame:[self gridFrameForOrientation:self.interfaceOrientation]];
     [self.view addSubview:self.grid];
     
@@ -171,7 +179,7 @@ typedef enum {
         }
     }
     
-    self.grid.dataSource = self.cashFlowDataSource;
+    self.grid.dataSource = (self.viewMode == CashFlowViewModeDefault)? self.cashFlowDataSource : self.plannedCashFlowDataSource;
 }
 
 
@@ -225,9 +233,8 @@ typedef enum {
                 // Get reference to the destination view controller
                InputDataView *vc = [segue destinationViewController];
                 
-                Period *period = [[self.cashFlow.periods allObjects] lastObject];
-                
-                [vc setLastPeriodNumber: [period.number intValue]];
+                vc.cashFlow = self.cashFlow;
+                vc.lastPeriod = (PeriodCashFlow *)[self.processedCashFlow.periodCashFlows lastObject];
             }
         }
     }
