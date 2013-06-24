@@ -351,7 +351,7 @@
             <objects>
                 <viewController storyboardIdentifier="PeriodInputData" id="Tdf-q8-Stp" customClass="InputDataView" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2yy-fk-7k7">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Gastos administrativos:" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="161" translatesAutoresizingMaskIntoConstraints="NO" id="Rym-ts-cCU">
@@ -1290,7 +1290,6 @@
                             <constraint firstItem="I21-ev-V4B" firstAttribute="leading" secondItem="fgQ-Gd-ZzE" secondAttribute="leading" type="default" id="zme-O5-hY8"/>
                             <constraint firstAttribute="bottom" secondItem="KRA-Pg-3xf" secondAttribute="bottom" constant="422" id="zqv-NQ-Rvd"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <connections>
                         <outlet property="administrativeExpenses" destination="Qhb-Q5-XRo" id="ZhH-cB-dhe"/>
@@ -1308,9 +1307,9 @@
                         <outlet property="txtIncomeTaxRegularization" destination="fgQ-Gd-ZzE" id="6lk-2M-BGk"/>
                         <outlet property="txtIncomeTaxes" destination="I21-ev-V4B" id="4nw-6a-wpt"/>
                         <outlet property="txtLoanIncomes" destination="Lhy-cO-j6S" id="OdE-Qx-0Ta"/>
-                        <outlet property="txtNewLoanExpenses" destination="YQ4-j9-ADn" id="aQy-Ux-HRH"/>
+                        <outlet property="txtNewLoanExpenses" destination="Bup-eh-UuR" id="eVM-cf-x52"/>
                         <outlet property="txtOldLoanExpenses" destination="BR2-20-Dym" id="cCo-9q-lvB"/>
-                        <outlet property="txtPayroll" destination="5Wa-IR-8oL" id="kat-iM-sgp"/>
+                        <outlet property="txtPayroll" destination="aKY-Qg-swg" id="wE6-Lz-nzj"/>
                         <outlet property="txtRawMaterials" destination="7C4-Ss-AN1" id="xS4-U3-K2f"/>
                         <outlet property="txtRawMaterialsCashPayment" destination="BUt-vu-dXK" id="ej6-O6-U35"/>
                         <outlet property="txtRawMaterialsPayment" destination="vP5-0a-p4b" id="Fki-5K-RXL"/>
@@ -1331,10 +1330,9 @@
             <objects>
                 <viewController id="jtK-MN-CMk" customClass="CashFlowViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uhX-Ct-ufR">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="pqx-ke-osh">
                         <barButtonItem key="leftBarButtonItem" title="Editar" id="cMJ-EW-59g">
@@ -1348,7 +1346,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <segue destination="Tdf-q8-Stp" kind="modal" identifier="ToPeriodInputData" id="gkz-ZA-nkx"/>
                     </connections>
