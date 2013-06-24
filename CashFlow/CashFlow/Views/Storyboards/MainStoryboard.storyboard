@@ -73,6 +73,7 @@
                         <outlet property="navItem" destination="H71-7a-pje" id="aae-bH-vhS"/>
                         <outlet property="theCollection" destination="P6H-S9-Noa" id="KhE-HZ-3IV"/>
                         <segue destination="eqm-MX-KAK" kind="modal" identifier="ToCreateNewFlow" id="7Kc-0M-wwm"/>
+                        <segue destination="jtK-MN-CMk" kind="push" identifier="ToGrid" id="3ss-Jg-tdb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7mg-Ty-LcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1292,7 +1293,7 @@
             <objects>
                 <viewController id="jtK-MN-CMk" customClass="CashFlowViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uhX-Ct-ufR">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
