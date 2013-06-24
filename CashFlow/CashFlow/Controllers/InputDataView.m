@@ -9,6 +9,7 @@
 #import "InputDataView.h"
 #import "AlertViewsFactory.h"
 #import "PeriodInputData.h"
+#import "GenericService.h"
 
 @interface InputDataView ()
 
@@ -93,6 +94,17 @@
     
 }
 
+- (NSNumber *)transformNsstrinToNsnumber:(NSString *)theString{
+    
+    if ([@"" isEqualToString:theString]) {
+        theString = @"0.0";
+    }
+    
+    NSNumber *number = [NSNumber numberWithFloat:[theString floatValue]];
+    
+    return number;
+}
+
 #pragma mark buttons actions
 - (IBAction)onTapCancel:(id)sender {
     [self dismissViewControllerAnimated:TRUE completion:Nil];
@@ -101,7 +113,38 @@
 - (IBAction)onTapDone:(id)sender {
     
     //Verify fields
+    
     //Save Data
+    period.inputData.badDebts = [self transformNsstrinToNsnumber:self.txtBadDebt.text];
+    period.inputData.baseRawMaterials = [self transformNsstrinToNsnumber:self.txtRawMaterials.text];
+    period.inputData.cashDebtCollections = [self transformNsstrinToNsnumber:self.txtCashDebtCollections.text];
+    period.inputData.creditSalesPenalty = [self transformNsstrinToNsnumber:self.txtCreditSalesPenalty.text];
+    period.inputData.debtCollections = [self transformNsstrinToNsnumber:self.txtDebtCollections.text];
+    period.inputData.dividends = [self transformNsstrinToNsnumber:self.txtDividends.text];
+    period.inputData.fixedAssetsExpense = [self transformNsstrinToNsnumber:self.txtFixedAssetsExpense.text];
+    period.inputData.fixedManpower = [self transformNsstrinToNsnumber:self.txtFixedManPower.text];
+    period.inputData.freights = [self transformNsstrinToNsnumber:self.txtFreights.text];
+    period.inputData.badDebts = [self transformNsstrinToNsnumber:self.txtBadDebt.text];
+    period.inputData.incomeTax = [self transformNsstrinToNsnumber:self.txtIncomeTaxes.text];
+    period.inputData.incomeTaxRegularization = [self transformNsstrinToNsnumber:self.txtIncomeTaxRegularization.text];
+    period.inputData.loanIncomes = [self transformNsstrinToNsnumber:self.txtLoanIncomes.text];
+    period.inputData.newLoanExpenses = [self transformNsstrinToNsnumber:self.txtNewLoanExpenses.text];
+    period.inputData.oldLoanExpenses = [self transformNsstrinToNsnumber:self.txtOldLoanExpenses.text];
+    period.inputData.payroll = [self transformNsstrinToNsnumber:self.txtPayroll.text];
+    period.inputData.rawMaterials = [self transformNsstrinToNsnumber:self.txtRawMaterials.text];
+    period.inputData.rawMaterialsCashPayment = [self transformNsstrinToNsnumber:self.txtRawMaterialsCashPayment.text];
+    period.inputData.rawMaterialsPayment = [self transformNsstrinToNsnumber:self.txtRawMaterialsPayment.text];
+    period.inputData.sales = [self transformNsstrinToNsnumber:self.txtSales.text];
+    period.inputData.salesExpenses = [self transformNsstrinToNsnumber:self.txtSemestralReward.text];
+    period.inputData.semestralRewards = [self transformNsstrinToNsnumber:self.txtSocialBenefit.text];
+    period.inputData.socialBenefits = [self transformNsstrinToNsnumber:self.txtRawMaterialsPayment.text];
+    period.inputData.tea = [self transformNsstrinToNsnumber:self.txtTea.text];
+    period.inputData.variableManpower = [self transformNsstrinToNsnumber:self.txtVariableManpower.text];
+    period.inputData.assetsPurchases = [self transformNsstrinToNsnumber:self.assetsPurchases.text];
+    period.inputData.administrativeExpenses = [self transformNsstrinToNsnumber:self.administrativeExpenses.text];
+    
+    [[GenericService sharedService] commitChanges];
+    
     
     [self onTapCancel:Nil];
     

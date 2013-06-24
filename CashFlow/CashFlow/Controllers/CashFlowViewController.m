@@ -62,6 +62,12 @@ typedef enum {
     [self setupGrid];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:TRUE];
+    
+    [self.grid reload];
+}
+
 #pragma mark -
 #pragma mark Custom Accessors
 
