@@ -52,6 +52,13 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:TRUE];
+    
+    [self.theCollection reloadData];
+    
+}
+
 #pragma mark CollectionView DataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     

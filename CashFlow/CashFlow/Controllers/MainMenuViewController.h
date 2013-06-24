@@ -25,5 +25,6 @@
 
 @property(nonatomic, retain) UITextField *txtFlowName;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
+@property (weak, nonatomic) IBOutlet UICollectionView *theCollection;
 
 @end
