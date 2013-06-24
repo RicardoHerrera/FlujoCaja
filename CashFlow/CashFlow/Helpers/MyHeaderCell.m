@@ -57,7 +57,6 @@
 -(void)setChecked:(BOOL)checked {
     
     NSLog(@"codigo de periodo: %d", codPeriodo);
-    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"hola" message:@"hola" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
     
     [alert show];

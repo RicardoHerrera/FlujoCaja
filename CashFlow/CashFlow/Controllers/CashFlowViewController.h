@@ -10,9 +10,17 @@
 #import "CashFlow.h"
 #import "GridOrientationSupportViewController.h"
 #import "MyHeaderCell.h"
+#import "ActionSheetPicker.h"
 
-@interface CashFlowViewController : GridOrientationSupportViewController
+@interface CashFlowViewController : GridOrientationSupportViewController{
+    NSMutableArray *arrayFlujos;
+}
 
 @property (strong, nonatomic) CashFlow *cashFlow;
+@property (nonatomic, assign) NSInteger selectedIndex;
+
+- (IBAction)onTapModify:(id)sender;
+- (void)flowWasSelected:(NSNumber *)selectedIndex element:(id)element;
+- (void)actionPickerCancelled:(id)sender;
 
 @end

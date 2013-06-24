@@ -371,7 +371,6 @@
         
         // Make the checkbox show whether the student can graduate.
         headerCell.codPeriod = cell.tag;
-        NSLog(@"tag %d", cell.tag);
         
         // Return YES to tell the data-source helper that we have manually populated this cell.
         return YES;

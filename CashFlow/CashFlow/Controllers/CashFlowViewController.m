@@ -13,6 +13,9 @@
 #import "CashFlowGridDataSource.h"
 #import "PlannedCashFlowGridDataSource.h"
 
+#import "CashFlowService.h"
+#import "CashFlow.h"
+
 typedef enum {
     CashFlowViewModeDefault,
     CashFlowViewModePlanned
@@ -30,6 +33,8 @@ typedef enum {
 
 @implementation CashFlowViewController
 
+@synthesize selectedIndex = _selectedIndex;
+
 #pragma mark -
 #pragma mark View Lifecycle
 
@@ -39,9 +44,19 @@ typedef enum {
     
     self.cashFlow = [[CashFlowService sharedService] getCashFlowWithPredicate:[NSPredicate predicateWithFormat:@"name == %@",@"Hello Cash Flow"]];
     
+    arrayFlujos = [[NSMutableArray alloc] init];
+    
     self.processedCashFlow = [[ProcessedCashFlow alloc] initWithCashFlow:self.cashFlow];
     self.cashFlowDataSource = [[CashFlowGridDataSource alloc] initWithProcessedCashFlow:self.processedCashFlow];
     self.plannedCashFlowDataSource = [[PlannedCashFlowGridDataSource alloc] initWithProcessedCashFlow:self.processedCashFlow];
+    
+    for (PeriodCashFlow *aFlow in self.processedCashFlow.periodCashFlows) {
+        if (aFlow.dateString != nil) {
+            [arrayFlujos addObject:aFlow.dateString];
+        }else{
+            [arrayFlujos addObject:@""];
+        }
+    }
     
     [self setupGrid];
 }
@@ -102,8 +117,6 @@ typedef enum {
         periodColumn.width = @200;
         periodColumn.tag = periodCashFlow.periodNumber;
         
-        NSLog(@"header: %@", periodColumn.headerCell);
-        
         [self.grid addColumn:periodColumn];
         
         if (i == self.processedCashFlow.periodCashFlows.count - 1) {
@@ -117,4 +130,16 @@ typedef enum {
 }
 
 
+- (IBAction)onTapModify:(id)sender {
+    [ActionSheetStringPicker showPickerWithTitle:@"Seleccione Flujo" rows:arrayFlujos initialSelection:self.selectedIndex target:self successAction:@selector(flowWasSelected:element:) cancelAction:@selector(actionPickerCancelled:) origin:sender];
+}
+
+- (void)flowWasSelected:(NSNumber *)selectedIndex element:(id)element {
+    
+    self.selectedIndex = [selectedIndex intValue];
+    
+}
+- (void)actionPickerCancelled:(id)sender {
+    NSLog(@"Delegate has been informed that ActionSheetPicker was cancelled");
+}
 @end
