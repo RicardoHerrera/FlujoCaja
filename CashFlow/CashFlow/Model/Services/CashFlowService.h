@@ -22,8 +22,10 @@
 - (void)deleteCashFlow:(CashFlow *)cashFlow;
 
 - (Period *)createPeriod;
+- (void)deletePeriod:(Period *)period;
 
 - (PeriodInputData *)createPeriodInputData;
+- (void)deletePeriodInputData:(PeriodInputData *)periodInputData;
 
 - (NSArray *)getPeriodCashFlowsForCashFlow:(CashFlow *)cashFlow;
 

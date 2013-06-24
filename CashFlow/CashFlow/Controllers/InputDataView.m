@@ -10,6 +10,7 @@
 #import "AlertViewsFactory.h"
 #import "PeriodInputData.h"
 #import "GenericService.h"
+#import "CashFlowService.h"
 
 @interface InputDataView ()
 
@@ -155,9 +156,7 @@
     
     if (isLastPeriod) {
         //delete the period
-        PeriodInputDataRepository *prdInputData = [[PeriodInputDataRepository alloc] init];
-        [prdInputData deletePeriodInputData:period.inputData];
-        
+        [[CashFlowService sharedService] deletePeriod:period.inputData.period];
         [[GenericService sharedService] commitChanges];
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"updateArrayFlows" object:nil];

@@ -39,7 +39,11 @@ typedef enum {
 
 #pragma mark notification methods
 - (void)updateArray:(NSNotification *)notification{
+    [self.grid removeColumnAtIndex:self.processedCashFlow.periodCashFlows.count];
     [self.processedCashFlow.periodCashFlows removeLastObject];
+    [self.processedCashFlow.periodPlannedCashFlows removeLastObject];
+    
+    
     [self.grid reload];
 }
 
@@ -136,9 +140,9 @@ typedef enum {
         
         [self.grid addColumn:periodColumn];
         
-        if (i == self.processedCashFlow.periodCashFlows.count - 1) {
+        if (i == 0) {
             SDataGridCellStyle* highlightedStyle = [[SDataGridCellStyle alloc] init];
-            highlightedStyle.backgroundColor = [UIColor colorWithRed:1.0f green:0.0f blue:0.0f alpha:0.1f];
+            highlightedStyle.backgroundColor = [UIColor colorWithRed:0.0f green:1.0f blue:0.0f alpha:0.1f];
             periodColumn.cellStyle = highlightedStyle;
         }
     }

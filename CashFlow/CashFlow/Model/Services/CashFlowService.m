@@ -223,12 +223,22 @@
     return [self.unitOfWork.periodsRepository createPeriod];
 }
 
+- (void)deletePeriod:(Period *)period
+{
+    [self.unitOfWork.periodsRepository deletePeriod:period];
+}
+
 #pragma mark -
 #pragma mark Period Input Data Methods
 
 - (PeriodInputData *)createPeriodInputData
 {
     return [self.unitOfWork.periodInputDataRepository createPeriodInputData];
+}
+
+- (void)deletePeriodInputData:(PeriodInputData *)periodInputData
+{
+    [self.unitOfWork.periodInputDataRepository deletePeriodInputData:periodInputData];
 }
 
 #pragma mark -
