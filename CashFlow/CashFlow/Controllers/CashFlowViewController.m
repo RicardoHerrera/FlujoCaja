@@ -73,9 +73,13 @@ typedef enum {
     [super viewDidLoad];
     
     UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:@"Flujo planeado" style:UIBarButtonItemStyleDone target:self action:@selector(toggleCashFlowViewMode:)];
-    UIBarButtonItem *deleteItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addFlow:)];
+    UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addFlow:)];
+
+    UIBarButtonItem *editItem = [[UIBarButtonItem alloc] initWithTitle:@"Editar" style:UIBarButtonItemStyleBordered target:self action:@selector(onTapModify:)];
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"Menú" style:UIBarButtonItemStyleBordered target:self action:@selector(back)];
     
-    self.navItem.rightBarButtonItems = @[doneItem, deleteItem];
+    self.navItem.rightBarButtonItems = @[doneItem, addItem];
+    self.navItem.leftBarButtonItems = @[backItem, editItem];
     
     self.cashFlow = [[CashFlowService sharedService] getCashFlowWithPredicate:[NSPredicate predicateWithFormat:@"name == %@",@"Hello Cash Flow"]];
     
@@ -182,6 +186,9 @@ typedef enum {
     self.grid.dataSource = (self.viewMode == CashFlowViewModeDefault)? self.cashFlowDataSource : self.plannedCashFlowDataSource;
 }
 
+- (void)back {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 - (IBAction)onTapModify:(id)sender {
     [ActionSheetStringPicker showPickerWithTitle:@"Seleccione Periodo" rows:arrayFlujos initialSelection:self.selectedIndex target:self successAction:@selector(flowWasSelected:element:) cancelAction:@selector(actionPickerCancelled:) origin:sender];
