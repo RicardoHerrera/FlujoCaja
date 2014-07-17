@@ -657,7 +657,7 @@
 				ORGANIZATIONNAME = UPCFinance;
 				TargetAttributes = {
 					7A4BCD0317519E5A00901881 = {
-						DevelopmentTeam = DLWB6ZX2PL;
+						DevelopmentTeam = Z64GBT5WYN;
 					};
 				};
 			};
@@ -779,8 +779,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ricardo Herrera Valle (GNZ7W49YB8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ricardo Herrera Valle (GNZ7W49YB8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: RICARDO HERRERA V. (7YW6VVPJRS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: RICARDO HERRERA V. (7YW6VVPJRS)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -795,7 +795,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "CCAB3CAA-DC4A-4458-9057-568A34267B6E";
+				PROVISIONING_PROFILE = "580C0A1F-84CE-4ABE-A69C-78DC6573FA14";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALID_ARCHS = "armv7 armv7s";
@@ -814,8 +814,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ricardo Herrera Valle (GNZ7W49YB8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ricardo Herrera Valle (GNZ7W49YB8)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: RICARDO HERRERA V. (Z64GBT5WYN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: RICARDO HERRERA V. (Z64GBT5WYN)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -823,7 +823,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "CCAB3CAA-DC4A-4458-9057-568A34267B6E";
+				PROVISIONING_PROFILE = "87133399-C667-4FC2-9E08-A8EE54CD1134";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -834,7 +834,7 @@
 		7A4BCD2717519E5A00901881 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ricardo Herrera Valle (GNZ7W49YB8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ricardo Herrera Valle (GNZ7W49YB8)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -846,7 +846,7 @@
 				INFOPLIST_FILE = "CashFlow/CashFlow-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "CCAB3CAA-DC4A-4458-9057-568A34267B6E";
+				PROVISIONING_PROFILE = "580C0A1F-84CE-4ABE-A69C-78DC6573FA14";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -855,8 +855,8 @@
 		7A4BCD2817519E5A00901881 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ricardo Herrera Valle (GNZ7W49YB8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ricardo Herrera Valle (GNZ7W49YB8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: RICARDO HERRERA V. (Z64GBT5WYN)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
@@ -867,7 +867,7 @@
 				INFOPLIST_FILE = "CashFlow/CashFlow-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "CCAB3CAA-DC4A-4458-9057-568A34267B6E";
+				PROVISIONING_PROFILE = "87133399-C667-4FC2-9E08-A8EE54CD1134";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
