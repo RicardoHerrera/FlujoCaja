@@ -834,8 +834,8 @@
 		7A4BCD2717519E5A00901881 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ricardo Herrera Valle (GNZ7W49YB8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: RICARDO HERRERA V. (7YW6VVPJRS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: RICARDO HERRERA V. (7YW6VVPJRS)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
@@ -855,7 +855,7 @@
 		7A4BCD2817519E5A00901881 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: RICARDO HERRERA V. (Z64GBT5WYN)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: RICARDO HERRERA V. (Z64GBT5WYN)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
